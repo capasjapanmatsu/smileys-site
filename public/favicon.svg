@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="#111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Samoyed / dog face silhouette -->
+  <ellipse cx="16" cy="12" rx="10" ry="9"/>
+  <circle cx="12" cy="10" r="1.5" fill="#111"/>
+  <circle cx="20" cy="10" r="1.5" fill="#111"/>
+  <path d="M10 15 Q16 18 22 15"/>
+  <path d="M8 6 Q6 4 5 6 Q6 8 8 7"/>
+  <path d="M24 6 Q26 4 27 6 Q26 8 24 7"/>
+</svg>
