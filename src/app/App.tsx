@@ -17,6 +17,9 @@ const BreedingSchedulePage = lazy(() =>
 const ContactPage = lazy(() =>
   import('./pages/ContactPage').then((m) => ({ default: m.ContactPage }))
 );
+const FaqPage = lazy(() =>
+  import('./pages/FaqPage').then((m) => ({ default: m.FaqPage }))
+);
 
 export default function App() {
   return (
@@ -55,6 +58,14 @@ export default function App() {
         }
       />
       <Route
+        path="/policy"
+        element={
+          <Suspense fallback={null}>
+            <BreedingPolicyPage />
+          </Suspense>
+        }
+      />
+      <Route
         path="/breeding-schedule"
         element={
           <Suspense fallback={null}>
@@ -67,6 +78,14 @@ export default function App() {
         element={
           <Suspense fallback={null}>
             <ContactPage />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/faq"
+        element={
+          <Suspense fallback={null}>
+            <FaqPage />
           </Suspense>
         }
       />

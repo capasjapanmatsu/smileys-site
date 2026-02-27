@@ -2,14 +2,30 @@
 
 import { PageLayout } from "../components/PageLayout";
 import { FadeInSection } from "../components/FadeInSection";
+import { tldrs } from "../content/aeo";
 
 export function BloodlinePage() {
+  const schemas: Record<string, unknown>[] = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: "サモエド血統へのこだわり",
+      inLanguage: "ja-JP",
+      author: { "@type": "Organization", name: "Smiley's Kennel" },
+      publisher: { "@type": "Organization", name: "Smiley's Kennel" },
+      mainEntityOfPage: "https://www.sammy-smile.com/bloodline",
+      description:
+        "熊本・九州のサモエド ブリーダー犬舎として、血統背景を確認できる繁殖計画と検査方針をまとめた解説ページです。",
+    },
+  ];
+
   return (
     <PageLayout
-      title="サモエド血統へのこだわり | Smiley's犬舎"
-      description="ロシア・ウクライナ・英国の名門血統を軸に、骨格・被毛・気質・健康を重視した繁殖方針を熊本のサモエド専門犬舎Smiley'sがご紹介します。"
+      title="サモエド血統 | 熊本・九州のサモエド ブリーダー犬舎"
+      description="熊本・九州のサモエド ブリーダー犬舎として、血統背景の確認と健康・気質を重視した繁殖方針をご紹介します。"
       canonicalPath="/bloodline"
       ogImage="/bloodline-main.webp"
+      jsonLd={schemas}
     >
       <div className="container mx-auto px-6 md:px-12">
         <FadeInSection>
@@ -20,6 +36,13 @@ export function BloodlinePage() {
             >
               血統へのこだわり
             </h1>
+            <div className="border border-gray-200 bg-gray-50 p-6 md:p-8 mb-12">
+              <ul className="space-y-2 text-gray-700 font-light leading-relaxed">
+                {tldrs.bloodline.map((line) => (
+                  <li key={line}>・{line}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </FadeInSection>
 

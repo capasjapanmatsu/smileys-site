@@ -2,14 +2,30 @@
 
 import { PageLayout } from "../components/PageLayout";
 import { FadeInSection } from "../components/FadeInSection";
+import { tldrs } from "../content/aeo";
 
 export function BreedingPolicyPage() {
+  const schemas: Record<string, unknown>[] = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: "繁殖理念と想い",
+      inLanguage: "ja-JP",
+      author: { "@type": "Organization", name: "Smiley's Kennel" },
+      publisher: { "@type": "Organization", name: "Smiley's Kennel" },
+      mainEntityOfPage: "https://www.sammy-smile.com/policy",
+      description:
+        "熊本・九州のサモエド ブリーダー犬舎として、少頭数・予約制で行う繁殖理念をまとめたページです。",
+    },
+  ];
+
   return (
     <PageLayout
-      title="繁殖理念と想い | Smiley's犬舎"
-      description="繁殖は仕事ではなく情熱という理念のもと、家族として寄り添うサモエドを丁寧に育てるSmiley's犬舎の繁殖方針と想いをご案内します。"
-      canonicalPath="/breeding-policy"
+      title="繁殖理念 | 熊本・九州のサモエド ブリーダー犬舎"
+      description="熊本・九州のサモエド ブリーダー犬舎として、少頭数・予約制で行う繁殖理念とお迎え方針をまとめています。"
+      canonicalPath="/policy"
       ogImage="/hero.webp"
+      jsonLd={schemas}
     >
       <div className="container mx-auto px-6 md:px-12">
         <FadeInSection>
@@ -20,6 +36,13 @@ export function BreedingPolicyPage() {
             >
               繁殖理念
             </h1>
+            <div className="border border-gray-200 bg-gray-50 p-6 md:p-8 mb-12">
+              <ul className="space-y-2 text-gray-700 font-light leading-relaxed">
+                <li>・熊本・九州のサモエド専門ブリーダー犬舎です。</li>
+                <li>・少頭数制で、一頭一頭に向き合いながらサモエドの子犬をご紹介しています。</li>
+                <li>・血統・健康・気質の調和を大切にした計画繁殖を行っています。</li>
+              </ul>
+            </div>
           </div>
         </FadeInSection>
 
@@ -83,7 +106,7 @@ export function BreedingPolicyPage() {
                 スタンダードに限りなく近く、健康で、愛らしい気質を持ち、
                 社交的で飼い主に寄り添い、作業能力を備えたサモエド。
                 それにより犬種の改良に貢献することを使命としております。
-                出所の分からない中間業者へ渡すことはございません。
+                1頭1頭大切に育てた子犬たちを一人一人丁寧にご案内しお渡し致します。
                 生涯にわたり大切に愛してくださるご家族のもとへお迎えいただいております。
               </p>
             </section>

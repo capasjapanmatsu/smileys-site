@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { Heart, Phone, Mail, ChevronRight, CalendarDays, Eye, FileText } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import { useSeo } from '../hooks/useSeo';
+import { SeoHead } from './SeoHead';
+import { aeoFaqs, tldrs } from '../content/aeo';
 
 const ChecklistModal = lazy(() =>
   import('./ChecklistModal').then((m) => ({ default: m.ChecklistModal }))
@@ -13,14 +14,6 @@ const ContactFormModal = lazy(() =>
 );
 
 export function SamoyedBreederSite() {
-  useSeo({
-    title: "熊本のサモエド専門犬舎 | Smiley's",
-    description:
-      "熊本で少頭数・小規模にサモエドをブリーディング。血統・健康・気質を重視し、見学予約や繁殖予定、お迎えまでの流れを掲載しています。",
-    canonicalPath: "/",
-    ogImage: "/hero.webp",
-  });
-
   const [activeSection, setActiveSection] = useState('home');
   const [checklistModalOpen, setChecklistModalOpen] = useState(false);
   const [contactFormModalOpen, setContactFormModalOpen] = useState(false);
@@ -35,7 +28,8 @@ export function SamoyedBreederSite() {
     { id: 'puppies', label: 'Puppies' },
     { id: 'parents', label: '血統' },
     { id: 'gallery', label: 'ギャラリー' },
-    { id: 'contact', label: 'Contact' }
+    { id: 'contact', label: 'Contact' },
+    { id: 'faq', label: 'FAQ' }
   ];
 
   const galleryImages = Array.from(
@@ -76,30 +70,55 @@ export function SamoyedBreederSite() {
     },
   ];
 
-  const faqs = [
+  const faqs = aeoFaqs;
+
+  const homeSchemas: Record<string, unknown>[] = [
     {
-      q: "どれくらい大きくなりますか？",
-      a: "個体差はありますが、男の子で30kg程度、女の子で25kg程度になります。",
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Smiley's Kennel",
+      url: "https://www.sammy-smile.com/",
+      inLanguage: "ja-JP",
     },
     {
-      q: "匂いは気になりますか？",
-      a: "月に1、2回程度のシャンプーでほとんど気になりません。",
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "Smiley's Kennel",
+      alternateName: ["Smiley's", "SAMMY.SMILE JP'S"],
+      url: "https://www.sammy-smile.com/",
+      logo: "https://www.sammy-smile.com/logo.webp",
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+81-90-9588-8128",
+        contactType: "customer support",
+        areaServed: "JP",
+      },
     },
     {
-      q: "トリミングは必要ですか？",
-      a: "毛が伸び続ける犬種ではないので基本不要ですが、足元・足の裏などは定期的なカットが必要です。",
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      name: "Smiley's Kennel",
+      description: "熊本・九州でサモエドの計画繁殖を行うブリーダー犬舎。少頭数・予約制で見学をご案内しています。",
+      image: "https://www.sammy-smile.com/hero.webp",
+      url: "https://www.sammy-smile.com/",
+      telephone: "+81-90-9588-8128",
+      address: {
+        "@type": "PostalAddress",
+        addressRegion: "熊本県",
+        addressLocality: "熊本市北区",
+        streetAddress: "龍田2丁目14-16",
+        addressCountry: "JP",
+      },
+      openingHours: "Sa-Su 13:00-17:00",
     },
     {
-      q: "抜け毛やメンテナンスはどのような感じですか？",
-      a: "日々ブラッシングは必要です。換毛期（年に2度程度）には一気に毛が生え変わるため、集中的なケアが必要です。",
-    },
-    {
-      q: "運動量はどれくらい必要ですか？",
-      a: "毎日朝夕1時間程度のお散歩が理想です。",
-    },
-    {
-      q: "お留守番はできますか？",
-      a: "犬種の特徴としてお留守番は苦手です。常にワンちゃんのそばに人がいる環境がおすすめです。",
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: { "@type": "Answer", text: item.a },
+      })),
     },
   ];
 
@@ -158,6 +177,13 @@ export function SamoyedBreederSite() {
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden" style={{ fontFamily: "'Montserrat', 'Noto Sans JP', sans-serif" }}>
+      <SeoHead
+        title="サモエド ブリーダー | 熊本・九州の犬舎 Smiley's"
+        description="熊本・九州でサモエドの計画繁殖を行うブリーダー犬舎です。少頭数・予約制で、見学予約や繁殖予定をご案内しています。"
+        canonicalPath="/"
+        ogImage="/hero.webp"
+        jsonLd={homeSchemas}
+      />
       {/* Side Navigation */}
       <nav className="fixed left-8 top-1/2 -translate-y-1/2 z-50 hidden lg:block">
         <div className="flex flex-col gap-6">
@@ -218,8 +244,11 @@ export function SamoyedBreederSite() {
             <Link to="/bloodline" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hidden sm:block">
               血統
             </Link>
-            <Link to="/breeding-policy" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hidden sm:block">
+            <Link to="/policy" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hidden sm:block">
               繁殖理念
+            </Link>
+            <Link to="/faq" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hidden sm:block">
+              FAQ
             </Link>
             <motion.button
               onClick={() => scrollToSection('contact')}
@@ -329,6 +358,39 @@ export function SamoyedBreederSite() {
         </div>
       </section>
 
+      {/* AEO Definition Blocks */}
+      <section className="py-14 bg-white border-y border-gray-100">
+        <div className="container mx-auto px-6 md:px-12 lg:px-24">
+          <div className="max-w-5xl mx-auto space-y-6">
+            <ul className="space-y-3 text-gray-700 font-light">
+              {tldrs.home.map((line) => (
+                <li key={line}>・{line}</li>
+              ))}
+            </ul>
+            <div className="grid md:grid-cols-3 gap-4 pt-6">
+              <Link
+                to="/samoyed"
+                className="border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors block"
+              >
+                <h3 className="text-lg font-medium text-gray-900">サモエドとは</h3>
+              </Link>
+              <Link
+                to="/policy"
+                className="border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors block"
+              >
+                <h3 className="text-lg font-medium text-gray-900">当犬舎の方針</h3>
+              </Link>
+              <button
+                onClick={() => scrollToSection('welcome-flow', 1800)}
+                className="text-left border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors"
+              >
+                <h3 className="text-lg font-medium text-gray-900">お迎え条件</h3>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About / Philosophy Section */}
       <section id="about" className="py-32 bg-white">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
@@ -375,35 +437,6 @@ export function SamoyedBreederSite() {
                     なお、お問い合わせをいただいても、常に無条件でお譲りできるわけではないことを予めご了承頂きますようお願い致します。
                   </p>
 
-                  <div className="pt-12 space-y-4 border-t border-gray-200 mt-12">
-                    <AnimatedSection delay={0.1}>
-                      <Link
-                        to="/samoyed"
-                        className="block text-xl font-light text-gray-900 hover:text-gray-600 transition-colors border-b border-transparent hover:border-gray-900 pb-1"
-                        style={{ fontFamily: "'Playfair Display', serif" }}
-                      >
-                        サモエドってどんな犬？（サモエドについて）
-                      </Link>
-                    </AnimatedSection>
-                    <AnimatedSection delay={0.2}>
-                      <Link
-                        to="/bloodline"
-                        className="block text-xl font-light text-gray-900 hover:text-gray-600 transition-colors border-b border-transparent hover:border-gray-900 pb-1"
-                        style={{ fontFamily: "'Playfair Display', serif" }}
-                      >
-                        血統について
-                      </Link>
-                    </AnimatedSection>
-                    <AnimatedSection delay={0.3}>
-                      <Link
-                        to="/breeding-policy"
-                        className="block text-xl font-light text-gray-900 hover:text-gray-600 transition-colors border-b border-transparent hover:border-gray-900 pb-1"
-                        style={{ fontFamily: "'Playfair Display', serif" }}
-                      >
-                        繁殖理念
-                      </Link>
-                    </AnimatedSection>
-                  </div>
                 </div>
               </div>
             </AnimatedSection>
@@ -732,14 +765,6 @@ export function SamoyedBreederSite() {
                   </div>
                 </div>
 
-                <motion.button
-                  onClick={() => setContactFormModalOpen(true)}
-                  className="inline-flex items-center gap-2 mt-8 text-base tracking-widest border-b border-gray-900 py-2 hover:border-gray-500 transition-colors bg-transparent cursor-pointer text-left min-h-[44px]"
-                  whileHover={{ x: 4 }}
-                >
-                  お問い合わせフォーム
-                  <ChevronRight className="w-4 h-4" />
-                </motion.button>
               </div>
             </AnimatedSection>
 
@@ -765,7 +790,7 @@ export function SamoyedBreederSite() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-gray-50 border-t border-gray-100">
+      <section id="faq" className="py-24 bg-gray-50 border-t border-gray-100">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
           <AnimatedSection>
             <div className="max-w-5xl mx-auto">
@@ -789,10 +814,26 @@ export function SamoyedBreederSite() {
                   <AnimatedSection key={item.q} delay={index * 0.05}>
                     <div className="bg-white border border-gray-200 p-6 md:p-7">
                       <h3 className="text-lg md:text-xl text-gray-900 mb-3 font-medium">{item.q}</h3>
-                      <p className="text-gray-700 font-light leading-relaxed">{item.a}</p>
+                      {item.q === "現在、子犬の募集はありますか？" ? (
+                        <p className="text-gray-700 font-light leading-relaxed">
+                          出産後の募集ではなく、事前予約より受け付けております。その為、出産前に予約で埋まってしまうことがあります。詳しくは
+                          <Link to="/breeding-schedule" className="underline underline-offset-4 hover:text-gray-900 mx-1">
+                            繁殖予定
+                          </Link>
+                          をご覧ください。
+                        </p>
+                      ) : (
+                        <p className="text-gray-700 font-light leading-relaxed">{item.a}</p>
+                      )}
                     </div>
                   </AnimatedSection>
                 ))}
+              </div>
+              <div className="text-center mt-8">
+                <Link to="/faq" className="inline-flex items-center gap-2 text-base border-b border-gray-900 pb-1 hover:gap-3 transition-all">
+                  FAQ詳細を見る
+                  <ChevronRight className="w-4 h-4" />
+                </Link>
               </div>
             </div>
           </AnimatedSection>
@@ -800,7 +841,7 @@ export function SamoyedBreederSite() {
       </section>
 
       {/* Welcome Flow Section */}
-      <section className="py-24 bg-[#f7f6f2] border-t border-gray-100">
+      <section id="welcome-flow" className="py-24 bg-[#f7f6f2] border-t border-gray-100">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
           <AnimatedSection>
             <div className="text-center mb-14">
@@ -848,7 +889,14 @@ export function SamoyedBreederSite() {
             </div>
             <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-4 border-t border-gray-700">
               <div className="flex items-center gap-3">
-                <Heart className="w-5 h-5" />
+                <img
+                  src="/samoyed-icon.webp"
+                  alt="サモエドシルエット"
+                  className="w-8 h-8 object-contain"
+                  width={32}
+                  height={32}
+                  loading="lazy"
+                />
                 <span className="text-lg font-light tracking-widest" style={{ fontFamily: "'Playfair Display', serif" }}>
                   Smiley's
                 </span>

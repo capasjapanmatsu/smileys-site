@@ -14,8 +14,8 @@ export function BreedingSchedulePage() {
 
   return (
     <PageLayout
-      title="繁殖予定と事前予約 | Smiley's犬舎"
-      description="2027年度出産予定のご案内と事前予約（お問い合わせ）方法を掲載しています。熊本のサモエド専門犬舎Smiley'sの最新繁殖予定をご確認ください。"
+      title="繁殖予定 | 熊本・九州のサモエド ブリーダー犬舎"
+      description="熊本・九州のサモエド ブリーダー犬舎の繁殖予定ページです。事前予約とお問い合わせ方法をご案内しています。"
       canonicalPath="/breeding-schedule"
       ogImage="/breeding-schedule-main.webp"
     >
@@ -34,6 +34,7 @@ export function BreedingSchedulePage() {
         <FadeInSection delay={0.1}>
           <div className="max-w-4xl mx-auto mb-16">
             <p className="text-lg leading-relaxed text-gray-700 font-light mb-8">
+              2026年度の予約は全てご予約済みになっています。
               現在は２０２７年度出産予定のご予約を受け付けております。
               子犬はご予約で埋まることがほとんどですので、事前のご予約をお願いいたします。
             </p>
@@ -65,7 +66,7 @@ export function BreedingSchedulePage() {
 
             <div className="text-center">
               <p className="text-gray-600 font-light mb-6">
-                繁殖予定よりも事前予約（お問い合わせ）をご希望の方は、下記よりお申し込みください。
+                事前予約・見学希望（お問い合わせ）をご希望の方は、下記よりお申し込みください。
               </p>
               <button
                 onClick={() => setContactFormModalOpen(true)}

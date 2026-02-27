@@ -5,12 +5,27 @@ import { FadeInSection } from "../components/FadeInSection";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 export function SamoyedCharacterPage() {
+  const schemas: Record<string, unknown>[] = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: "サモエドの特徴と性格",
+      inLanguage: "ja-JP",
+      author: { "@type": "Organization", name: "Smiley's Kennel" },
+      publisher: { "@type": "Organization", name: "Smiley's Kennel" },
+      mainEntityOfPage: "https://www.sammy-smile.com/samoyed",
+      description:
+        "熊本・九州のサモエド ブリーダー犬舎が、サモエドの起源、性格、運動量、被毛ケアをまとめた解説ページです。",
+    },
+  ];
+
   return (
     <PageLayout
-      title="サモエドの特徴と性格 | Smiley's犬舎"
-      description="サモエドの起源、性格、FCIスタンダード、健康管理、日々のお手入れまでを熊本のサモエド専門犬舎Smiley'sがわかりやすくご紹介します。"
+      title="サモエドとは | 熊本・九州のサモエド ブリーダー犬舎"
+      description="熊本・九州のサモエド ブリーダー犬舎が、サモエドの特徴・性格・健康管理・お手入れをわかりやすく解説します。"
       canonicalPath="/samoyed"
       ogImage="/samoyed-character-main.webp"
+      jsonLd={schemas}
     >
       <div className="container mx-auto px-6 md:px-12">
         <FadeInSection>
@@ -21,6 +36,13 @@ export function SamoyedCharacterPage() {
             >
               サモエドってどんな犬？
             </h1>
+            <div className="border border-gray-200 bg-gray-50 p-6 md:p-8 mb-12">
+              <ul className="space-y-2 text-gray-700 font-light leading-relaxed">
+                <li>・サモエドはシベリア原産の大型犬で、社交的で人懐こい性格が特徴です。</li>
+                <li>・寒冷地の作業犬として活躍してきたため、運動量が多く被毛ケアと暑さ対策が重要です。</li>
+                <li>・家族と強い絆を築く犬種で、十分な運動と環境があれば良き家庭犬になります。</li>
+              </ul>
+            </div>
           </div>
         </FadeInSection>
 

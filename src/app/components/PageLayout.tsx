@@ -2,7 +2,7 @@
 
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import { useSeo } from "../hooks/useSeo";
+import { SeoHead } from "./SeoHead";
 
 interface PageLayoutProps {
   children: React.ReactNode;
@@ -10,16 +10,23 @@ interface PageLayoutProps {
   description: string;
   canonicalPath: string;
   ogImage?: string;
+  jsonLd?: Record<string, unknown>[];
 }
 
-export function PageLayout({ children, title, description, canonicalPath, ogImage }: PageLayoutProps) {
-  useSeo({ title, description, canonicalPath, ogImage });
-
+export function PageLayout({ children, title, description, canonicalPath, ogImage, jsonLd }: PageLayoutProps) {
   return (
     <div
       className="min-h-screen bg-white overflow-x-hidden"
       style={{ fontFamily: "'Montserrat', 'Noto Sans JP', sans-serif" }}
     >
+      <SeoHead
+        title={title}
+        description={description}
+        canonicalPath={canonicalPath}
+        ogImage={ogImage}
+        jsonLd={jsonLd}
+      />
+
       <header className="fixed top-0 w-full bg-white/90 backdrop-blur-xl z-40 border-b border-gray-100">
         <div className="container mx-auto px-4 sm:px-6 md:px-12 py-4 flex justify-between items-center gap-3">
           <Link to="/" className="flex items-center gap-3">

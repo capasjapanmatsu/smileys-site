@@ -4,8 +4,8 @@ import { FadeInSection } from "../components/FadeInSection";
 export function ContactPage() {
   return (
     <PageLayout
-      title="お問い合わせ | Smiley's犬舎"
-      description="Smiley's犬舎へのお問い合わせページです。見学予約・繁殖予定・お迎えに関するご相談を受け付けています。"
+      title="お問い合わせ | 熊本・九州のサモエド ブリーダー犬舎"
+      description="熊本・九州のサモエド ブリーダー犬舎へのお問い合わせページです。見学予約・繁殖予定・お迎え相談を受け付けています。"
       canonicalPath="/contact"
       ogImage="/hero.webp"
     >
