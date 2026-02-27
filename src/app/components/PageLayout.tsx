@@ -67,6 +67,14 @@ export function PageLayout({ children, title, description, canonicalPath, ogImag
         <div className="container mx-auto px-6 md:px-12">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-3">
+              <img
+                src="/samoyed-icon.webp"
+                alt="サモエドシルエット"
+                className="w-8 h-8 object-contain"
+                width={32}
+                height={32}
+                loading="lazy"
+              />
               <span
                 className="text-lg font-light tracking-widest"
                 style={{ fontFamily: "'Playfair Display', serif" }}
