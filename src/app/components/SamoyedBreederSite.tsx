@@ -35,7 +35,7 @@ export function SamoyedBreederSite() {
   ];
 
   const galleryImages = Array.from(
-    { length: 29 },
+    { length: 39 },
     (_, i) => `/gallery/gallery-${String(i + 1).padStart(2, '0')}.webp`
   );
 
