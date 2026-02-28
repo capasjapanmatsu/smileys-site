@@ -134,6 +134,16 @@ export function SamoyedCharacterPage() {
               >
                 気質と働き
               </h2>
+              <div className="mb-6">
+                <ImageWithFallback
+                  src="/samoyed-work.webp"
+                  alt="障害物を軽やかに跳ぶサモエド"
+                  className="w-full max-w-2xl h-auto object-cover"
+                  loading="lazy"
+                  width={1024}
+                  height={1024}
+                />
+              </div>
               <ul className="space-y-4 text-gray-700 font-light leading-relaxed">
                 <li>社交的で人が大好き。テント生活の歴史から「家族と一緒」が大前提。</li>
                 <li>スピッツらしい独立心ゆえに、ポジティブ強化＆一貫したトレーニングが必須。</li>
@@ -151,6 +161,16 @@ export function SamoyedCharacterPage() {
               >
                 性格の特徴
               </h2>
+              <div className="mb-6">
+                <ImageWithFallback
+                  src="/samoyed-temperament.webp"
+                  alt="飼い主とハイタッチするサモエド"
+                  className="w-full max-w-2xl h-auto object-cover"
+                  loading="lazy"
+                  width={1024}
+                  height={768}
+                />
+              </div>
               <ul className="space-y-4 text-gray-700 font-light leading-relaxed">
                 <li>・明るく人懐っこく、家族との触れ合いを好む</li>
                 <li>・穏やかで友好的、子供や他の動物とも仲良くなりやすい</li>
