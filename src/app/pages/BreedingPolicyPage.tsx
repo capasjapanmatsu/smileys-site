@@ -56,6 +56,24 @@ export function BreedingPolicyPage() {
               一つひとつの繁殖は、長い時間をかけた考察と計画の成果であり、
               その唯一の目的は利益ではなく、犬種の改良に貢献することです。
             </p>
+            <div className="mt-8 grid grid-cols-2 gap-4 max-w-3xl">
+              <img
+                src="/policy-showdog.webp"
+                alt="ショー会場で立つサモエド"
+                className="w-full h-44 md:h-56 object-cover"
+                width={1024}
+                height={768}
+                loading="lazy"
+              />
+              <img
+                src="/policy-awards.webp"
+                alt="ドッグショーのトロフィーとロゼット"
+                className="w-full h-44 md:h-56 object-cover"
+                width={798}
+                height={1000}
+                loading="lazy"
+              />
+            </div>
           </div>
         </FadeInSection>
 
