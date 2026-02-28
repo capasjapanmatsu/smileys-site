@@ -7,6 +7,8 @@ export const APP_ROUTE_PATHS = {
   policyLegacy: "/breeding-policy",
   breedingSchedule: "/breeding-schedule",
   contact: "/contact",
+  kubitka: "/kubitka",
+  legal: "/legal",
   faq: "/faq",
 } as const;
 

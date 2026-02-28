@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import { writeFile } from 'node:fs/promises'
 import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
@@ -21,6 +22,16 @@ export default defineConfig({
       readable: true,
       generateRobotsTxt: true,
     }),
+    {
+      name: 'normalize-robots-txt',
+      async closeBundle() {
+        await writeFile(
+          path.resolve(__dirname, 'dist/robots.txt'),
+          'User-agent: *\nAllow: /\n\nSitemap: https://smileys.one/sitemap.xml\n',
+          'utf8',
+        )
+      },
+    },
   ],
   resolve: {
     alias: {

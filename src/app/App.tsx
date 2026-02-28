@@ -18,6 +18,12 @@ const BreedingSchedulePage = lazy(() =>
 const ContactPage = lazy(() =>
   import('./pages/ContactPage').then((m) => ({ default: m.ContactPage }))
 );
+const KubitkaPage = lazy(() =>
+  import('./pages/KubitkaPage').then((m) => ({ default: m.KubitkaPage }))
+);
+const LegalNoticePage = lazy(() =>
+  import('./pages/LegalNoticePage').then((m) => ({ default: m.LegalNoticePage }))
+);
 const FaqPage = lazy(() =>
   import('./pages/FaqPage').then((m) => ({ default: m.FaqPage }))
 );
@@ -79,6 +85,22 @@ export default function App() {
         element={
           <Suspense fallback={null}>
             <ContactPage />
+          </Suspense>
+        }
+      />
+      <Route
+        path={APP_ROUTE_PATHS.kubitka}
+        element={
+          <Suspense fallback={null}>
+            <KubitkaPage />
+          </Suspense>
+        }
+      />
+      <Route
+        path={APP_ROUTE_PATHS.legal}
+        element={
+          <Suspense fallback={null}>
+            <LegalNoticePage />
           </Suspense>
         }
       />

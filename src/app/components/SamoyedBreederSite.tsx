@@ -579,7 +579,8 @@ export function SamoyedBreederSite() {
                 title: "ロシアチャンピオン",
                 description:
                   "ロシア – BELIY VOLK（ベリーヴォルク）犬舎から来た男の子。この犬舎は世界的ショーで多数のチャンピオンを輩出し、骨格の美しさ、落ち着いた性格、豊富な被毛を特徴としおっとりとした優しい性格が特徴。 曾祖父に名犬「BELIY VOLK DIVIDE ET IMPERA（デイビットインペラ）」を持つ直系血統。",
-                image: "/parent-sam.webp"
+                image: "/parent-sam.webp",
+                detailPath: "/kubitka#sam",
               },
               {
                 name: "クビトカ",
@@ -587,7 +588,8 @@ export function SamoyedBreederSite() {
                 title: "ウクライナ モルドバ他多数のジュニアチャンピオン",
                 description:
                   "ウクライナ有名犬舎DAENERYS / DESANT（デザナリー）犬舎より来た優良血統の女の子です。さらに43カ国でタイトルを獲得し、世界で最も有名なサモエドの一頭である「BELIY VOLK YAROMIR VELIKIY（ヤロミヤベルギー）」の血統も受け継ぎ、骨格と歩様を正しく伝えています。",
-                image: "/parent-kubitka.webp"
+                image: "/parent-kubitka.webp",
+                detailPath: "/kubitka#kubitka",
               }
             ].map((dog, index) => (
               <AnimatedSection key={index} delay={index * 0.2}>
@@ -620,10 +622,30 @@ export function SamoyedBreederSite() {
                     {"description" in dog && dog.description ? (
                       <p className="text-base md:text-sm text-gray-700 font-light leading-relaxed pt-2">{dog.description}</p>
                     ) : null}
+                    {"detailPath" in dog && dog.detailPath ? (
+                      <Link
+                        to={dog.detailPath}
+                        className="inline-flex items-center gap-2 pt-2 text-base md:text-sm underline underline-offset-4 hover:text-gray-900 transition-colors"
+                      >
+                        詳しくは
+                        <ChevronRight className="w-4 h-4" />
+                      </Link>
+                    ) : null}
                   </div>
                 </div>
               </AnimatedSection>
             ))}
+          </div>
+          <div className="mt-10 flex flex-wrap justify-center gap-6 text-sm md:text-base">
+            <Link to="/kubitka#sam" className="underline underline-offset-4 hover:text-gray-900 transition-colors">
+              サムの詳細を見る
+            </Link>
+            <Link to="/kubitka#kubitka" className="underline underline-offset-4 hover:text-gray-900 transition-colors">
+              クビトカの詳細を見る
+            </Link>
+            <Link to="/kubitka#kai" className="underline underline-offset-4 hover:text-gray-900 transition-colors">
+              カイの詳細を見る
+            </Link>
           </div>
         </div>
       </section>
@@ -912,23 +934,73 @@ export function SamoyedBreederSite() {
       <footer className="py-12 bg-gray-900 text-white">
         <div className="container mx-auto px-6 md:px-12">
           <div className="flex flex-col gap-8">
-            <div className="space-y-2 text-base md:text-sm text-gray-300 font-light">
-              <p><strong className="text-white">事業所名</strong> Smiley's</p>
-              <p><strong className="text-white">犬舎名</strong> SAMMY.SMILE JP'S</p>
-              <p><strong className="text-white">住所</strong> 熊本県熊本市北区龍田2丁目14-16</p>
-              <p><strong className="text-white">動物取扱業登録番号</strong> 第一種動物取扱業熊市販第R7-12号</p>
-              <p><strong className="text-white">動物取扱責任者</strong> 松本 亜理沙</p>
-              <p>
-                <strong className="text-white">公式LINE</strong>{" "}
-                <a
-                  href="https://lin.ee/Ngs8RXx"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline underline-offset-4 hover:text-white transition-colors"
-                >
-                  https://lin.ee/Ngs8RXx
-                </a>
-              </p>
+            <div className="flex flex-col lg:flex-row justify-between gap-8">
+              <div className="space-y-2 text-base md:text-sm text-gray-300 font-light">
+                <p><strong className="text-white">事業所名</strong> Smiley's</p>
+                <p><strong className="text-white">犬舎名</strong> SAMMY.SMILE JP'S</p>
+                <p><strong className="text-white">住所</strong> 熊本県熊本市北区龍田2丁目14-16</p>
+                <p><strong className="text-white">動物取扱業登録番号</strong> 第一種動物取扱業熊市販第R7-12号</p>
+                <p><strong className="text-white">動物取扱責任者</strong> 松本 亜理沙</p>
+                <p>
+                  <strong className="text-white">法定表記</strong>{" "}
+                  <Link to="/legal" className="underline underline-offset-4 hover:text-white transition-colors">
+                    特定商取引法に基づく表記
+                  </Link>
+                </p>
+                <p>
+                  <strong className="text-white">お問い合わせ</strong>{" "}
+                  <Link to="/contact" className="underline underline-offset-4 hover:text-white transition-colors">
+                    お問い合わせフォーム
+                  </Link>
+                </p>
+                <p>
+                  <strong className="text-white">公式LINE</strong>{" "}
+                  <a
+                    href="https://lin.ee/Ngs8RXx"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-4 hover:text-white transition-colors"
+                  >
+                  Smiley's公式LINE
+                  </a>
+                </p>
+              </div>
+              <div className="w-full lg:max-w-[440px]">
+                <div className="grid grid-cols-2 gap-2">
+                  <img
+                    src="/cert-pet-breeding-instructor.png"
+                    alt="ペット繁殖インストラクター 公認資格取得証明"
+                    className="w-full max-w-[210px] h-auto bg-white p-1 ml-auto"
+                    width={320}
+                    height={92}
+                    loading="lazy"
+                  />
+                  <img
+                    src="/cert-dog-shitsuke-instructor.png"
+                    alt="犬のしつけインストラクター 公認資格取得証明"
+                    className="w-full max-w-[210px] h-auto bg-white p-1"
+                    width={320}
+                    height={92}
+                    loading="lazy"
+                  />
+                  <img
+                    src="/cert-dog-training-advisor.png"
+                    alt="ドッグトレーニングアドバイザー 資格保持者"
+                    className="w-full max-w-[210px] h-auto bg-white p-1 ml-auto"
+                    width={320}
+                    height={92}
+                    loading="lazy"
+                  />
+                  <img
+                    src="/cert-pet-breeder.png"
+                    alt="犬・猫ペットブリーダー 資格保持者"
+                    className="w-full max-w-[210px] h-auto bg-white p-1"
+                    width={320}
+                    height={92}
+                    loading="lazy"
+                  />
+                </div>
+              </div>
             </div>
             <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-4 border-t border-gray-700">
               <div className="flex items-center gap-3">
