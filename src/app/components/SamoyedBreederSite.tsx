@@ -26,8 +26,8 @@ export function SamoyedBreederSite() {
     { id: 'news', label: 'News' },
     { id: 'about', label: 'Philosophy' },
     { id: 'puppies', label: 'Puppies' },
-    { id: 'parents', label: '血統' },
-    { id: 'gallery', label: 'ギャラリー' },
+    { id: 'parents', label: 'Bloodline' },
+    { id: 'gallery', label: 'Gallery' },
     { id: 'contact', label: 'Contact' },
     { id: 'faq', label: 'FAQ' }
   ];
