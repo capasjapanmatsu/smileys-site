@@ -120,6 +120,16 @@ export function KubitkaPage() {
               <h2 className="text-2xl md:text-3xl font-light mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
                 サム（BELIY VOLK SENSEY）
               </h2>
+              <div className="mb-5">
+                <img
+                  src="/sam-profile.webp"
+                  alt="サム（BELIY VOLK SENSEY）"
+                  className="w-full max-w-2xl h-auto object-cover"
+                  width={1024}
+                  height={1024}
+                  loading="lazy"
+                />
+              </div>
               <p className="text-sm md:text-base text-gray-600 mb-4">2019/07/18生 / From Russia / male</p>
               <p className="text-gray-700 font-light leading-relaxed mb-4">
                 ロシアの名門 BELIY VOLK犬舎直系として迎えたサム（BELIY VOLK SENSEY）は、
@@ -159,6 +169,16 @@ export function KubitkaPage() {
               <h2 className="text-2xl md:text-3xl font-light mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
                 クビトカ（DAENERYS QUITIKA WHITE DREAM）
               </h2>
+              <div className="mb-5">
+                <img
+                  src="/kubitka-profile.webp"
+                  alt="クビトカ（DAENERYS QUITIKA WHITE DREAM）"
+                  className="w-full max-w-2xl h-auto object-cover"
+                  width={1024}
+                  height={1024}
+                  loading="lazy"
+                />
+              </div>
               <p className="text-gray-700 font-light leading-relaxed mb-4">
                 ウクライナ有名犬舎 DAENERYS / DESANT（デザナリー）出身の優良血統の女の子です。
                 世界的に評価される BELIY VOLK YAROMIR VELIKIY 系統も受け継ぎ、
