@@ -578,7 +578,7 @@ export function SamoyedBreederSite() {
                 role: "BOYS",
                 title: "ロシアチャンピオン",
                 description:
-                  "ロシア – BELIY VOLK（ベリーヴォルク）犬舎から来た男の子。この犬舎は世界的ショーで多数のチャンピオンを輩出し、骨格の美しさ、落ち着いた性格、豊富な被毛を特徴としおっとりとした優しい性格が特徴。 曾祖父に名犬「BELIY VOLK DIVIDE ET IMPERA（デイビットインペラ）」を持つ直系血統。",
+                  "ロシア – BELIY VOLK（ベリーヴォルク）犬舎から来た男の子。この犬舎は世界的ショーで多数のチャンピオンを輩出し、骨格の美しさ、落ち着いた性格、豊富な被毛を特徴としおっとりとした優しい性格が特徴。 曾祖父に名犬「BELIY VOLK DIVIDE ET IMPERA」を持つ直系血統。",
                 image: "/parent-sam.webp",
                 detailPath: "/kubitka#sam",
               },
@@ -587,7 +587,7 @@ export function SamoyedBreederSite() {
                 role: "GIRLS",
                 title: "ウクライナ モルドバ他多数のジュニアチャンピオン",
                 description:
-                  "ウクライナ有名犬舎DAENERYS / DESANT（デザナリー）犬舎より来た優良血統の女の子です。さらに43カ国でタイトルを獲得し、世界で最も有名なサモエドの一頭である「BELIY VOLK YAROMIR VELIKIY（ヤロミヤベルギー）」の血統も受け継ぎ、骨格と歩様を正しく伝えています。",
+                  "ウクライナ有名犬舎DAENERYS / DESANT犬舎より来た優良血統の女の子です。さらに43カ国でタイトルを獲得し、世界で最も有名なサモエドの一頭である「BELIY VOLK YAROMIR VELIKIY」の血統も受け継ぎ、骨格と歩様を正しく伝えています。",
                 image: "/parent-kubitka.webp",
                 detailPath: "/kubitka#kubitka",
               }

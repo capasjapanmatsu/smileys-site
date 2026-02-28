@@ -15,11 +15,11 @@ const championTitles = [
 ];
 
 const bloodlines = [
-  "ROYBRIDGE（ロイブリッジ）",
-  "DUCKSLAKE（ダックスレイク）",
-  "FAIRVILLE（フェアビル）",
-  "BELIY VOLK（ベリーヴォルク）",
-  "DAENERYS / DESANT（デザナリー）",
+  "ROYBRIDGE",
+  "DUCKSLAKE",
+  "FAIRVILLE",
+  "BELIY VOLK",
+  "DAENERYS / DESANT",
 ];
 
 const geneticTests = [
@@ -80,12 +80,12 @@ export function KubitkaPage() {
                 サムの血統は世界中のショーラインで高く評価される血筋を受け継いでいます。
               </p>
               <ul className="space-y-2 text-gray-900 mb-4">
-                <li>・BELIY VOLK DIVIDE ET IMPERA（デイビット・インペラ）直系</li>
-                <li>・BELIY VOLK DAVID ET EMPIRE（デイビット・エンパイア）</li>
+                <li>・BELIY VOLK DIVIDE ET IMPERA 直系</li>
+                <li>・BELIY VOLK DAVID ET EMPIRE</li>
               </ul>
               <p className="text-gray-700 font-light leading-relaxed">
-                ヤロミール・ヴェリキーは43カ国以上でタイトルを獲得した伝説的サモエドであり、
-                その父犬デイビット・インペラの直系血統を継ぐサムも、骨太で美しい骨格構成、豊かなコート、
+                BELIY VOLK YAROMIR VELIKIYは43カ国以上でタイトルを獲得した伝説的サモエドであり、
+                その父犬BELIY VOLK DIVIDE ET IMPERAの直系血統を継ぐサムも、骨太で美しい骨格構成、豊かなコート、
                 力強くしなやかな歩様、安定した気質を備えています。
               </p>
               <h3 className="text-xl font-light mt-6 mb-3">ロシア名門 BELIY VOLK の血統</h3>
@@ -155,7 +155,7 @@ export function KubitkaPage() {
                 正統派ショー血統のサモエドです。
               </p>
               <p className="text-gray-700 font-light leading-relaxed mb-4">
-                その父犬であるデイビット・インペラ直系血統を継ぐ BELIY VOLK SENSEY（サム）の息子として、
+                その父犬であるBELIY VOLK DIVIDE ET IMPERA直系血統を継ぐ BELIY VOLK SENSEY（サム）の息子として、
                 骨太で美しい骨格構成、豊かなコート、力強くしなやかな歩様、安定した気質を受け継いでいます。
               </p>
               <h3 className="text-xl font-light mb-3">ロシア名門 BELIY VOLK の血統</h3>
