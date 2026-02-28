@@ -130,7 +130,7 @@ export function KubitkaPage() {
                   loading="lazy"
                 />
               </div>
-              <p className="text-sm md:text-base text-gray-600 mb-4">2019/07/18生 / From Russia / male</p>
+              <p className="text-sm md:text-base text-gray-600 mb-4">2019年7月18生まれ / From Russia / male</p>
               <p className="text-gray-700 font-light leading-relaxed mb-4">
                 ロシアの名門 BELIY VOLK犬舎直系として迎えたサム（BELIY VOLK SENSEY）は、
                 優れた骨格構成・美しい被毛・しなやかな歩様を兼ね備えた正統派ショー血統のサモエドです。
@@ -169,6 +169,7 @@ export function KubitkaPage() {
               <h2 className="text-2xl md:text-3xl font-light mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
                 クビトカ（DAENERYS QUITIKA WHITE DREAM）
               </h2>
+              <p className="text-sm md:text-base text-gray-600 mb-4">2024年1月4日生まれ / From Ukraine / Female</p>
               <div className="mb-5">
                 <img
                   src="/kubitka-profile.webp"
@@ -220,6 +221,7 @@ export function KubitkaPage() {
               <h2 className="text-2xl md:text-3xl font-light mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
                 カイ（SAMMY.SMILE JP'S CASTOR）
               </h2>
+              <p className="text-sm md:text-base text-gray-600 mb-4">2025年4月18日生まれ / Male</p>
               <p className="text-gray-700 font-light leading-relaxed mb-4">
                 サム直系の息子で、優れた骨格構成・美しい被毛・しなやかな歩様を兼ね備えた
                 正統派ショー血統のサモエドです。
