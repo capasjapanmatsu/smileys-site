@@ -68,7 +68,7 @@ export function KubitkaPage() {
 
             <section id="sam" className="border border-gray-200 bg-white p-6 md:p-8 scroll-mt-28">
               <h2 className="text-2xl md:text-3xl font-light mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
-                サム（呼名: サム / 引退）
+                サム（BELIY VOLK SENSEY）
               </h2>
               <p className="text-sm md:text-base text-gray-600 mb-4">2019/07/18生 / From Russia / male</p>
               <p className="text-gray-700 font-light leading-relaxed mb-4">
@@ -107,7 +107,7 @@ export function KubitkaPage() {
 
             <section id="kubitka" className="border border-gray-200 bg-white p-6 md:p-8 scroll-mt-28">
               <h2 className="text-2xl md:text-3xl font-light mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
-                クビトカ（クイティカ）
+                クビトカ（DAENERYS QUITIKA WHITE DREAM）
               </h2>
               <p className="text-gray-700 font-light leading-relaxed mb-4">
                 ウクライナ有名犬舎 DAENERYS / DESANT（デザナリー）出身の優良血統の女の子です。
@@ -148,7 +148,7 @@ export function KubitkaPage() {
 
             <section id="kai" className="border border-gray-200 bg-white p-6 md:p-8 scroll-mt-28">
               <h2 className="text-2xl md:text-3xl font-light mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
-                カイ（呼名: カイ）
+                カイ（SAMMY.SMILE JP'S CASTOR）
               </h2>
               <p className="text-gray-700 font-light leading-relaxed mb-4">
                 サム直系の息子で、優れた骨格構成・美しい被毛・しなやかな歩様を兼ね備えた
