@@ -1,6 +1,7 @@
 "use client";
 
 import { Link } from "react-router-dom";
+import { FileText, Mail } from "lucide-react";
 import { motion } from "motion/react";
 import { SeoHead } from "./SeoHead";
 
@@ -11,6 +12,18 @@ interface PageLayoutProps {
   canonicalPath: string;
   ogImage?: string;
   jsonLd?: Record<string, unknown>[];
+}
+
+function LineMonoIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="w-4 h-4 shrink-0">
+      <rect x="2.5" y="3.5" width="19" height="15" rx="5" ry="5" fill="none" stroke="currentColor" strokeWidth="1.8" />
+      <path d="M9 18.5 8 21l4-2.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      <text x="12" y="13.3" textAnchor="middle" fontSize="6.2" fontWeight="700" fill="currentColor">
+        LINE
+      </text>
+    </svg>
+  );
 }
 
 export function PageLayout({ children, title, description, canonicalPath, ogImage, jsonLd }: PageLayoutProps) {
@@ -83,16 +96,24 @@ export function PageLayout({ children, title, description, canonicalPath, ogImag
                   Smiley's
                 </span>
               </div>
-              <div className="text-base md:text-sm text-gray-500 font-light space-y-1">
+              <div className="text-base md:text-sm text-gray-500 font-light space-y-2 leading-relaxed">
                 <p>熊本県熊本市北区龍田2丁目14-16</p>
                 <p>第一種動物取扱業熊市販第R7-12号</p>
                 <p>
-                  <Link to="/legal" className="underline underline-offset-4 hover:text-gray-300 transition-colors">
+                  <Link
+                    to="/legal"
+                    className="inline-flex items-center gap-2 underline underline-offset-4 hover:text-gray-300 transition-colors"
+                  >
+                    <FileText className="w-4 h-4" />
                     特定商取引法に基づく表記
                   </Link>
                 </p>
                 <p>
-                  <Link to="/contact" className="underline underline-offset-4 hover:text-gray-300 transition-colors">
+                  <Link
+                    to="/?openContact=1#contact"
+                    className="inline-flex items-center gap-2 underline underline-offset-4 hover:text-gray-300 transition-colors"
+                  >
+                    <Mail className="w-4 h-4" />
                     お問い合わせフォーム
                   </Link>
                 </p>
@@ -101,8 +122,9 @@ export function PageLayout({ children, title, description, canonicalPath, ogImag
                     href="https://lin.ee/Ngs8RXx"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline underline-offset-4 hover:text-gray-300 transition-colors"
+                    className="inline-flex items-center gap-2 underline underline-offset-4 hover:text-gray-300 transition-colors"
                   >
+                    <LineMonoIcon />
                     Smiley's公式LINE
                   </a>
                 </p>

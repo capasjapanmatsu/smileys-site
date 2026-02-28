@@ -6,7 +6,6 @@ export const APP_ROUTE_PATHS = {
   policy: "/policy",
   policyLegacy: "/breeding-policy",
   breedingSchedule: "/breeding-schedule",
-  contact: "/contact",
   kubitka: "/kubitka",
   legal: "/legal",
   faq: "/faq",
@@ -19,6 +18,5 @@ export const SITEMAP_ROUTE_PATHS = [
   APP_ROUTE_PATHS.bloodline,
   APP_ROUTE_PATHS.policy,
   APP_ROUTE_PATHS.breedingSchedule,
-  APP_ROUTE_PATHS.contact,
   APP_ROUTE_PATHS.faq,
 ] as const;

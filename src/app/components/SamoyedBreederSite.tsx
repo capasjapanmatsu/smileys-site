@@ -1,5 +1,5 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { Heart, Phone, Mail, ChevronRight, CalendarDays, Eye, FileText } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
@@ -17,6 +17,8 @@ export function SamoyedBreederSite() {
   const [activeSection, setActiveSection] = useState('home');
   const [checklistModalOpen, setChecklistModalOpen] = useState(false);
   const [contactFormModalOpen, setContactFormModalOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
@@ -141,6 +143,21 @@ export function SamoyedBreederSite() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    if (params.get('openContact') !== '1') return;
+    setContactFormModalOpen(true);
+    params.delete('openContact');
+    navigate(
+      {
+        pathname: '/',
+        search: params.toString() ? `?${params.toString()}` : '',
+        hash: location.hash,
+      },
+      { replace: true }
+    );
+  }, [location.search, location.hash, navigate]);
 
   const scrollToSection = (id: string, duration = 1500) => {
     const element = document.getElementById(id);
@@ -935,33 +952,40 @@ export function SamoyedBreederSite() {
         <div className="container mx-auto px-6 md:px-12">
           <div className="flex flex-col gap-8">
             <div className="flex flex-col lg:flex-row justify-between gap-8">
-              <div className="space-y-2 text-base md:text-sm text-gray-300 font-light">
+              <div className="space-y-3 text-base md:text-sm text-gray-300 font-light leading-relaxed">
                 <p><strong className="text-white">事業所名</strong> Smiley's</p>
                 <p><strong className="text-white">犬舎名</strong> SAMMY.SMILE JP'S</p>
                 <p><strong className="text-white">住所</strong> 熊本県熊本市北区龍田2丁目14-16</p>
                 <p><strong className="text-white">動物取扱業登録番号</strong> 第一種動物取扱業熊市販第R7-12号</p>
                 <p><strong className="text-white">動物取扱責任者</strong> 松本 亜理沙</p>
                 <p>
-                  <strong className="text-white">法定表記</strong>{" "}
-                  <Link to="/legal" className="underline underline-offset-4 hover:text-white transition-colors">
+                  <Link
+                    to="/legal"
+                    className="inline-flex items-center gap-2 underline underline-offset-4 hover:text-white transition-colors"
+                  >
+                    <FileText className="w-4 h-4" />
                     特定商取引法に基づく表記
                   </Link>
                 </p>
                 <p>
-                  <strong className="text-white">お問い合わせ</strong>{" "}
-                  <Link to="/contact" className="underline underline-offset-4 hover:text-white transition-colors">
+                  <button
+                    type="button"
+                    onClick={() => setContactFormModalOpen(true)}
+                    className="inline-flex items-center gap-2 underline underline-offset-4 hover:text-white transition-colors"
+                  >
+                    <Mail className="w-4 h-4" />
                     お問い合わせフォーム
-                  </Link>
+                  </button>
                 </p>
                 <p>
-                  <strong className="text-white">公式LINE</strong>{" "}
                   <a
                     href="https://lin.ee/Ngs8RXx"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline underline-offset-4 hover:text-white transition-colors"
+                    className="inline-flex items-center gap-2 underline underline-offset-4 hover:text-white transition-colors"
                   >
-                  Smiley's公式LINE
+                    <LineMonoIcon />
+                    Smiley's公式LINE
                   </a>
                 </p>
               </div>
@@ -1042,6 +1066,18 @@ export function SamoyedBreederSite() {
         </div>
       </footer>
     </div>
+  );
+}
+
+function LineMonoIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="w-4 h-4 shrink-0">
+      <rect x="2.5" y="3.5" width="19" height="15" rx="5" ry="5" fill="none" stroke="currentColor" strokeWidth="1.8" />
+      <path d="M9 18.5 8 21l4-2.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      <text x="12" y="13.3" textAnchor="middle" fontSize="6.2" fontWeight="700" fill="currentColor">
+        LINE
+      </text>
+    </svg>
   );
 }
 

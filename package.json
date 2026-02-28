@@ -97,8 +97,10 @@
       "/samoyed",
       "/bloodline",
       "/policy",
-      "/contact",
-      "/faq"
+      "/breeding-schedule",
+      "/faq",
+      "/kubitka",
+      "/legal"
     ],
     "puppeteerArgs": [
       "--no-sandbox",

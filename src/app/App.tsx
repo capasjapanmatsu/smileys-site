@@ -15,9 +15,6 @@ const BreedingPolicyPage = lazy(() =>
 const BreedingSchedulePage = lazy(() =>
   import('./pages/BreedingSchedulePage').then((m) => ({ default: m.BreedingSchedulePage }))
 );
-const ContactPage = lazy(() =>
-  import('./pages/ContactPage').then((m) => ({ default: m.ContactPage }))
-);
 const KubitkaPage = lazy(() =>
   import('./pages/KubitkaPage').then((m) => ({ default: m.KubitkaPage }))
 );
@@ -77,14 +74,6 @@ export default function App() {
         element={
           <Suspense fallback={null}>
             <BreedingSchedulePage />
-          </Suspense>
-        }
-      />
-      <Route
-        path={APP_ROUTE_PATHS.contact}
-        element={
-          <Suspense fallback={null}>
-            <ContactPage />
           </Suspense>
         }
       />
