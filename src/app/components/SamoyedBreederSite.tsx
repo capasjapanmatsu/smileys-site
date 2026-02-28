@@ -578,7 +578,7 @@ export function SamoyedBreederSite() {
                 role: "BOYS",
                 title: "ロシアチャンピオン",
                 description:
-                  "ロシア – BELIY VOLK（ベリーヴォルク）犬舎から来た男の子。この犬舎は世界的ショーで多数のチャンピオンを輩出し、骨格の美しさ、落ち着いた性格、豊富な被毛を特徴としおっとりとした優しい性格が特徴。 曾祖父に名犬「BELIY VOLK DIVIDE ET IMPERA」を持つ直系血統。",
+                  "ロシア – BELIY VOLK犬舎から来た男の子。この犬舎は世界的ショーで多数のチャンピオンを輩出し、骨格の美しさ、落ち着いた性格、豊富な被毛を特徴としおっとりとした優しい性格が特徴。 曾祖父に名犬「BELIY VOLK DIVIDE ET IMPERA」を持つ直系血統。",
                 image: "/parent-sam.webp",
                 detailPath: "/kubitka#sam",
               },

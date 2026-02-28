@@ -32,14 +32,34 @@ const geneticTests = [
 export function KubitkaPage() {
   const location = useLocation();
 
+  const smoothScrollToId = (id: string, duration = 1400) => {
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    const headerOffset = 96;
+    const startY = window.scrollY;
+    const targetY = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+    const distance = targetY - startY;
+    const startTime = performance.now();
+
+    const easeInOutCubic = (t: number) =>
+      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+    const animate = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = easeInOutCubic(progress);
+      window.scrollTo(0, startY + distance * eased);
+      if (progress < 1) requestAnimationFrame(animate);
+    };
+
+    requestAnimationFrame(animate);
+  };
+
   useEffect(() => {
     if (!location.hash) return;
     const id = location.hash.replace("#", "");
-    const target = document.getElementById(id);
-    if (!target) return;
-    requestAnimationFrame(() => {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
+    requestAnimationFrame(() => smoothScrollToId(id));
   }, [location.hash]);
 
   return (
@@ -60,9 +80,39 @@ export function KubitkaPage() {
                 親犬紹介
               </h1>
               <div className="flex flex-wrap items-center justify-center gap-4 text-sm md:text-base">
-                <a href="#sam" className="underline underline-offset-4 hover:text-gray-900 transition-colors">サム詳細を見る</a>
-                <a href="#kubitka" className="underline underline-offset-4 hover:text-gray-900 transition-colors">クビトカ詳細を見る</a>
-                <a href="#kai" className="underline underline-offset-4 hover:text-gray-900 transition-colors">カイ詳細を見る</a>
+                <a
+                  href="#sam"
+                  className="underline underline-offset-4 hover:text-gray-900 transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    history.replaceState(null, "", "#sam");
+                    smoothScrollToId("sam", 1600);
+                  }}
+                >
+                  サム詳細を見る
+                </a>
+                <a
+                  href="#kubitka"
+                  className="underline underline-offset-4 hover:text-gray-900 transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    history.replaceState(null, "", "#kubitka");
+                    smoothScrollToId("kubitka", 1600);
+                  }}
+                >
+                  クビトカ詳細を見る
+                </a>
+                <a
+                  href="#kai"
+                  className="underline underline-offset-4 hover:text-gray-900 transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    history.replaceState(null, "", "#kai");
+                    smoothScrollToId("kai", 1600);
+                  }}
+                >
+                  カイ詳細を見る
+                </a>
               </div>
             </div>
 
@@ -72,7 +122,7 @@ export function KubitkaPage() {
               </h2>
               <p className="text-sm md:text-base text-gray-600 mb-4">2019/07/18生 / From Russia / male</p>
               <p className="text-gray-700 font-light leading-relaxed mb-4">
-                ロシアの名門 BELIY VOLK（ベリーヴォルク）犬舎直系として迎えたサム（BELIY VOLK SENSEY）は、
+                ロシアの名門 BELIY VOLK犬舎直系として迎えたサム（BELIY VOLK SENSEY）は、
                 優れた骨格構成・美しい被毛・しなやかな歩様を兼ね備えた正統派ショー血統のサモエドです。
               </p>
               <h3 className="text-xl font-light mb-3">血統背景</h3>
