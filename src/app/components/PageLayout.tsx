@@ -88,6 +88,16 @@ export function PageLayout({ children, title, description, canonicalPath, ogImag
             <div className="text-base md:text-sm text-gray-500 font-light">
               <p>熊本県熊本市北区龍田2丁目14-16</p>
               <p>第一種動物取扱業熊市販第R7-12号</p>
+              <p>
+                <a
+                  href="https://lin.ee/Ngs8RXx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-4 hover:text-gray-300 transition-colors"
+                >
+                  公式LINE: https://lin.ee/Ngs8RXx
+                </a>
+              </p>
             </div>
           </div>
         </div>

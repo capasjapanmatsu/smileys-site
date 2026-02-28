@@ -763,6 +763,20 @@ export function SamoyedBreederSite() {
                       <div className="text-base md:text-sm text-gray-500 font-light mt-1">※事前予約制</div>
                     </div>
                   </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-5 h-5 mt-1 shrink-0 text-gray-900 font-semibold">L</div>
+                    <div>
+                      <div className="text-base md:text-sm tracking-widest text-gray-500 mb-1">公式LINE</div>
+                      <a
+                        href="https://lin.ee/Ngs8RXx"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-lg font-light underline underline-offset-4 hover:text-gray-600 transition-colors"
+                      >
+                        友だち追加はこちら
+                      </a>
+                    </div>
+                  </div>
                 </div>
 
               </div>
@@ -783,6 +797,24 @@ export function SamoyedBreederSite() {
                   お問い合わせフォーム
                   <ChevronRight className="w-4 h-4" />
                 </motion.button>
+                <a
+                  href="https://lin.ee/Ngs8RXx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-full py-4 min-h-[48px] border border-gray-900 text-gray-900 text-base tracking-widest hover:bg-gray-100 transition-colors"
+                >
+                  公式LINEを追加
+                </a>
+                <div className="pt-2">
+                  <img
+                    src="/line-qr.webp"
+                    alt="公式LINE QRコード"
+                    className="w-40 h-40 object-contain mx-auto"
+                    width={160}
+                    height={160}
+                    loading="lazy"
+                  />
+                </div>
               </div>
             </AnimatedSection>
           </div>
@@ -886,6 +918,17 @@ export function SamoyedBreederSite() {
               <p><strong className="text-white">住所</strong> 熊本県熊本市北区龍田2丁目14-16</p>
               <p><strong className="text-white">動物取扱業登録番号</strong> 第一種動物取扱業熊市販第R7-12号</p>
               <p><strong className="text-white">動物取扱責任者</strong> 松本 亜理沙</p>
+              <p>
+                <strong className="text-white">公式LINE</strong>{" "}
+                <a
+                  href="https://lin.ee/Ngs8RXx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-4 hover:text-white transition-colors"
+                >
+                  https://lin.ee/Ngs8RXx
+                </a>
+              </p>
             </div>
             <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-4 border-t border-gray-700">
               <div className="flex items-center gap-3">

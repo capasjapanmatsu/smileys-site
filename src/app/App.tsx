@@ -1,6 +1,7 @@
 import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { SamoyedBreederSite } from './components/SamoyedBreederSite';
+import { APP_ROUTE_PATHS } from './routePaths';
 
 const SamoyedCharacterPage = lazy(() =>
   import('./pages/SamoyedCharacterPage').then((m) => ({ default: m.SamoyedCharacterPage }))
@@ -24,9 +25,9 @@ const FaqPage = lazy(() =>
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<SamoyedBreederSite />} />
+      <Route path={APP_ROUTE_PATHS.home} element={<SamoyedBreederSite />} />
       <Route
-        path="/samoyed"
+        path={APP_ROUTE_PATHS.samoyed}
         element={
           <Suspense fallback={null}>
             <SamoyedCharacterPage />
@@ -34,7 +35,7 @@ export default function App() {
         }
       />
       <Route
-        path="/samoyed-character"
+        path={APP_ROUTE_PATHS.samoyedLegacy}
         element={
           <Suspense fallback={null}>
             <SamoyedCharacterPage />
@@ -42,7 +43,7 @@ export default function App() {
         }
       />
       <Route
-        path="/bloodline"
+        path={APP_ROUTE_PATHS.bloodline}
         element={
           <Suspense fallback={null}>
             <BloodlinePage />
@@ -50,7 +51,7 @@ export default function App() {
         }
       />
       <Route
-        path="/breeding-policy"
+        path={APP_ROUTE_PATHS.policyLegacy}
         element={
           <Suspense fallback={null}>
             <BreedingPolicyPage />
@@ -58,7 +59,7 @@ export default function App() {
         }
       />
       <Route
-        path="/policy"
+        path={APP_ROUTE_PATHS.policy}
         element={
           <Suspense fallback={null}>
             <BreedingPolicyPage />
@@ -66,7 +67,7 @@ export default function App() {
         }
       />
       <Route
-        path="/breeding-schedule"
+        path={APP_ROUTE_PATHS.breedingSchedule}
         element={
           <Suspense fallback={null}>
             <BreedingSchedulePage />
@@ -74,7 +75,7 @@ export default function App() {
         }
       />
       <Route
-        path="/contact"
+        path={APP_ROUTE_PATHS.contact}
         element={
           <Suspense fallback={null}>
             <ContactPage />
@@ -82,7 +83,7 @@ export default function App() {
         }
       />
       <Route
-        path="/faq"
+        path={APP_ROUTE_PATHS.faq}
         element={
           <Suspense fallback={null}>
             <FaqPage />

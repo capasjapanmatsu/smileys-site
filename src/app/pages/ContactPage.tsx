@@ -38,9 +38,30 @@ export function ContactPage() {
                   sammysmilejp@gmail.com
                 </a>
               </p>
+              <p className="text-gray-900 text-base md:text-lg">
+                公式LINE:{" "}
+                <a
+                  className="underline underline-offset-4 break-all"
+                  href="https://lin.ee/Ngs8RXx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  https://lin.ee/Ngs8RXx
+                </a>
+              </p>
               <p className="text-sm md:text-base text-gray-600">
                 見学は事前予約制です。現在は2027年度出産予定のご予約を受け付けています。
               </p>
+              <div className="pt-2">
+                <img
+                  src="/line-qr.webp"
+                  alt="公式LINE QRコード"
+                  className="w-36 h-36 object-contain"
+                  width={144}
+                  height={144}
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
         </FadeInSection>

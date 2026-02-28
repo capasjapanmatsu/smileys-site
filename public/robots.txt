@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.sammy-smile.com/sitemap.xml
+Sitemap: https://smileys.one/sitemap.xml
