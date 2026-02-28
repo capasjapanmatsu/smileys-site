@@ -13,7 +13,10 @@ export default defineConfig({
     tailwindcss(),
     Sitemap({
       hostname: 'https://smileys.one',
-      dynamicRoutes: SITEMAP_ROUTE_PATHS.filter((route) => route !== '/'),
+      // Use routePaths as the single source of truth to avoid duplicate "/" entries
+      // from dist HTML scanning + dynamicRoutes.
+      extensions: [],
+      dynamicRoutes: [...SITEMAP_ROUTE_PATHS],
       exclude: ['/404', '/404.html', '/samoyed-character', '/breeding-policy'],
       readable: true,
       generateRobotsTxt: true,
