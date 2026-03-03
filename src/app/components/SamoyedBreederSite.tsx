@@ -1,4 +1,4 @@
-import { useState, useEffect, lazy, Suspense } from 'react';
+import { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { Heart, Phone, Mail, ChevronRight, CalendarDays, Eye, FileText, ShoppingBag } from 'lucide-react';
@@ -23,6 +23,21 @@ export function SamoyedBreederSite() {
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = heroVideoRef.current;
+    if (!video) return;
+    const play = () => {
+      video.play().catch(() => {});
+    };
+    if (video.readyState >= 2) {
+      play();
+    } else {
+      video.addEventListener('loadeddata', play);
+      return () => video.removeEventListener('loadeddata', play);
+    }
+  }, []);
 
   const sections = [
     { id: 'home', label: 'Home' },
@@ -291,15 +306,21 @@ export function SamoyedBreederSite() {
           style={{ opacity, scale }}
         >
           <video
-            src="/hero.mp4"
-            autoPlay
-            loop
-            muted
+            ref={heroVideoRef}
             playsInline
-            onCanPlay={(e) => { e.currentTarget.playbackRate = 1 / 6; }}
+            autoPlay
+            muted
+            loop
+            preload="auto"
+            poster="/hero.webp"
+            onCanPlay={(e) => {
+              e.currentTarget.play().catch(() => {});
+            }}
             className="w-full h-full object-cover"
             aria-label="サモエドの親犬と2頭の子犬が緑の芝生の上で仲良く眠っている様子 - 熊本サモエド専門犬舎 Smiley's"
-          />
+          >
+            <source src="/hero.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-white" />
         </motion.div>
 
