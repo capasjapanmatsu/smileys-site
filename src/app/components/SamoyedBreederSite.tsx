@@ -1,10 +1,11 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { Heart, Phone, Mail, ChevronRight, CalendarDays, Eye, FileText } from 'lucide-react';
+import { Heart, Phone, Mail, ChevronRight, CalendarDays, Eye, FileText, ShoppingBag } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { SeoHead } from './SeoHead';
 import { aeoFaqs, tldrs } from '../content/aeo';
+import { testimonials } from '../content/testimonials';
 
 const ChecklistModal = lazy(() =>
   import('./ChecklistModal').then((m) => ({ default: m.ChecklistModal }))
@@ -27,6 +28,7 @@ export function SamoyedBreederSite() {
     { id: 'home', label: 'Home' },
     { id: 'news', label: 'News' },
     { id: 'about', label: 'Philosophy' },
+    { id: 'testimonials', label: 'Voice' },
     { id: 'puppies', label: 'Puppies' },
     { id: 'parents', label: 'Bloodline' },
     { id: 'gallery', label: 'Gallery' },
@@ -264,6 +266,9 @@ export function SamoyedBreederSite() {
             <Link to="/policy" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hidden sm:block">
               繁殖理念
             </Link>
+            <Link to="/blog" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hidden sm:block">
+              ブログ
+            </Link>
             <Link to="/faq" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hidden sm:block">
               FAQ
             </Link>
@@ -285,13 +290,15 @@ export function SamoyedBreederSite() {
           className="absolute inset-0 z-0"
           style={{ opacity, scale }}
         >
-          <ImageWithFallback
-            src="/hero.webp"
-            alt="サモエドの親犬と2頭の子犬が緑の芝生の上で仲良く眠っている様子 - 熊本サモエド専門犬舎 Smiley's"
+          <video
+            src="/hero.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            onCanPlay={(e) => { e.currentTarget.playbackRate = 1 / 6; }}
             className="w-full h-full object-cover"
-            fetchPriority="high"
-            loading="eager"
-            decoding="sync"
+            aria-label="サモエドの親犬と2頭の子犬が緑の芝生の上で仲良く眠っている様子 - 熊本サモエド専門犬舎 Smiley's"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-white" />
         </motion.div>
@@ -362,6 +369,13 @@ export function SamoyedBreederSite() {
                   <span>8月末産まれオーナー様全頭決まりました。</span>
                 </li>
               </ul>
+              <Link
+                to="/blog"
+                className="inline-flex items-center gap-2 mt-8 text-base tracking-widest border-b border-gray-900 py-2 hover:border-gray-500 transition-colors min-h-[44px]"
+              >
+                ブログをもっと読む
+                <ChevronRight className="w-4 h-4" />
+              </Link>
               <motion.button
                 onClick={() => scrollToSection('puppies')}
                 className="inline-flex items-center gap-2 mt-8 text-base tracking-widest border-b border-gray-900 py-2 hover:border-gray-500 transition-colors bg-transparent cursor-pointer text-left min-h-[44px]"
@@ -477,6 +491,46 @@ export function SamoyedBreederSite() {
                 <div className="absolute -bottom-8 -right-8 w-32 h-32 border border-gray-900 -z-10" />
               </div>
             </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-32 bg-gray-50">
+        <div className="container mx-auto px-6 md:px-12 lg:px-24">
+          <AnimatedSection>
+            <div className="text-center mb-16">
+              <motion.div
+                initial={{ width: 0 }}
+                whileInView={{ width: 60 }}
+                transition={{ duration: 0.8 }}
+                className="h-px bg-gray-900 mb-6 mx-auto"
+              />
+              <h2
+                className="text-5xl md:text-6xl font-light mb-6"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                お客様の声
+              </h2>
+              <p className="text-lg text-gray-600 font-light tracking-wide">
+                当犬舎からお迎えいただいたオーナー様の声をご紹介します
+              </p>
+            </div>
+          </AnimatedSection>
+
+          <div className="max-w-4xl mx-auto space-y-8">
+            {testimonials.map((item, index) => (
+              <AnimatedSection key={item.id} delay={index * 0.08}>
+                <div className="bg-white border border-gray-200 p-6 md:p-8">
+                  <p className="text-gray-700 font-light leading-relaxed whitespace-pre-line">
+                    {item.text}
+                  </p>
+                  <p className="mt-6 text-sm text-gray-500 font-light">
+                    {item.prefecture} {item.name}
+                  </p>
+                </div>
+              </AnimatedSection>
+            ))}
           </div>
         </div>
       </section>
@@ -968,6 +1022,15 @@ export function SamoyedBreederSite() {
                   </Link>
                 </p>
                 <p>
+                  <Link
+                    to="/privacy"
+                    className="inline-flex items-center gap-2 underline underline-offset-4 hover:text-white transition-colors"
+                  >
+                    <FileText className="w-4 h-4" />
+                    プライバシーポリシー
+                  </Link>
+                </p>
+                <p>
                   <button
                     type="button"
                     onClick={() => setContactFormModalOpen(true)}
@@ -986,6 +1049,17 @@ export function SamoyedBreederSite() {
                   >
                     <LineMonoIcon />
                     Smiley's公式LINE
+                  </a>
+                </p>
+                <p>
+                  <a
+                    href="https://umaoyatsu.base.shop/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 underline underline-offset-4 hover:text-white transition-colors"
+                  >
+                    <ShoppingBag className="w-4 h-4" />
+                    MOFU LAB（おやつ販売）
                   </a>
                 </p>
               </div>

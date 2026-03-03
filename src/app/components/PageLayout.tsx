@@ -1,7 +1,7 @@
 "use client";
 
 import { Link } from "react-router-dom";
-import { FileText, Mail } from "lucide-react";
+import { FileText, Mail, ShoppingBag, BookOpen } from "lucide-react";
 import { motion } from "motion/react";
 import { SeoHead } from "./SeoHead";
 
@@ -110,6 +110,24 @@ export function PageLayout({ children, title, description, canonicalPath, ogImag
                 </p>
                 <p>
                   <Link
+                    to="/privacy"
+                    className="inline-flex items-center gap-2 underline underline-offset-4 hover:text-gray-300 transition-colors"
+                  >
+                    <FileText className="w-4 h-4" />
+                    プライバシーポリシー
+                  </Link>
+                </p>
+                <p>
+                  <Link
+                    to="/blog"
+                    className="inline-flex items-center gap-2 underline underline-offset-4 hover:text-gray-300 transition-colors"
+                  >
+                    <BookOpen className="w-4 h-4" />
+                    ブログ
+                  </Link>
+                </p>
+                <p>
+                  <Link
                     to="/?openContact=1#contact"
                     className="inline-flex items-center gap-2 underline underline-offset-4 hover:text-gray-300 transition-colors"
                   >
@@ -126,6 +144,17 @@ export function PageLayout({ children, title, description, canonicalPath, ogImag
                   >
                     <LineMonoIcon />
                     Smiley's公式LINE
+                  </a>
+                </p>
+                <p>
+                  <a
+                    href="https://umaoyatsu.base.shop/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 underline underline-offset-4 hover:text-gray-300 transition-colors"
+                  >
+                    <ShoppingBag className="w-4 h-4" />
+                    MOFU LAB（おやつ販売）
                   </a>
                 </p>
               </div>

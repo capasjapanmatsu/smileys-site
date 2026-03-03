@@ -21,6 +21,15 @@ const KubitkaPage = lazy(() =>
 const LegalNoticePage = lazy(() =>
   import('./pages/LegalNoticePage').then((m) => ({ default: m.LegalNoticePage }))
 );
+const PrivacyPolicyPage = lazy(() =>
+  import('./pages/PrivacyPolicyPage').then((m) => ({ default: m.PrivacyPolicyPage }))
+);
+const BlogPage = lazy(() =>
+  import('./pages/BlogPage').then((m) => ({ default: m.BlogPage }))
+);
+const BlogPostPage = lazy(() =>
+  import('./pages/BlogPostPage').then((m) => ({ default: m.BlogPostPage }))
+);
 const FaqPage = lazy(() =>
   import('./pages/FaqPage').then((m) => ({ default: m.FaqPage }))
 );
@@ -90,6 +99,30 @@ export default function App() {
         element={
           <Suspense fallback={null}>
             <LegalNoticePage />
+          </Suspense>
+        }
+      />
+      <Route
+        path={APP_ROUTE_PATHS.privacy}
+        element={
+          <Suspense fallback={null}>
+            <PrivacyPolicyPage />
+          </Suspense>
+        }
+      />
+      <Route
+        path={APP_ROUTE_PATHS.blog}
+        element={
+          <Suspense fallback={null}>
+            <BlogPage />
+          </Suspense>
+        }
+      />
+      <Route
+        path={`${APP_ROUTE_PATHS.blog}/:slug`}
+        element={
+          <Suspense fallback={null}>
+            <BlogPostPage />
           </Suspense>
         }
       />

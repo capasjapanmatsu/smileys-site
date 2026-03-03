@@ -29,7 +29,7 @@ function upsertMetaByProperty(property: string, content: string) {
   meta.setAttribute("content", content);
 }
 
-function upsertImagePreload(id: string, href: string) {
+function upsertPreload(id: string, href: string, as: "image" | "video" = "image") {
   let link = document.querySelector(`link[data-preload-id="${id}"]`) as HTMLLinkElement | null;
   if (!link) {
     link = document.createElement("link");
@@ -37,7 +37,7 @@ function upsertImagePreload(id: string, href: string) {
     document.head.appendChild(link);
   }
   link.setAttribute("rel", "preload");
-  link.setAttribute("as", "image");
+  link.setAttribute("as", as);
   link.setAttribute("href", href);
 }
 
@@ -73,9 +73,9 @@ export function useSeo({ title, description, canonicalPath, ogImage = "/hero.web
     }
     canonical.setAttribute("href", canonicalUrl);
 
-    // Only preload the hero on top page. Preloading it globally wastes bytes on sub-pages.
+    // Only preload the hero video on top page. Preloading it globally wastes bytes on sub-pages.
     if (canonicalPath === "/") {
-      upsertImagePreload("home-hero", "/hero.webp");
+      upsertPreload("home-hero", "/hero.mp4", "video");
     } else {
       removeImagePreload("home-hero");
     }

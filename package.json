@@ -100,7 +100,13 @@
       "/breeding-schedule",
       "/faq",
       "/kubitka",
-      "/legal"
+      "/legal",
+      "/privacy",
+      "/blog",
+      "/blog/2026-reservation-status",
+      "/blog/samoyed-summer-care",
+      "/blog/puppy-socialization",
+      "/blog/2023-litter-update"
     ],
     "puppeteerArgs": [
       "--no-sandbox",
