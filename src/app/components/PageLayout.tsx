@@ -200,6 +200,16 @@ export function PageLayout({ children, title, description, canonicalPath, ogImag
               </div>
             </div>
           </div>
+          <p className="pt-8 text-center text-sm text-gray-500 font-light">
+            <a
+              href="https://capas.jp/business/web-creation"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-400 transition-colors"
+            >
+              Designed by CAPAS
+            </a>
+          </p>
         </div>
       </footer>
     </div>

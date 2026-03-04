@@ -1173,6 +1173,16 @@ export function SamoyedBreederSite() {
                 />
               </div>
             </div>
+            <p className="pt-6 text-center text-sm text-gray-500 font-light">
+              <a
+                href="https://capas.jp/business/web-creation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gray-400 transition-colors"
+              >
+                Designed by CAPAS
+              </a>
+            </p>
           </div>
         </div>
       </footer>
