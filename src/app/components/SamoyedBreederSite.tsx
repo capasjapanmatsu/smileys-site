@@ -24,6 +24,7 @@ export function SamoyedBreederSite() {
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
   const heroVideoRef = useRef<HTMLVideoElement>(null);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   useEffect(() => {
     const video = heroVideoRef.current;
@@ -312,16 +313,31 @@ export function SamoyedBreederSite() {
             muted
             loop
             preload="auto"
-            poster="/hero.webp"
             onCanPlay={(e) => {
               e.currentTarget.play().catch(() => {});
             }}
+            onPlaying={() => setIsVideoPlaying(true)}
             className="w-full h-full object-cover"
             aria-label="サモエドの親犬と2頭の子犬が緑の芝生の上で仲良く眠っている様子 - 熊本サモエド専門犬舎 Smiley's"
           >
             <source src="/hero.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-white" />
+          {/* 動画再生まで静止画を表示。再生開始でフェードアウト */}
+          <div
+            className={`absolute inset-0 z-[1] transition-opacity duration-500 ${
+              isVideoPlaying ? 'opacity-0 pointer-events-none' : 'opacity-100'
+            }`}
+            aria-hidden={isVideoPlaying}
+          >
+            <img
+              src="/hero.webp"
+              alt=""
+              className="w-full h-full object-cover"
+              fetchPriority="high"
+              loading="eager"
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-white z-[2]" />
         </motion.div>
 
         <div className="container mx-auto px-6 md:px-12 relative z-10 text-center">
