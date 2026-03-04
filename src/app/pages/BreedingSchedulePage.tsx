@@ -1,6 +1,6 @@
 "use client";
 
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense, useState, useRef, useEffect } from "react";
 import { PageLayout } from "../components/PageLayout";
 import { FadeInSection } from "../components/FadeInSection";
 import { ChevronRight } from "lucide-react";
@@ -11,6 +11,22 @@ const ContactFormModal = lazy(() =>
 
 export function BreedingSchedulePage() {
   const [contactFormModalOpen, setContactFormModalOpen] = useState(false);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const scheduleVideoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = scheduleVideoRef.current;
+    if (!video) return;
+    const play = () => {
+      video.play().catch(() => {});
+    };
+    if (video.readyState >= 2) {
+      play();
+    } else {
+      video.addEventListener("loadeddata", play);
+      return () => video.removeEventListener("loadeddata", play);
+    }
+  }, []);
 
   return (
     <PageLayout
@@ -39,15 +55,38 @@ export function BreedingSchedulePage() {
               子犬はご予約で埋まることがほとんどですので、事前のご予約をお願いいたします。
             </p>
 
-            <div className="mb-12">
-              <img
-                src="/breeding-schedule-main.webp"
-                alt="繁殖予定のサモエド紹介画像"
-                className="w-full h-auto object-cover border border-gray-200"
-                loading="lazy"
-                width={1200}
-                height={800}
-              />
+            <div className="mb-12 relative aspect-[3/2] w-full overflow-hidden border border-gray-200">
+              <video
+                ref={scheduleVideoRef}
+                playsInline
+                autoPlay
+                muted
+                loop
+                preload="auto"
+                onCanPlay={(e) => {
+                  e.currentTarget.play().catch(() => {});
+                }}
+                onPlaying={() => setIsVideoPlaying(true)}
+                className="absolute inset-0 w-full h-full object-cover"
+                aria-label="繁殖予定のサモエド紹介動画"
+              >
+                <source src="/breeding-schedule-main.mp4" type="video/mp4" />
+              </video>
+              <div
+                className={`absolute inset-0 transition-opacity duration-500 ${
+                  isVideoPlaying ? "opacity-0 pointer-events-none" : "opacity-100"
+                }`}
+                aria-hidden={isVideoPlaying}
+              >
+                <img
+                  src="/breeding-schedule-main.webp"
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                  width={1200}
+                  height={800}
+                />
+              </div>
             </div>
 
             <div className="border border-gray-200 p-8 mb-12">
