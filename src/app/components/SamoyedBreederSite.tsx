@@ -276,6 +276,9 @@ export function SamoyedBreederSite() {
             <Link to="/samoyed" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hidden sm:block">
               サモエドについて
             </Link>
+            <Link to="/samoyed-life" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hidden sm:block">
+              サモエドがいる暮らし
+            </Link>
             <Link to="/bloodline" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hidden sm:block">
               血統
             </Link>
@@ -441,6 +444,12 @@ export function SamoyedBreederSite() {
                 className="border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors block"
               >
                 <h3 className="text-lg font-medium text-gray-900">サモエドとは</h3>
+              </Link>
+              <Link
+                to="/samoyed-life"
+                className="border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors block"
+              >
+                <h3 className="text-lg font-medium text-gray-900">サモエドがいる暮らし</h3>
               </Link>
               <Link
                 to="/policy"

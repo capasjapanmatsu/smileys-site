@@ -6,6 +6,9 @@ import { APP_ROUTE_PATHS } from './routePaths';
 const SamoyedCharacterPage = lazy(() =>
   import('./pages/SamoyedCharacterPage').then((m) => ({ default: m.SamoyedCharacterPage }))
 );
+const SamoyedLifePage = lazy(() =>
+  import('./pages/SamoyedLifePage').then((m) => ({ default: m.SamoyedLifePage }))
+);
 const BloodlinePage = lazy(() =>
   import('./pages/BloodlinePage').then((m) => ({ default: m.BloodlinePage }))
 );
@@ -51,6 +54,14 @@ export default function App() {
         element={
           <Suspense fallback={null}>
             <SamoyedCharacterPage />
+          </Suspense>
+        }
+      />
+      <Route
+        path={APP_ROUTE_PATHS.samoyedLife}
+        element={
+          <Suspense fallback={null}>
+            <SamoyedLifePage />
           </Suspense>
         }
       />

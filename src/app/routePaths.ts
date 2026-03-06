@@ -3,6 +3,7 @@ import { getBlogPostSlugs } from "./content/blog";
 export const APP_ROUTE_PATHS = {
   home: "/",
   samoyed: "/samoyed",
+  samoyedLife: "/samoyed-life",
   samoyedLegacy: "/samoyed-character",
   bloodline: "/bloodline",
   policy: "/policy",
@@ -19,6 +20,7 @@ export const APP_ROUTE_PATHS = {
 export const SITEMAP_ROUTE_PATHS = [
   APP_ROUTE_PATHS.home,
   APP_ROUTE_PATHS.samoyed,
+  APP_ROUTE_PATHS.samoyedLife,
   APP_ROUTE_PATHS.bloodline,
   APP_ROUTE_PATHS.policy,
   APP_ROUTE_PATHS.breedingSchedule,

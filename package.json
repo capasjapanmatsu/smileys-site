@@ -95,6 +95,7 @@
     "include": [
       "/",
       "/samoyed",
+      "/samoyed-life",
       "/bloodline",
       "/policy",
       "/breeding-schedule",
