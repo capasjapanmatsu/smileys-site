@@ -70,9 +70,9 @@ export function SamoyedLifePage() {
       jsonLd={schemas}
     >
       {/* 動画（縦長460x800）と文字がスクロールで一緒に動く */}
-      <section className="relative">
-        {/* 動画：縦長（460x800）の対比で上下を少しトリミングして表示 */}
-        <div className="relative w-full aspect-[460/680] overflow-hidden">
+      <section className="relative bg-black min-h-screen">
+        {/* 動画：縦長（460x800）の対比で表示 */}
+        <div className="relative w-full aspect-[460/800] overflow-hidden">
           <video
             ref={lifeVideoRef}
             playsInline
@@ -107,9 +107,9 @@ export function SamoyedLifePage() {
           <div className="absolute inset-0 bg-black/65 z-[2]" />
         </div>
 
-        {/* 動画の上に重なるテキスト。一番上から表示 */}
-        <div className="relative z-10 -mt-[148%] pt-24 pb-32 px-6 md:px-12">
-          <div className="max-w-2xl mx-auto text-center text-white space-y-32">
+        {/* スマホ: 動画の下にテキスト配置 / PC: 動画の上にオーバーレイ */}
+        <div className="relative z-10 -mt-0 md:-mt-[148%] pt-16 md:pt-24 pb-24 md:pb-32 px-6 md:px-12">
+          <div className="max-w-2xl mx-auto text-center text-white space-y-16 md:space-y-32">
             <FadeInSection delay={0}>
               <h1
                 className="text-4xl md:text-6xl font-light mb-6"
@@ -117,10 +117,10 @@ export function SamoyedLifePage() {
               >
                 サモエドがいる暮らし
               </h1>
-              <p className="text-base md:text-lg font-light mb-8 leading-loose text-white/90">
+              <p className="text-base md:text-lg font-light mb-8 leading-relaxed text-white/90">
                 愛犬とともに過ごす日々の幸せをご紹介します
               </p>
-              <p className="text-sm md:text-base font-light leading-loose text-white/85">
+              <p className="text-sm md:text-base font-light leading-relaxed text-white/85">
                 サモエドとの暮らしは、毎日が小さな発見と喜びに満ちています。
                 ここでは、サモエドがご家族にもたらしてくれる豊かさについて、いくつかの視点からお伝えします。
               </p>
@@ -135,7 +135,7 @@ export function SamoyedLifePage() {
                   >
                     {item.title}
                   </h2>
-                  <p className="text-base md:text-lg font-light leading-loose text-white/90">
+                  <p className="text-base md:text-lg font-light leading-relaxed text-white/90">
                     {item.description}
                   </p>
                 </div>
@@ -143,7 +143,7 @@ export function SamoyedLifePage() {
             ))}
 
             <FadeInSection delay={0.1}>
-              <p className="font-light mb-6 leading-loose text-white/90">
+              <p className="font-light mb-6 leading-relaxed text-white/90">
                 サモエドをお迎えしたい方は、ぜひ当犬舎までお問い合わせください。
               </p>
               <Link
