@@ -13,7 +13,7 @@ export function SamoyedCharacterPage() {
       inLanguage: "ja-JP",
       author: { "@type": "Organization", name: "Smiley's Kennel" },
       publisher: { "@type": "Organization", name: "Smiley's Kennel" },
-      mainEntityOfPage: "https://www.sammy-smile.com/samoyed",
+      mainEntityOfPage: "https://smileys.one/samoyed",
       description:
         "熊本・九州のサモエド ブリーダー犬舎が、サモエドの起源、性格、運動量、被毛ケアをまとめた解説ページです。",
     },

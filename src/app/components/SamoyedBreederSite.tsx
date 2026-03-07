@@ -23,6 +23,7 @@ export function SamoyedBreederSite() {
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
+  const stickyCtaOpacity = useTransform(scrollYProgress, [0.15, 0.25], [0, 1]);
   const heroVideoRef = useRef<HTMLVideoElement>(null);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
@@ -96,32 +97,38 @@ export function SamoyedBreederSite() {
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
+      "@id": "https://smileys.one/#website",
       name: "Smiley's Kennel",
-      url: "https://www.sammy-smile.com/",
+      url: "https://smileys.one/",
       inLanguage: "ja-JP",
     },
     {
       "@context": "https://schema.org",
       "@type": "Organization",
+      "@id": "https://smileys.one/#organization",
       name: "Smiley's Kennel",
       alternateName: ["Smiley's", "SAMMY.SMILE JP'S"],
-      url: "https://www.sammy-smile.com/",
-      logo: "https://www.sammy-smile.com/logo.webp",
+      url: "https://smileys.one/",
+      logo: "https://smileys.one/logo.webp",
       contactPoint: {
         "@type": "ContactPoint",
         telephone: "+81-90-9588-8128",
         contactType: "customer support",
         areaServed: "JP",
+        availableLanguage: "Japanese",
       },
     },
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
+      "@id": "https://smileys.one/#localbusiness",
       name: "Smiley's Kennel",
       description: "熊本・九州でサモエドの計画繁殖を行うブリーダー犬舎。少頭数・予約制で見学をご案内しています。",
-      image: "https://www.sammy-smile.com/hero.webp",
-      url: "https://www.sammy-smile.com/",
+      image: "https://smileys.one/hero.webp",
+      url: "https://smileys.one/",
+      logo: "https://smileys.one/logo.webp",
       telephone: "+81-90-9588-8128",
+      sameAs: ["https://lin.ee/Ngs8RXx"],
       address: {
         "@type": "PostalAddress",
         addressRegion: "熊本県",
@@ -129,16 +136,20 @@ export function SamoyedBreederSite() {
         streetAddress: "龍田2丁目14-16",
         addressCountry: "JP",
       },
+      areaServed: { "@type": "Country", name: "日本" },
       openingHours: "Sa-Su 13:00-17:00",
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: faqs.map((item) => ({
-        "@type": "Question",
-        name: item.q,
-        acceptedAnswer: { "@type": "Answer", text: item.a },
-      })),
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+81-90-9588-8128",
+        contactType: "customer service",
+        areaServed: "JP",
+        hoursAvailable: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Saturday", "Sunday"],
+          opens: "13:00",
+          closes: "17:00",
+        },
+      },
     },
   ];
 
@@ -334,10 +345,13 @@ export function SamoyedBreederSite() {
           >
             <img
               src="/hero.webp"
-              alt=""
+              alt="サモエド専門犬舎 Smiley's - 熊本・九州のブリーダー"
               className="w-full h-full object-cover"
               fetchPriority="high"
               loading="eager"
+              width={1920}
+              height={1080}
+              decoding="sync"
             />
           </div>
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-white z-[2]" />
@@ -364,7 +378,17 @@ export function SamoyedBreederSite() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
+            <motion.button
+              onClick={() => setContactFormModalOpen(true)}
+              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[48px] px-8 py-4 bg-gray-900 text-white text-base tracking-widest hover:bg-gray-800 transition-colors"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              見学予約・お問い合わせ
+              <ChevronRight className="w-4 h-4" />
+            </motion.button>
             <motion.button
               onClick={() => scrollToSection('puppies')}
               className="group inline-flex items-center gap-3 text-base tracking-widest border-b-2 border-gray-900 py-2 hover:gap-5 transition-all duration-300 min-h-[44px]"
@@ -1046,6 +1070,32 @@ export function SamoyedBreederSite() {
           </div>
         </div>
       </section>
+
+      {/* スクロール時固定CTA（スマホで押しやすい） */}
+      <motion.div
+        className="fixed bottom-0 left-0 right-0 z-30 lg:hidden pointer-events-none"
+        style={{ opacity: stickyCtaOpacity }}
+        aria-hidden
+      >
+        <div className="p-3 pointer-events-auto">
+          <div className="flex gap-3 max-w-md mx-auto">
+            <button
+              onClick={() => setContactFormModalOpen(true)}
+              className="flex-1 min-h-[48px] px-4 py-3 bg-gray-900 text-white text-sm font-medium tracking-wider rounded-lg shadow-lg hover:bg-gray-800 transition-colors"
+            >
+              お問い合わせ
+            </button>
+            <a
+              href="https://lin.ee/Ngs8RXx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 min-h-[48px] px-4 py-3 bg-[#06C755] text-white text-sm font-medium tracking-wider rounded-lg shadow-lg hover:bg-[#05b04c] transition-colors flex items-center justify-center"
+            >
+              LINE
+            </a>
+          </div>
+        </div>
+      </motion.div>
 
       {/* Footer */}
       <footer className="py-12 bg-gray-900 text-white">

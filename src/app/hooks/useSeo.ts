@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const BASE_URL = "https://www.sammy-smile.com";
+const BASE_URL = "https://smileys.one";
 
 type SeoOptions = {
   title: string;

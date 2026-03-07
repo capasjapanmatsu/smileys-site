@@ -2,12 +2,14 @@ import { PageLayout } from "../components/PageLayout";
 import { FadeInSection } from "../components/FadeInSection";
 import { aeoFaqs, tldrs } from "../content/aeo";
 import { Link } from "react-router-dom";
+import { createBreadcrumbList } from "../lib/schema";
 
 export function FaqPage() {
   const faqSchemas: Record<string, unknown>[] = [
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
+      "@id": "https://smileys.one/faq#faqpage",
       mainEntity: aeoFaqs.map((item) => ({
         "@type": "Question",
         name: item.q,
@@ -17,6 +19,7 @@ export function FaqPage() {
         },
       })),
     },
+    createBreadcrumbList([{ label: "FAQ" }], "/faq"),
   ];
 
   return (
@@ -26,6 +29,7 @@ export function FaqPage() {
       canonicalPath="/faq"
       ogImage="/hero.webp"
       jsonLd={faqSchemas}
+      breadcrumbs={[{ label: "FAQ" }]}
     >
       <div className="container mx-auto px-6 md:px-12">
         <FadeInSection delay={0.05}>

@@ -5,6 +5,8 @@ import { FileText, Mail, ShoppingBag, BookOpen } from "lucide-react";
 import { motion } from "motion/react";
 import { SeoHead } from "./SeoHead";
 
+type BreadcrumbItem = { label: string; path?: string };
+
 interface PageLayoutProps {
   children: React.ReactNode;
   title: string;
@@ -12,6 +14,7 @@ interface PageLayoutProps {
   canonicalPath: string;
   ogImage?: string;
   jsonLd?: Record<string, unknown>[];
+  breadcrumbs?: BreadcrumbItem[];
 }
 
 function LineMonoIcon() {
@@ -26,7 +29,7 @@ function LineMonoIcon() {
   );
 }
 
-export function PageLayout({ children, title, description, canonicalPath, ogImage, jsonLd }: PageLayoutProps) {
+export function PageLayout({ children, title, description, canonicalPath, ogImage, jsonLd, breadcrumbs }: PageLayoutProps) {
   return (
     <div
       className="min-h-screen bg-white overflow-x-hidden"
@@ -73,6 +76,23 @@ export function PageLayout({ children, title, description, canonicalPath, ogImag
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease: "easeOut" }}
       >
+        {breadcrumbs && breadcrumbs.length > 0 && (
+          <nav aria-label="パンくず" className="container mx-auto px-4 sm:px-6 md:px-12 pt-2 pb-4">
+            <ol className="flex flex-wrap items-center gap-1.5 text-sm text-gray-500">
+              <li><Link to="/" className="hover:text-gray-900 transition-colors">ホーム</Link></li>
+              {breadcrumbs.map((item, i) => (
+                <li key={i} className="flex items-center gap-1.5">
+                  <span aria-hidden>/</span>
+                  {item.path ? (
+                    <Link to={item.path} className="hover:text-gray-900 transition-colors">{item.label}</Link>
+                  ) : (
+                    <span className="text-gray-900 font-medium" aria-current="page">{item.label}</span>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </nav>
+        )}
         {children}
       </motion.main>
 

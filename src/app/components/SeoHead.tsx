@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 
-const BASE_URL = "https://www.sammy-smile.com";
+const BASE_URL = "https://smileys.one";
 
 type SeoHeadProps = {
   title: string;
@@ -34,10 +34,13 @@ export function SeoHead({
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={imageUrl} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
+      <meta name="twitter:url" content={canonicalUrl} />
       <meta name="twitter:image" content={imageUrl} />
 
       {jsonLd.map((schema, idx) => (

@@ -9,6 +9,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Smiley's Kennel" />
+    <!-- LCP画像の先行読み込み -->
+    <link rel="preload" href="/hero.webp" as="image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,6 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@400;500&family=Noto+Sans+JP:wght@400;500&display=swap"
       media="print"
       onload="this.media='all'"
+      crossorigin
     />
     <noscript>
       <link
@@ -31,10 +34,10 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="サモエド ブリーダー | 熊本・九州の犬舎 Smiley's" />
     <meta property="og:description" content="熊本・九州でサモエドの計画繁殖を行うブリーダー犬舎。少頭数・予約制で見学予約や繁殖予定をご案内しています。" />
-    <meta property="og:url" content="https://www.sammy-smile.com/" />
+    <meta property="og:url" content="https://smileys.one/" />
     <meta property="og:site_name" content="SammySmile kennel - サモエド専門犬舎" />
     <meta property="og:locale" content="ja_JP" />
-    <meta property="og:image" content="https://www.sammy-smile.com/hero.webp" />
+    <meta property="og:image" content="https://smileys.one/hero.webp" />
     <meta property="og:image:type" content="image/webp" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -44,14 +47,14 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="サモエド ブリーダー | 熊本・九州の犬舎 Smiley's" />
     <meta name="twitter:description" content="熊本・九州でサモエドの計画繁殖を行うブリーダー犬舎。見学予約と繁殖予定をご案内しています。" />
-    <meta name="twitter:image" content="https://www.sammy-smile.com/hero.webp" />
+    <meta name="twitter:image" content="https://smileys.one/hero.webp" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/samoyed-icon.png" />
     <link rel="apple-touch-icon" href="/samoyed-icon.png" />
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.sammy-smile.com/" />
+    <link rel="canonical" href="https://smileys.one/" />
 
     <!-- JSON-LD is injected per route with react-helmet-async -->
   </head>

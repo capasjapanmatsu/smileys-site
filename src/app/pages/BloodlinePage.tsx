@@ -3,6 +3,7 @@
 import { PageLayout } from "../components/PageLayout";
 import { FadeInSection } from "../components/FadeInSection";
 import { tldrs } from "../content/aeo";
+import { createBreadcrumbList } from "../lib/schema";
 
 export function BloodlinePage() {
   const schemas: Record<string, unknown>[] = [
@@ -13,10 +14,11 @@ export function BloodlinePage() {
       inLanguage: "ja-JP",
       author: { "@type": "Organization", name: "Smiley's Kennel" },
       publisher: { "@type": "Organization", name: "Smiley's Kennel" },
-      mainEntityOfPage: "https://www.sammy-smile.com/bloodline",
+      mainEntityOfPage: "https://smileys.one/bloodline",
       description:
         "熊本・九州のサモエド ブリーダー犬舎として、血統背景を確認できる繁殖計画と検査方針をまとめた解説ページです。",
     },
+    createBreadcrumbList([{ label: "血統" }], "/bloodline"),
   ];
 
   return (
@@ -26,6 +28,7 @@ export function BloodlinePage() {
       canonicalPath="/bloodline"
       ogImage="/bloodline-main.webp"
       jsonLd={schemas}
+      breadcrumbs={[{ label: "血統" }]}
     >
       <div className="container mx-auto px-6 md:px-12">
         <FadeInSection>

@@ -13,7 +13,7 @@ export function BreedingPolicyPage() {
       inLanguage: "ja-JP",
       author: { "@type": "Organization", name: "Smiley's Kennel" },
       publisher: { "@type": "Organization", name: "Smiley's Kennel" },
-      mainEntityOfPage: "https://www.sammy-smile.com/policy",
+      mainEntityOfPage: "https://smileys.one/policy",
       description:
         "熊本・九州のサモエド ブリーダー犬舎として、少頭数・予約制で行う繁殖理念をまとめたページです。",
     },

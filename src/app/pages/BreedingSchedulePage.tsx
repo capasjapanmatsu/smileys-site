@@ -4,6 +4,7 @@ import { lazy, Suspense, useState, useRef, useEffect } from "react";
 import { PageLayout } from "../components/PageLayout";
 import { FadeInSection } from "../components/FadeInSection";
 import { ChevronRight } from "lucide-react";
+import { createBreadcrumbList } from "../lib/schema";
 
 const ContactFormModal = lazy(() =>
   import("../components/ContactFormModal").then((m) => ({ default: m.ContactFormModal }))
@@ -34,6 +35,8 @@ export function BreedingSchedulePage() {
       description="熊本・九州のサモエド ブリーダー犬舎の繁殖予定ページです。事前予約とお問い合わせ方法をご案内しています。"
       canonicalPath="/breeding-schedule"
       ogImage="/breeding-schedule-main.webp"
+      breadcrumbs={[{ label: "繁殖予定" }]}
+      jsonLd={[createBreadcrumbList([{ label: "繁殖予定" }], "/breeding-schedule")]}
     >
       <div className="container mx-auto px-6 md:px-12">
         <FadeInSection>

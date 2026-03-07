@@ -35,7 +35,7 @@ export function SamoyedLifePage() {
       inLanguage: "ja-JP",
       author: { "@type": "Organization", name: "Smiley's Kennel" },
       publisher: { "@type": "Organization", name: "Smiley's Kennel" },
-      mainEntityOfPage: "https://www.sammy-smile.com/samoyed-life",
+      mainEntityOfPage: "https://smileys.one/samoyed-life",
       description:
         "サモエドと暮らすことの魅力。和み、家族の相棒、毎日の散歩で人も健康に。絆を深め、家族の一員としての暮らしをご紹介します。",
     },
