@@ -117,10 +117,10 @@ export function SamoyedLifePage() {
               >
                 サモエドがいる暮らし
               </h1>
-              <p className="text-base md:text-lg font-light mb-8 leading-relaxed text-white/90">
+              <p className="text-base md:text-xl font-light mb-8 leading-relaxed md:leading-loose text-white/90">
                 愛犬とともに過ごす日々の幸せをご紹介します
               </p>
-              <p className="text-sm md:text-base font-light leading-relaxed text-white/85">
+              <p className="text-sm md:text-lg font-light leading-relaxed md:leading-loose text-white/85">
                 サモエドとの暮らしは、毎日が小さな発見と喜びに満ちています。
                 ここでは、サモエドがご家族にもたらしてくれる豊かさについて、いくつかの視点からお伝えします。
               </p>
@@ -130,12 +130,12 @@ export function SamoyedLifePage() {
               <FadeInSection key={item.title} delay={0.05 + index * 0.08}>
                 <div>
                   <h2
-                    className="text-xl md:text-2xl font-light mb-4"
+                    className="text-xl md:text-3xl font-light mb-4"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
                     {item.title}
                   </h2>
-                  <p className="text-base md:text-lg font-light leading-relaxed text-white/90">
+                  <p className="text-base md:text-xl font-light leading-relaxed md:leading-loose text-white/90">
                     {item.description}
                   </p>
                 </div>
@@ -143,12 +143,12 @@ export function SamoyedLifePage() {
             ))}
 
             <FadeInSection delay={0.1}>
-              <p className="font-light mb-6 leading-relaxed text-white/90">
+              <p className="text-base md:text-lg font-light mb-6 leading-relaxed md:leading-loose text-white/90">
                 サモエドをお迎えしたい方は、ぜひ当犬舎までお問い合わせください。
               </p>
               <Link
                 to={APP_ROUTE_PATHS.breedingSchedule}
-                className="inline-flex items-center gap-2 text-base tracking-widest border-b-2 border-white/80 py-2 hover:border-white transition-colors text-white"
+                className="inline-flex items-center gap-2 text-base md:text-lg tracking-widest border-b-2 border-white/80 py-2 hover:border-white transition-colors text-white"
               >
                 繁殖予定・お問い合わせ
               </Link>
