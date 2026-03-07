@@ -4,11 +4,14 @@ import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { PageLayout } from "../components/PageLayout";
 import { FadeInSection } from "../components/FadeInSection";
+import { useIsMobile } from "../components/ui/use-mobile";
 import { APP_ROUTE_PATHS } from "../routePaths";
 
 export function SamoyedLifePage() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const lifeVideoRef = useRef<HTMLVideoElement>(null);
+  const isMobile = useIsMobile();
+  const isDesktop = !isMobile;
 
   useEffect(() => {
     const video = lifeVideoRef.current;
@@ -110,7 +113,7 @@ export function SamoyedLifePage() {
         {/* スマホ: 動画の下にテキスト配置 / PC: 動画の上にオーバーレイ */}
         <div className="relative z-10 -mt-0 md:-mt-[148%] pt-16 md:pt-24 pb-24 md:pb-32 px-6 md:px-12">
           <div className="max-w-2xl mx-auto text-center text-white space-y-16 md:space-y-32">
-            <FadeInSection delay={0}>
+            <FadeInSection delay={0} fromBottomOnDesktop isDesktop={isDesktop}>
               <h1
                 className="text-4xl md:text-6xl font-light mb-6"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -127,7 +130,12 @@ export function SamoyedLifePage() {
             </FadeInSection>
 
             {highlights.map((item, index) => (
-              <FadeInSection key={item.title} delay={0.05 + index * 0.08}>
+              <FadeInSection
+                key={item.title}
+                delay={0.05 + index * 0.08}
+                fromBottomOnDesktop
+                isDesktop={isDesktop}
+              >
                 <div>
                   <h2
                     className="text-xl md:text-3xl font-light mb-4"
@@ -142,7 +150,7 @@ export function SamoyedLifePage() {
               </FadeInSection>
             ))}
 
-            <FadeInSection delay={0.1}>
+            <FadeInSection delay={0.1} fromBottomOnDesktop isDesktop={isDesktop}>
               <p className="text-base md:text-lg font-light mb-6 leading-relaxed md:leading-loose text-white/90">
                 サモエドをお迎えしたい方は、ぜひ当犬舎までお問い合わせください。
               </p>
