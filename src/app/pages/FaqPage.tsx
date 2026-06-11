@@ -2,23 +2,11 @@ import { PageLayout } from "../components/PageLayout";
 import { FadeInSection } from "../components/FadeInSection";
 import { aeoFaqs, tldrs } from "../content/aeo";
 import { Link } from "react-router-dom";
-import { createBreadcrumbList } from "../lib/schema";
+import { createBreadcrumbList, createFaqPageSchema } from "../lib/schema";
 
 export function FaqPage() {
   const faqSchemas: Record<string, unknown>[] = [
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "@id": "https://smileys.one/faq#faqpage",
-      mainEntity: aeoFaqs.map((item) => ({
-        "@type": "Question",
-        name: item.q,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: item.a,
-        },
-      })),
-    },
+    createFaqPageSchema(aeoFaqs, "https://smileys.one/faq#faqpage"),
     createBreadcrumbList([{ label: "FAQ" }], "/faq"),
   ];
 

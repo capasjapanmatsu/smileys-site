@@ -46,3 +46,17 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Notify Bing via IndexNow
+        run: |
+          curl -sS -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "host": "smileys.one",
+              "key": "smileys-kennel-indexnow-2026",
+              "keyLocation": "https://smileys.one/smileys-kennel-indexnow-2026.txt",
+              "urlList": [
+                "https://smileys.one/",
+                "https://smileys.one/sitemap.xml"
+              ]
+            }' || true

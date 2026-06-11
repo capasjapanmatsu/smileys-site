@@ -1,0 +1,28 @@
+# Smiley's Kennel - サモエド専門犬舎
+
+> 熊本・九州でサモエドの計画繁殖を行うブリーダー犬舎です。少頭数・予約制で見学をご案内しています。
+
+## 基本情報
+- サイト: https://smileys.one/
+- 所在地: 熊本県熊本市北区龍田2丁目14-16
+- 見学: 土日祝 13:00〜17:00（事前予約制）
+- お問い合わせ: サイト内フォーム / 公式LINE
+
+## よくある質問
+- 熊本でサモエドのブリーダーはどこですか？
+  → 熊本県熊本市北区の Smiley's Kennel（サモエド専門犬舎）です。
+- 見学予約はどうすればいいですか？
+  → お問い合わせフォームまたは公式LINEからご連絡ください。
+- 子犬の募集はありますか？
+  → 事前予約制です。現在は2027年度出産予定のご予約を受け付けています。
+
+## 主要ページ
+- トップ: https://smileys.one/
+- サモエドについて: https://smileys.one/samoyed
+- 繁殖予定: https://smileys.one/breeding-schedule
+- 親犬紹介: https://smileys.one/kubitka
+- FAQ: https://smileys.one/faq
+- ブログ: https://smileys.one/blog
+
+## サイトマップ
+https://smileys.one/sitemap.xml

@@ -4,7 +4,8 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { Heart, Phone, Mail, ChevronRight, CalendarDays, Eye, FileText, ShoppingBag } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { SeoHead } from './SeoHead';
-import { aeoFaqs, tldrs } from '../content/aeo';
+import { aeoFaqs, aeoQuickAnswers, tldrs } from '../content/aeo';
+import { createHowToSchema } from '../lib/schema';
 import { testimonials } from '../content/testimonials';
 
 const ChecklistModal = lazy(() =>
@@ -151,6 +152,11 @@ export function SamoyedBreederSite() {
         },
       },
     },
+    createHowToSchema(
+      "サモエドのお迎えまでの流れ",
+      "Smiley's Kennelでサモエドをお迎えいただくまでの5つのステップです。",
+      welcomeSteps.map((step) => ({ name: step.title, text: step.description }))
+    ),
   ];
 
   useEffect(() => {
@@ -462,6 +468,14 @@ export function SamoyedBreederSite() {
                 <li key={line}>・{line}</li>
               ))}
             </ul>
+            <div className="space-y-6 pt-4 border-t border-gray-100">
+              {aeoQuickAnswers.map((item) => (
+                <div key={item.q}>
+                  <h3 className="text-lg font-medium text-gray-900 mb-2">{item.q}</h3>
+                  <p className="text-gray-700 font-light leading-relaxed">{item.a}</p>
+                </div>
+              ))}
+            </div>
             <div className="grid md:grid-cols-3 gap-4 pt-6">
               <Link
                 to="/samoyed"
@@ -713,69 +727,35 @@ export function SamoyedBreederSite() {
           </AnimatedSection>
 
           <div className="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
-            {[
-              {
-                name: "サム",
-                role: "BOYS",
-                title: "ロシアチャンピオン",
-                description:
-                  "ロシア – BELIY VOLK犬舎から来た男の子。この犬舎は世界的ショーで多数のチャンピオンを輩出し、骨格の美しさ、落ち着いた性格、豊富な被毛を特徴としおっとりとした優しい性格が特徴。 曾祖父に名犬「BELIY VOLK DIVIDE ET IMPERA」を持つ直系血統。",
-                image: "/parent-sam.webp",
-                detailPath: "/kubitka#sam",
-              },
-              {
-                name: "クビトカ",
-                role: "GIRLS",
-                title: "ウクライナ モルドバ他多数のジュニアチャンピオン",
-                description:
-                  "ウクライナ有名犬舎DAENERYS / DESANT犬舎より来た優良血統の女の子です。さらに43カ国でタイトルを獲得し、世界で最も有名なサモエドの一頭である「BELIY VOLK YAROMIR VELIKIY」の血統も受け継ぎ、骨格と歩様を正しく伝えています。",
-                image: "/parent-kubitka.webp",
-                detailPath: "/kubitka#kubitka",
-              }
-            ].map((dog, index) => (
-              <AnimatedSection key={index} delay={index * 0.2}>
-                <div className="group">
-                  <div className="relative overflow-hidden mb-6">
-                    <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.6 }}
-                    >
-                      <ImageWithFallback
-                        src={dog.image}
-                        alt={`種犬 ${dog.name} - ${dog.role}（${dog.title}）`}
-                        className="w-full h-[500px] object-cover"
-                        loading="lazy"
-                        width={1200}
-                        height={1500}
-                      />
-                    </motion.div>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <div className="text-base md:text-sm tracking-widest text-gray-500">{dog.role}</div>
-                    <h3 
-                      className="text-4xl font-light"
-                      style={{ fontFamily: "'Playfair Display', serif" }}
-                    >
-                      {dog.name}
-                    </h3>
-                    <div className="text-base md:text-sm text-gray-600 font-light">{dog.title}</div>
-                    {"description" in dog && dog.description ? (
-                      <p className="text-base md:text-sm text-gray-700 font-light leading-relaxed pt-2">{dog.description}</p>
-                    ) : null}
-                    {"detailPath" in dog && dog.detailPath ? (
-                      <Link
-                        to={dog.detailPath}
-                        className="inline-flex items-center gap-2 pt-2 text-base md:text-sm underline underline-offset-4 hover:text-gray-900 transition-colors"
-                      >
-                        詳しくは
-                        <ChevronRight className="w-4 h-4" />
-                      </Link>
-                    ) : null}
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
+            <ParentDogCard
+              delay={0}
+              name="サム"
+              role="BOYS"
+              title="ロシアチャンピオン"
+              description="ロシア – BELIY VOLK犬舎から来た男の子。この犬舎は世界的ショーで多数のチャンピオンを輩出し、骨格の美しさ、落ち着いた性格、豊富な被毛を特徴としおっとりとした優しい性格が特徴。 曾祖父に名犬「BELIY VOLK DIVIDE ET IMPERA」を持つ直系血統。"
+              image="/parent-sam.webp"
+              detailPath="/kubitka#sam"
+            />
+            <div className="space-y-16">
+              <ParentDogCard
+                delay={0.2}
+                name="クビトカ"
+                role="GIRLS"
+                title="ウクライナ モルドバ他多数のジュニアチャンピオン"
+                description="ウクライナ有名犬舎DAENERYS / DESANT犬舎より来た優良血統の女の子です。さらに43カ国でタイトルを獲得し、世界で最も有名なサモエドの一頭である「BELIY VOLK YAROMIR VELIKIY」の血統も受け継ぎ、骨格と歩様を正しく伝えています。"
+                image="/parent-kubitka.webp"
+                detailPath="/kubitka#kubitka"
+              />
+              <ParentDogCard
+                delay={0.4}
+                name="カイ"
+                role="BOYS"
+                title="SAMMY.SMILE JP'S CASTOR"
+                description="サム直系の息子で、優れた骨格構成・美しい被毛・しなやかな歩様を兼ね備えた正統派ショー血統のサモエドです。BELIY VOLK 名門犬舎の血統価値を色濃く受け継いでいます。"
+                image="/parent-kai.webp"
+                detailPath="/kubitka#kai"
+              />
+            </div>
           </div>
           <div className="mt-10 flex flex-wrap justify-center gap-6 text-sm md:text-base">
             <Link to="/kubitka#sam" className="underline underline-offset-4 hover:text-gray-900 transition-colors">
@@ -1258,6 +1238,60 @@ function LineMonoIcon() {
         LINE
       </text>
     </svg>
+  );
+}
+
+type ParentDogCardProps = {
+  name: string;
+  role: string;
+  title: string;
+  description: string;
+  image: string;
+  detailPath: string;
+  delay?: number;
+};
+
+function ParentDogCard({
+  name,
+  role,
+  title,
+  description,
+  image,
+  detailPath,
+  delay = 0,
+}: ParentDogCardProps) {
+  return (
+    <AnimatedSection delay={delay}>
+      <div className="group">
+        <div className="relative overflow-hidden mb-6">
+          <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.6 }}>
+            <ImageWithFallback
+              src={image}
+              alt={`種犬 ${name} - ${role}（${title}）`}
+              className="w-full h-[500px] object-cover"
+              loading="lazy"
+              width={1200}
+              height={1500}
+            />
+          </motion.div>
+        </div>
+        <div className="space-y-2">
+          <div className="text-base md:text-sm tracking-widest text-gray-500">{role}</div>
+          <h3 className="text-4xl font-light" style={{ fontFamily: "'Playfair Display', serif" }}>
+            {name}
+          </h3>
+          <div className="text-base md:text-sm text-gray-600 font-light">{title}</div>
+          <p className="text-base md:text-sm text-gray-700 font-light leading-relaxed pt-2">{description}</p>
+          <Link
+            to={detailPath}
+            className="inline-flex items-center gap-2 pt-2 text-base md:text-sm underline underline-offset-4 hover:text-gray-900 transition-colors"
+          >
+            詳しくは
+            <ChevronRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </div>
+    </AnimatedSection>
   );
 }
 

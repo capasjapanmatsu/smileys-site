@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+# Bing / IndexNow
 Sitemap: https://smileys.one/sitemap.xml

@@ -27,7 +27,7 @@ export default defineConfig({
       async closeBundle() {
         await writeFile(
           path.resolve(__dirname, 'dist/robots.txt'),
-          'User-agent: *\nAllow: /\n\nSitemap: https://smileys.one/sitemap.xml\n',
+          'User-agent: *\nAllow: /\n\n# Bing / IndexNow\nSitemap: https://smileys.one/sitemap.xml\n',
           'utf8',
         )
       },

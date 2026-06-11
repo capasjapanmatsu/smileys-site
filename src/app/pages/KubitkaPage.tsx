@@ -222,6 +222,16 @@ export function KubitkaPage() {
                 カイ（SAMMY.SMILE JP'S CASTOR）
               </h2>
               <p className="text-sm md:text-base text-gray-600 mb-4">2025年4月18日生まれ / Male</p>
+              <div className="mb-5">
+                <img
+                  src="/kai-profile.webp"
+                  alt="カイ（SAMMY.SMILE JP'S CASTOR）"
+                  className="w-full max-w-2xl h-auto object-cover"
+                  width={1024}
+                  height={1024}
+                  loading="lazy"
+                />
+              </div>
               <p className="text-gray-700 font-light leading-relaxed mb-4">
                 サム直系の息子で、優れた骨格構成・美しい被毛・しなやかな歩様を兼ね備えた
                 正統派ショー血統のサモエドです。
