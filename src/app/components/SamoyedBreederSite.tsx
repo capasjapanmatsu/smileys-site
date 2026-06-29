@@ -430,6 +430,10 @@ export function SamoyedBreederSite() {
               </h2>
               <ul className="space-y-4 text-gray-700 font-light">
                 <li className="flex gap-4">
+                  <span className="text-gray-500 shrink-0">2028年</span>
+                  <span>ご予約のご相談を承っております。</span>
+                </li>
+                <li className="flex gap-4">
                   <span className="text-gray-500 shrink-0">2027年</span>
                   <span>ご予約はキャンセル待ちとなります。</span>
                 </li>
