@@ -63,31 +63,31 @@ export function SamoyedBreederSite() {
     {
       number: '01',
       title: 'お問い合わせ',
-      description: 'お電話またはメールフォームからお気軽にお問い合わせください',
-      icon: <Phone className="w-8 h-8 text-amber-700" />,
+      description: 'メールフォームまたは公式LINEからお気軽にお問い合わせください',
+      icon: <Mail className="w-8 h-8 text-amber-700" />,
     },
     {
       number: '02',
-      title: '見学予約',
-      description: '見学日時をご予約いただきます。事前予約制となっております',
+      title: '事前予約',
+      description: '募集案内を確認の上事前予約をお願いします。キャンセル待ちの場合もお気軽にご相談ください',
       icon: <CalendarDays className="w-8 h-8 text-amber-700" />,
     },
     {
       number: '03',
-      title: 'ご見学',
-      description: '実際に子犬とふれあい、健康状態や性格をご確認いただけます',
+      title: '子犬のご確認',
+      description: '出産後、動画や見学で子犬をご確認いただけます',
       icon: <Eye className="w-8 h-8 text-amber-700" />,
     },
     {
       number: '04',
-      title: 'お申し込み',
-      description: 'お気に入りの子が見つかりましたら、お申し込み手続きをいたします',
+      title: 'ご契約',
+      description: 'お迎えの子犬が決まり次第、契約手続きをいたします',
       icon: <FileText className="w-8 h-8 text-amber-700" />,
     },
     {
       number: '05',
       title: 'お引き渡し',
-      description: '健康診断書と必要書類をお渡しし、お迎えいただきます',
+      description: '必要書類をお渡しし、お迎えいただきます',
       icon: <Heart className="w-8 h-8 text-amber-700" />,
     },
   ];
@@ -113,10 +113,10 @@ export function SamoyedBreederSite() {
       logo: "https://smileys.one/logo.webp",
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+81-90-9588-8128",
         contactType: "customer support",
         areaServed: "JP",
         availableLanguage: "Japanese",
+        url: "https://lin.ee/Ngs8RXx",
       },
     },
     {
@@ -128,7 +128,6 @@ export function SamoyedBreederSite() {
       image: "https://smileys.one/hero.webp",
       url: "https://smileys.one/",
       logo: "https://smileys.one/logo.webp",
-      telephone: "+81-90-9588-8128",
       sameAs: ["https://lin.ee/Ngs8RXx"],
       address: {
         "@type": "PostalAddress",
@@ -141,9 +140,9 @@ export function SamoyedBreederSite() {
       openingHours: "Sa-Su 13:00-17:00",
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+81-90-9588-8128",
         contactType: "customer service",
         areaServed: "JP",
+        url: "https://lin.ee/Ngs8RXx",
         hoursAvailable: {
           "@type": "OpeningHoursSpecification",
           dayOfWeek: ["Saturday", "Sunday"],
@@ -392,7 +391,7 @@ export function SamoyedBreederSite() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
             >
-              見学予約・お問い合わせ
+              お問い合わせ・事前予約
               <ChevronRight className="w-4 h-4" />
             </motion.button>
             <motion.button
@@ -431,12 +430,12 @@ export function SamoyedBreederSite() {
               </h2>
               <ul className="space-y-4 text-gray-700 font-light">
                 <li className="flex gap-4">
-                  <span className="text-gray-500 shrink-0">2026年</span>
-                  <span>今年度の予約はキャンセル待ちとなります。</span>
+                  <span className="text-gray-500 shrink-0">2027年</span>
+                  <span>ご予約はキャンセル待ちとなります。</span>
                 </li>
                 <li className="flex gap-4">
-                  <span className="text-gray-500 shrink-0">2023年</span>
-                  <span>8月末産まれオーナー様全頭決まりました。</span>
+                  <span className="text-gray-500 shrink-0">2026年</span>
+                  <span>今年度の予約はキャンセル待ちとなります。</span>
                 </li>
               </ul>
               <Link
@@ -629,7 +628,7 @@ export function SamoyedBreederSite() {
                 子犬紹介
               </h2>
               <p className="text-lg text-gray-600 font-light tracking-wide">
-                現在は２０２７年度出産予定のご予約を受け付けております。
+                現在は２０２８年度出産予定のご予約を受け付けております。
               </p>
               <Link
                 to="/breeding-schedule"
@@ -657,7 +656,7 @@ export function SamoyedBreederSite() {
                       >
                         <ImageWithFallback
                           src={puppy.image}
-                          alt={`サモエドの子犬（${puppy.gender}）- 2027年度出産予定`}
+                          alt={`サモエドの子犬（${puppy.gender}）- 2028年度出産予定`}
                           className="w-full h-96 object-cover"
                           loading="lazy"
                           width={1200}

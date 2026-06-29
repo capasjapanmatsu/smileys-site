@@ -53,8 +53,8 @@ export function BreedingSchedulePage() {
         <FadeInSection delay={0.1}>
           <div className="max-w-4xl mx-auto mb-16">
             <p className="text-lg leading-relaxed text-gray-700 font-light mb-8">
-              2026年度の予約は全てご予約済みになっています。
-              現在は２０２７年度出産予定のご予約を受け付けております。
+              ２０２６年度・２０２７年度の出産予定は、ともにキャンセル待ちとなっております。
+              ２０２８年度出産予定のご予約は別途受け付けております。
               子犬はご予約で埋まることがほとんどですので、事前のご予約をお願いいたします。
             </p>
 
@@ -97,11 +97,12 @@ export function BreedingSchedulePage() {
                 className="text-2xl font-light mb-6"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
-                2027年度 繁殖予定
+                ２０２６・２０２７年度 繁殖予定
               </h2>
               <ul className="space-y-4 text-gray-700 font-light">
-                <li>・出産予定：2027年度</li>
-                <li>・ご予約は随時受け付けております</li>
+                <li>・出産予定：２０２６・２０２７年度</li>
+                <li>・２０２６年度・２０２７年度ともにキャンセル待ちとなっております</li>
+                <li>・２０２８年のご予約は別途受付中です。繁殖ペアについてはお問い合わせください。</li>
                 <li>・詳細についてはお気軽にお問い合わせください</li>
               </ul>
             </div>

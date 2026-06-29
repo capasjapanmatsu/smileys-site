@@ -90,7 +90,7 @@ export function PrivacyPolicyPage() {
               <section>
                 <h2 className="text-xl font-medium text-gray-900 mb-3">8. お問い合わせ</h2>
                 <p>
-                  個人情報の取り扱いに関するお問い合わせや、ご本人からの開示・訂正・削除のご請求は、お問い合わせフォームまたはお電話にてお申し込みください。
+                  個人情報の取り扱いに関するお問い合わせや、ご本人からの開示・訂正・削除のご請求は、お問い合わせフォームまたは公式LINEにてお申し込みください。
                 </p>
                 <p className="mt-4">
                   事業所名：Smiley's（サミースマイル犬舎）<br />
