@@ -36,6 +36,9 @@ const BlogPostPage = lazy(() =>
 const FaqPage = lazy(() =>
   import('./pages/FaqPage').then((m) => ({ default: m.FaqPage }))
 );
+const TestimonialsPage = lazy(() =>
+  import('./pages/TestimonialsPage').then((m) => ({ default: m.TestimonialsPage }))
+);
 
 export default function App() {
   return (
@@ -142,6 +145,14 @@ export default function App() {
         element={
           <Suspense fallback={null}>
             <FaqPage />
+          </Suspense>
+        }
+      />
+      <Route
+        path={APP_ROUTE_PATHS.testimonials}
+        element={
+          <Suspense fallback={null}>
+            <TestimonialsPage />
           </Suspense>
         }
       />

@@ -6,7 +6,7 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 import { SeoHead } from './SeoHead';
 import { aeoFaqs, tldrs } from '../content/aeo';
 import { createHowToSchema } from '../lib/schema';
-import { testimonials } from '../content/testimonials';
+import { featuredTestimonials } from '../content/testimonials';
 
 const ChecklistModal = lazy(() =>
   import('./ChecklistModal').then((m) => ({ default: m.ChecklistModal }))
@@ -575,10 +575,10 @@ export function SamoyedBreederSite() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-32 bg-gray-50">
+      <section id="testimonials" className="py-24 bg-gray-50">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
           <AnimatedSection>
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <motion.div
                 initial={{ width: 0 }}
                 whileInView={{ width: 60 }}
@@ -598,7 +598,7 @@ export function SamoyedBreederSite() {
           </AnimatedSection>
 
           <div className="max-w-4xl mx-auto space-y-8">
-            {testimonials.map((item, index) => (
+            {featuredTestimonials.map((item, index) => (
               <AnimatedSection key={item.id} delay={index * 0.08}>
                 <div className="bg-white border border-gray-200 p-6 md:p-8">
                   <p className="text-gray-700 font-light leading-relaxed whitespace-pre-line">
@@ -610,6 +610,16 @@ export function SamoyedBreederSite() {
                 </div>
               </AnimatedSection>
             ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              to="/testimonials"
+              className="inline-flex items-center gap-2 text-base tracking-widest border-b border-gray-900 py-2 hover:border-gray-500 transition-colors min-h-[44px]"
+            >
+              お客様の声をもっと見る
+              <ChevronRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>

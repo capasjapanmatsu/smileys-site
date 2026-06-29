@@ -13,6 +13,7 @@ export const APP_ROUTE_PATHS = {
   legal: "/legal",
   privacy: "/privacy",
   faq: "/faq",
+  testimonials: "/testimonials",
   blog: "/blog",
 } as const;
 
@@ -26,6 +27,7 @@ export const SITEMAP_ROUTE_PATHS = [
   APP_ROUTE_PATHS.breedingSchedule,
   APP_ROUTE_PATHS.kubitka,
   APP_ROUTE_PATHS.faq,
+  APP_ROUTE_PATHS.testimonials,
   APP_ROUTE_PATHS.legal,
   APP_ROUTE_PATHS.privacy,
   APP_ROUTE_PATHS.blog,

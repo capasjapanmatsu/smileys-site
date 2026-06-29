@@ -43,3 +43,5 @@ export const testimonials: Testimonial[] = [
     text: "サモエドを迎える前は、夫婦そろってインドアな生活をしていました。ですが、お迎えしてからはお散歩やお出かけの機会が増え、生活がとてもアクティブになりました。サモエドのおかげで毎日がより楽しくなり、夫婦で過ごす時間もさらに充実しています。",
   },
 ];
+
+export const featuredTestimonials = testimonials.slice(0, 3);
