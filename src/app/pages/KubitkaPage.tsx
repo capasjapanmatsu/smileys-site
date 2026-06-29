@@ -181,7 +181,7 @@ export function KubitkaPage() {
                 />
               </div>
               <p className="text-gray-700 font-light leading-relaxed mb-4">
-                ウクライナ有名犬舎 DAENERYS / DESANT（デザナリー）出身の優良血統の女の子です。
+                ウクライナ有名犬舎 DAENERYS / DESANT（デネリス）出身の優良血統の女の子です。
                 世界的に評価される BELIY VOLK YAROMIR VELIKIY 系統も受け継ぎ、
                 骨格と歩様の美しさを次世代へ伝えることを重視しています。
               </p>

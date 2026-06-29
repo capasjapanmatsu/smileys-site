@@ -173,7 +173,7 @@ export function BloodlinePage() {
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-medium text-gray-900 mb-2">✅ ウクライナ – DAENERYS / DESANT（デザナリー）犬舎</h3>
+                  <h3 className="font-medium text-gray-900 mb-2">✅ ウクライナ – DAENERYS / DESANT（デネリス）犬舎</h3>
                   <p className="text-gray-700 font-light leading-relaxed mb-4">
                     ロシアBELIY VOLKの血統と英国名門血統を重ね、骨構成とバランスの取れた顔立ちを持つ名門犬舎。
                   </p>
