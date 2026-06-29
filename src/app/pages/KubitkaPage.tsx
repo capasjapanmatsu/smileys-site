@@ -207,7 +207,6 @@ export function KubitkaPage() {
               <p className="text-gray-700 font-light leading-relaxed">
                 2025年 Crufts（クラフツ）出陳資格（Qualified for Crufts）を正式に取得しています。
                 Crufts は世界最大規模のドッグショーであり、資格取得そのものが犬質の高さを示す重要な実績です。
-                輸送時期の都合により出陳は見送りとなりましたが、資格は正式に保有していました。
               </p>
               <h3 className="text-xl font-light mt-6 mb-3">遺伝子検査</h3>
               <ul className="space-y-2 text-gray-900">
