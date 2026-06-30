@@ -494,7 +494,7 @@ export function SamoyedBreederSite() {
                 onClick={() => scrollToSection('welcome-flow', 1800)}
                 className="text-left border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors"
               >
-                <h3 className="text-lg font-medium text-gray-900">お迎え条件</h3>
+                <h3 className="text-lg font-medium text-gray-900">お迎えの流れ</h3>
               </button>
             </div>
           </div>
