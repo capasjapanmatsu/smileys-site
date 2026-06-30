@@ -295,7 +295,7 @@ export function SamoyedBreederSite() {
             <Link to="/samoyed-life" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hidden sm:block">
               サモエドがいる暮らし
             </Link>
-            <Link to="/bloodline" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hidden sm:block">
+            <Link to="/bloodline" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
               血統
             </Link>
             <Link to="/policy" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hidden sm:block">
@@ -489,6 +489,12 @@ export function SamoyedBreederSite() {
                 className="border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors block"
               >
                 <h3 className="text-lg font-medium text-gray-900">当犬舎の方針</h3>
+              </Link>
+              <Link
+                to="/bloodline"
+                className="border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors block"
+              >
+                <h3 className="text-lg font-medium text-gray-900">血統</h3>
               </Link>
               <button
                 onClick={() => scrollToSection('welcome-flow', 1800)}
