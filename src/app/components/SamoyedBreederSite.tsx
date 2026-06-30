@@ -295,7 +295,7 @@ export function SamoyedBreederSite() {
             <Link to="/samoyed-life" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hidden sm:block">
               サモエドがいる暮らし
             </Link>
-            <Link to="/bloodline" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+            <Link to="/bloodline" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hidden sm:block">
               血統
             </Link>
             <Link to="/policy" className="text-sm text-gray-600 hover:text-gray-900 transition-colors hidden sm:block">
