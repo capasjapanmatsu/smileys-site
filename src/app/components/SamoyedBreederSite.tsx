@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { Heart, Phone, Mail, ChevronRight, CalendarDays, Eye, FileText, ShoppingBag } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { SeoHead } from './SeoHead';
-import { aeoFaqs, tldrs } from '../content/aeo';
+import { featuredHomeFaqs, tldrs } from '../content/aeo';
 import { createHowToSchema } from '../lib/schema';
 import { featuredTestimonials } from '../content/testimonials';
 
@@ -92,7 +92,7 @@ export function SamoyedBreederSite() {
     },
   ];
 
-  const faqs = aeoFaqs;
+  const faqs = featuredHomeFaqs;
 
   const homeSchemas: Record<string, unknown>[] = [
     {

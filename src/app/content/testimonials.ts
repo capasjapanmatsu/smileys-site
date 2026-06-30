@@ -44,4 +44,4 @@ export const testimonials: Testimonial[] = [
   },
 ];
 
-export const featuredTestimonials = testimonials.slice(0, 3);
+export const featuredTestimonials = testimonials.slice(0, 2);

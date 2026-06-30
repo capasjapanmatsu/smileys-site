@@ -78,6 +78,13 @@ export const aeoFaqs: FaqItem[] = [
   },
 ];
 
+export const featuredHomeFaqs: FaqItem[] = [
+  "現在、子犬の募集はありますか？",
+  "予約はどうすればいい？",
+  "九州でサモエドを迎えたい場合の流れは？",
+  "Smiley's Kennelはどこにありますか？",
+].map((q) => aeoFaqs.find((item) => item.q === q)!);
+
 export const tldrs = {
   home: [
     "熊本で少頭数・予約制のサモエド専門犬舎です。",
