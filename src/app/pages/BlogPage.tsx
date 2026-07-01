@@ -53,16 +53,44 @@ export function BlogPage() {
                     </>
                   )}
                 </div>
-                <h2 className="text-xl md:text-2xl font-medium text-gray-900 mb-2 group-hover:text-amber-800 transition-colors">
-                  {post.title}
-                </h2>
-                <p className="text-gray-600 font-light leading-relaxed line-clamp-2">
-                  {post.excerpt}
-                </p>
-                <span className="inline-flex items-center gap-1 mt-4 text-sm text-gray-500 group-hover:text-gray-900 transition-colors">
-                  続きを読む
-                  <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </span>
+
+                {post.image ? (
+                  <div className="flex gap-4 sm:gap-5">
+                    <img
+                      src={post.image}
+                      alt=""
+                      className="w-24 md:w-32 shrink-0 aspect-[4/3] object-cover border border-gray-200 bg-gray-50"
+                      width={128}
+                      height={96}
+                      loading="lazy"
+                    />
+                    <div className="flex-1 min-w-0">
+                      <h2 className="text-xl md:text-2xl font-medium text-gray-900 mb-2 group-hover:text-amber-800 transition-colors">
+                        {post.title}
+                      </h2>
+                      <p className="text-gray-600 font-light leading-relaxed line-clamp-2">
+                        {post.excerpt}
+                      </p>
+                      <span className="inline-flex items-center gap-1 mt-4 text-sm text-gray-500 group-hover:text-gray-900 transition-colors">
+                        続きを読む
+                        <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                      </span>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <h2 className="text-xl md:text-2xl font-medium text-gray-900 mb-2 group-hover:text-amber-800 transition-colors">
+                      {post.title}
+                    </h2>
+                    <p className="text-gray-600 font-light leading-relaxed line-clamp-2">
+                      {post.excerpt}
+                    </p>
+                    <span className="inline-flex items-center gap-1 mt-4 text-sm text-gray-500 group-hover:text-gray-900 transition-colors">
+                      続きを読む
+                      <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </>
+                )}
               </Link>
             </FadeInSection>
           ))}
