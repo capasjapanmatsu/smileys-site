@@ -7,7 +7,7 @@ export function TestimonialsPage() {
   return (
     <PageLayout
       title="お客様の声 | Smiley's Kennel"
-      description="熊本・九州のサモエド専門犬舎 Smiley's からお迎えいただいたオーナー様の声をご紹介します。"
+      description="Smiley's からお迎えいただいたオーナー様の声。福岡・長崎など各地からご家族が増えています。"
       canonicalPath="/testimonials"
       ogImage="/hero.webp"
       breadcrumbs={[{ label: "お客様の声" }]}

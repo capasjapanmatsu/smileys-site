@@ -15,14 +15,14 @@ export function BreedingPolicyPage() {
       publisher: { "@type": "Organization", name: "Smiley's Kennel" },
       mainEntityOfPage: "https://smileys.one/policy",
       description:
-        "熊本・九州のサモエド ブリーダー犬舎として、少頭数・予約制で行う繁殖理念をまとめたページです。",
+        "少頭数・予約制で行う計画繁殖の理念と、お迎えまでの方針をまとめたページです。",
     },
   ];
 
   return (
     <PageLayout
-      title="繁殖理念 | 熊本・九州のサモエド ブリーダー犬舎"
-      description="熊本・九州のサモエド ブリーダー犬舎として、少頭数・予約制で行う繁殖理念とお迎え方針をまとめています。"
+      title="繁殖理念 | 少頭数・計画繁殖 | Smiley's Kennel"
+      description="常時販売ではなく計画性と福祉を優先する繁殖理念。血統・健康・気質の調和を大切に、条件確認を前提にお迎えまでご案内しています。"
       canonicalPath="/policy"
       ogImage="/hero.webp"
       jsonLd={schemas}
@@ -38,7 +38,7 @@ export function BreedingPolicyPage() {
             </h1>
             <div className="border border-gray-200 bg-gray-50 p-6 md:p-8 mb-12">
               <ul className="space-y-2 text-gray-700 font-light leading-relaxed">
-                <li>・熊本・九州のサモエド専門ブリーダー犬舎です。</li>
+                <li>・サモエド専門の計画繁殖犬舎です（熊本県熊本市）。</li>
                 <li>・少頭数制で、一頭一頭に向き合いながらサモエドの子犬をご紹介しています。</li>
                 <li>・血統・健康・気質の調和を大切にした計画繁殖を行っています。</li>
               </ul>

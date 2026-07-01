@@ -12,8 +12,8 @@ export function FaqPage() {
 
   return (
     <PageLayout
-      title="サモエド ブリーダーFAQ | 熊本・九州の犬舎"
-      description="熊本・九州のサモエド ブリーダー犬舎によくある質問をまとめたFAQです。予約方法、飼育、検査方針を簡潔に確認できます。"
+      title="サモエド ブリーダーFAQ | 飼育・予約・検査 | Smiley's"
+      description="サモエドの飼育、予約方法、遺伝子検査、血統方針などよくある質問をまとめました。熊本・九州からのお迎え相談も受け付けています。"
       canonicalPath="/faq"
       ogImage="/hero.webp"
       jsonLd={faqSchemas}

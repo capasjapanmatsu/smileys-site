@@ -31,8 +31,8 @@ export function BreedingSchedulePage() {
 
   return (
     <PageLayout
-      title="繁殖予定 | 熊本・九州のサモエド ブリーダー犬舎"
-      description="熊本・九州のサモエド ブリーダー犬舎の繁殖予定ページです。事前予約とお問い合わせ方法をご案内しています。"
+      title="繁殖予定・子犬予約 | Smiley's Kennel（熊本・九州）"
+      description="事前予約制の繁殖予定と募集状況をご案内。2026年度以降の予約相談もお問い合わせください。熊本県の犬舎より全国へお迎え相談を承ります。"
       canonicalPath="/breeding-schedule"
       ogImage="/breeding-schedule-main.webp"
       breadcrumbs={[{ label: "繁殖予定" }]}

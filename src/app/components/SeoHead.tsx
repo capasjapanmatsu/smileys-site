@@ -17,7 +17,7 @@ export function SeoHead({
   canonicalPath,
   ogImage = "/hero.webp",
   jsonLd = [],
-  keywords = "サモエド,サモエド ブリーダー,熊本,九州,犬舎",
+  keywords = "サモエド,サモエド ブリーダー,犬舎,血統,計画繁殖,熊本,九州",
 }: SeoHeadProps) {
   const canonicalUrl = `${BASE_URL}${canonicalPath}`;
   const imageUrl = `${BASE_URL}${ogImage}`;

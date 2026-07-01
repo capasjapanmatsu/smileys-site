@@ -16,15 +16,15 @@ export function BloodlinePage() {
       publisher: { "@type": "Organization", name: "Smiley's Kennel" },
       mainEntityOfPage: "https://smileys.one/bloodline",
       description:
-        "熊本・九州のサモエド ブリーダー犬舎として、血統背景を確認できる繁殖計画と検査方針をまとめた解説ページです。",
+        "ロシア・ウクライナ・英国系の血統背景を重視した計画繁殖と、健康・気質のバランスを確認できる方針をまとめたページです。",
     },
     createBreadcrumbList([{ label: "血統" }], "/bloodline"),
   ];
 
   return (
     <PageLayout
-      title="サモエド血統 | 熊本・九州のサモエド ブリーダー犬舎"
-      description="熊本・九州のサモエド ブリーダー犬舎として、血統背景の確認と健康・気質を重視した繁殖方針をご紹介します。"
+      title="サモエド血統へのこだわり | 名門血統・遺伝子検査 | Smiley's"
+      description="ロシア・ウクライナ・英国系の血統背景を重視した計画繁殖。骨格・歩様・気質・健康のバランスを確認できる方針をご紹介します。"
       canonicalPath="/bloodline"
       ogImage="/bloodline-main.webp"
       jsonLd={schemas}

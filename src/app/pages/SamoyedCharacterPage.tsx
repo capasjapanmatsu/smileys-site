@@ -15,14 +15,14 @@ export function SamoyedCharacterPage() {
       publisher: { "@type": "Organization", name: "Smiley's Kennel" },
       mainEntityOfPage: "https://smileys.one/samoyed",
       description:
-        "熊本・九州のサモエド ブリーダー犬舎が、サモエドの起源、性格、運動量、被毛ケアをまとめた解説ページです。",
+        "サモエドの起源、性格、運動量、被毛ケア、暑さ対策をまとめた犬種解説ページです。",
     },
   ];
 
   return (
     <PageLayout
-      title="サモエドとは | 熊本・九州のサモエド ブリーダー犬舎"
-      description="熊本・九州のサモエド ブリーダー犬舎が、サモエドの特徴・性格・健康管理・お手入れをわかりやすく解説します。"
+      title="サモエドとは | 特徴・性格・飼育の要点 | Smiley's"
+      description="サモエドの特徴、性格、運動量、被毛ケア、暑さ対策をわかりやすく解説。計画繁殖犬舎 Smiley's が犬種の基本をまとめています。"
       canonicalPath="/samoyed"
       ogImage="/samoyed-character-main.webp"
       jsonLd={schemas}

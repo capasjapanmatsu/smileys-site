@@ -66,7 +66,7 @@ export function SamoyedLifePage() {
 
   return (
     <PageLayout
-      title="サモエドがいる暮らし | 熊本・九州のサモエド ブリーダー犬舎"
+      title="サモエドがいる暮らし | 家族としての暮らし方 | Smiley's"
       description="サモエドと暮らす魅力をご紹介。和み、お子さんの相棒、毎日の散歩で人も健康に。絆を深め、家族としての暮らしをSmiley'sがお伝えします。"
       canonicalPath="/samoyed-life"
       ogImage="/samoyed-life-main.webp"

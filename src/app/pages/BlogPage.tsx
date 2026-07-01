@@ -18,7 +18,7 @@ export function BlogPage() {
   return (
     <PageLayout
       title="ブログ | Smiley's Kennel"
-      description="熊本・九州のサモエド専門犬舎 Smiley'sのブログ。子犬のご案内、飼育のヒント、犬舎のお知らせなどをお届けします。"
+      description="サモエド専門犬舎 Smiley's のブログ。子犬のご案内、飼育のヒント、犬舎のお知らせなどをお届けします。"
       canonicalPath="/blog"
       ogImage="/hero.webp"
     >

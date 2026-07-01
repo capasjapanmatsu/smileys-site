@@ -124,7 +124,7 @@ export function SamoyedBreederSite() {
       "@type": "LocalBusiness",
       "@id": "https://smileys.one/#localbusiness",
       name: "Smiley's Kennel",
-      description: "熊本・九州でサモエドの計画繁殖を行うブリーダー犬舎。少頭数・予約制で見学をご案内しています。",
+      description: "サモエド専門の計画繁殖犬舎。血統・健康・気質を重視し、熊本県熊本市から全国へお迎え相談をご案内しています。",
       image: "https://smileys.one/hero.webp",
       url: "https://smileys.one/",
       logo: "https://smileys.one/logo.webp",
@@ -229,8 +229,8 @@ export function SamoyedBreederSite() {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden" style={{ fontFamily: "'Montserrat', 'Noto Sans JP', sans-serif" }}>
       <SeoHead
-        title="サモエド ブリーダー | 熊本・九州の犬舎 Smiley's"
-        description="熊本・九州でサモエドの計画繁殖を行うブリーダー犬舎です。少頭数・予約制で、見学予約や繁殖予定をご案内しています。"
+        title="サモエド ブリーダー | 計画繁殖・血統重視 | Smiley's（熊本・九州）"
+        description="サモエド専門の計画繁殖犬舎。血統・健康・気質を重視し、遺伝子検査済みの親犬から少頭数で繁殖しています。熊本県熊本市に所在。見学・お迎え相談は事前予約制で全国からご案内しています。"
         canonicalPath="/"
         ogImage="/hero.webp"
         jsonLd={homeSchemas}
