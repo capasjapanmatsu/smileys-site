@@ -498,6 +498,18 @@ export function SamoyedBreederSite() {
               >
                 <h3 className="text-lg font-medium text-gray-900">血統</h3>
               </Link>
+              <Link
+                to="/faq"
+                className="border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors block"
+              >
+                <h3 className="text-lg font-medium text-gray-900">よくある質問</h3>
+              </Link>
+              <Link
+                to="/blog"
+                className="border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors block"
+              >
+                <h3 className="text-lg font-medium text-gray-900">ブログ</h3>
+              </Link>
               <button
                 onClick={() => scrollToSection('welcome-flow', 1800)}
                 className="text-left border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors"
