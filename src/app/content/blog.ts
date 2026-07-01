@@ -93,6 +93,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "暑さに弱いサモエドの夏のケアと熱中症対策について。",
     date: "2025-06-20",
     category: "飼育のヒント",
+    image: "/blog/samoyed-summer-care.png",
     content: `
       <p>サモエドは寒冷地原産の犬種のため、暑さにはあまり強くありません。夏場は特に注意が必要です。</p>
       <h3>室内環境</h3>

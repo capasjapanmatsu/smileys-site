@@ -81,6 +81,19 @@ export function BlogPostPage() {
                 </h1>
               </header>
 
+              {post.image && (
+                <div className="mb-10 overflow-hidden border border-gray-200 bg-gray-50">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-auto max-h-[420px] object-cover"
+                    width={1200}
+                    height={675}
+                    loading="eager"
+                  />
+                </div>
+              )}
+
               <div
                 className="prose-blog text-gray-700 font-light leading-relaxed space-y-4 [&_h3]:text-lg [&_h3]:font-medium [&_h3]:text-gray-900 [&_h3]:mt-8 [&_h3]:mb-2 [&_p]:leading-relaxed"
                 dangerouslySetInnerHTML={{ __html: post.content.trim() }}
