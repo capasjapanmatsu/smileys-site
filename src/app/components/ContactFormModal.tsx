@@ -352,15 +352,17 @@ export function ContactFormModal({ isOpen, onClose }: ContactFormModalProps) {
                       </div>
 
                       <div>
-                        <label htmlFor="phone" className="block text-base md:text-sm tracking-widest text-gray-500 mb-2">
-                          電話番号
+                        <label htmlFor="address" className="block text-base md:text-sm tracking-widest text-gray-500 mb-2">
+                          住所 <span className="text-red-500">*</span>
                         </label>
                         <input
-                          id="phone"
-                          name="phone"
-                          type="tel"
+                          id="address"
+                          name="address"
+                          type="text"
+                          required
+                          autoComplete="street-address"
                           className="w-full px-0 py-4 bg-transparent border-b border-gray-300 focus:border-gray-900 outline-none transition-colors font-light text-lg"
-                          placeholder="090-1234-5678"
+                          placeholder="例：熊本県熊本市北区〇〇1-2-3"
                         />
                       </div>
 

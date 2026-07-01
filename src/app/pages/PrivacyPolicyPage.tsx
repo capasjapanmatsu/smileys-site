@@ -39,7 +39,7 @@ export function PrivacyPolicyPage() {
                 <ul className="list-disc pl-6 mt-2 space-y-2">
                   <li>氏名</li>
                   <li>メールアドレス</li>
-                  <li>電話番号</li>
+                  <li>住所</li>
                   <li>お問い合わせ内容</li>
                   <li>その他、お問い合わせやご予約の際にお客様がご提供いただく情報</li>
                 </ul>
