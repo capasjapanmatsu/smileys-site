@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { Heart, Phone, Mail, ChevronRight, CalendarDays, Eye, FileText, ShoppingBag } from 'lucide-react';
+import { Heart, Mail, ChevronRight, CalendarDays, Eye, FileText, ShoppingBag, MapPin, Clock } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { SeoHead } from './SeoHead';
 import { featuredHomeFaqs, tldrs } from '../content/aeo';
@@ -901,7 +901,7 @@ export function SamoyedBreederSite() {
 
                 <div className="space-y-6 pt-8">
                   <div className="flex items-start gap-4">
-                    <Mail className="w-5 h-5 text-gray-900 mt-1 shrink-0" />
+                    <MapPin className="w-5 h-5 text-gray-900 mt-1 shrink-0" />
                     <div>
                       <div className="text-base md:text-sm tracking-widest text-gray-500 mb-1">住所</div>
                       <div className="text-lg font-light text-gray-900">
@@ -910,7 +910,7 @@ export function SamoyedBreederSite() {
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <Phone className="w-5 h-5 text-gray-900 mt-1 shrink-0" />
+                    <Clock className="w-5 h-5 text-gray-900 mt-1 shrink-0" />
                     <div>
                       <div className="text-base md:text-sm tracking-widest text-gray-500 mb-1">営業時間</div>
                       <div className="text-xl font-light">土日祝 13:00～17:00</div>
@@ -918,7 +918,7 @@ export function SamoyedBreederSite() {
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-5 h-5 mt-1 shrink-0 text-gray-900 font-semibold">L</div>
+                    <LineMonoIcon className="w-5 h-5 shrink-0 text-gray-900 mt-1" />
                     <div>
                       <div className="text-base md:text-sm tracking-widest text-gray-500 mb-1">公式LINE</div>
                       <a
@@ -1240,9 +1240,9 @@ export function SamoyedBreederSite() {
   );
 }
 
-function LineMonoIcon() {
+function LineMonoIcon({ className = "w-4 h-4 shrink-0" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="w-4 h-4 shrink-0">
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
       <rect x="2.5" y="3.5" width="19" height="15" rx="5" ry="5" fill="none" stroke="currentColor" strokeWidth="1.8" />
       <path d="M9 18.5 8 21l4-2.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
       <text x="12" y="13.3" textAnchor="middle" fontSize="6.2" fontWeight="700" fill="currentColor">
