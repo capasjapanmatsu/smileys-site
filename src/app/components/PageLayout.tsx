@@ -116,6 +116,9 @@ export function PageLayout({ children, title, description, canonicalPath, ogImag
                   Smiley's
                 </span>
               </div>
+              <p className="text-base md:text-sm text-gray-400 font-light">
+                サミースマイル犬舎（SAMMY.SMILE JP'S）
+              </p>
               <div className="text-base md:text-sm text-gray-500 font-light space-y-2 leading-relaxed">
                 <p>熊本県熊本市北区龍田2丁目14-16</p>
                 <p>第一種動物取扱業熊市販第R7-12号</p>

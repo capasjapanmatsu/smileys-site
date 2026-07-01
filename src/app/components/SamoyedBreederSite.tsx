@@ -100,6 +100,7 @@ export function SamoyedBreederSite() {
       "@type": "WebSite",
       "@id": "https://smileys.one/#website",
       name: "Smiley's Kennel",
+      alternateName: ["Smiley's", "サミースマイル犬舎", "SammySmile", "Sammy Smile Kennel"],
       url: "https://smileys.one/",
       inLanguage: "ja-JP",
     },
@@ -108,7 +109,7 @@ export function SamoyedBreederSite() {
       "@type": "Organization",
       "@id": "https://smileys.one/#organization",
       name: "Smiley's Kennel",
-      alternateName: ["Smiley's", "SAMMY.SMILE JP'S"],
+      alternateName: ["Smiley's", "SAMMY.SMILE JP'S", "サミースマイル犬舎", "SammySmile", "Sammy Smile Kennel"],
       url: "https://smileys.one/",
       logo: "https://smileys.one/logo.webp",
       contactPoint: {
@@ -124,7 +125,8 @@ export function SamoyedBreederSite() {
       "@type": "LocalBusiness",
       "@id": "https://smileys.one/#localbusiness",
       name: "Smiley's Kennel",
-      description: "サモエド専門の計画繁殖犬舎。血統・健康・気質を重視し、熊本県熊本市から全国へお迎え相談をご案内しています。",
+      alternateName: ["Smiley's", "SAMMY.SMILE JP'S", "サミースマイル犬舎", "SammySmile", "Sammy Smile Kennel"],
+      description: "サミースマイル犬舎（Smiley's）。サモエド専門の計画繁殖犬舎。血統・健康・気質を重視し、熊本県熊本市から全国へお迎え相談をご案内しています。",
       image: "https://smileys.one/hero.webp",
       url: "https://smileys.one/",
       logo: "https://smileys.one/logo.webp",
@@ -375,7 +377,7 @@ export function SamoyedBreederSite() {
               Smiley's
             </h1>
             <p className="text-base sm:text-lg md:text-2xl font-light tracking-widest text-gray-700 mb-12">
-              サモエド専門犬舎 | 熊本・九州
+              サミースマイル犬舎（Smiley's）| 熊本・九州
             </p>
           </motion.div>
 
@@ -530,7 +532,8 @@ export function SamoyedBreederSite() {
                 
                 <div className="space-y-6 text-lg leading-relaxed text-gray-700 font-light">
                   <p>
-                    熊本にて、少頭数・小規模でサモエドのブリーディングを行っております。
+                    サミースマイル犬舎（Smiley's）は、サモエド専門の計画繁殖犬舎です。
+                    少頭数・小規模でサモエドのブリーディングを行っております。
                   </p>
                   <p>
                     私たちにとって繁殖は仕事ではなく、情熱です。
@@ -895,6 +898,7 @@ export function SamoyedBreederSite() {
                   </h2>
                   <p className="text-lg text-gray-600 font-light leading-relaxed">
                     子犬の見学やお問い合わせは、土日祝13:00～17:00に承っております。
+                    公式サイト（https://smileys.one）からお問い合わせ・事前予約を承ります。
                     当店はペットショップではありませんので見学は事前のご予約が必要です。土日祝のみ見学可能となります。
                   </p>
                 </div>
@@ -939,7 +943,7 @@ export function SamoyedBreederSite() {
             <AnimatedSection delay={0.2}>
               <div className="space-y-8 p-8 md:p-12 bg-gray-50 border border-gray-100">
                 <p className="text-gray-600 font-light text-lg leading-relaxed">
-                  見学・お問い合わせは本サイトよりお願いいたします。
+                  見学・お問い合わせは公式サイト（https://smileys.one）よりお願いいたします。
                   土日祝13:00～17:00、事前予約制となります。
                 </p>
                 <motion.button
@@ -1095,7 +1099,7 @@ export function SamoyedBreederSite() {
             <div className="flex flex-col lg:flex-row justify-between gap-8">
               <div className="space-y-3 text-base md:text-sm text-gray-300 font-light leading-relaxed">
                 <p><strong className="text-white">事業所名</strong> Smiley's</p>
-                <p><strong className="text-white">犬舎名</strong> SAMMY.SMILE JP'S</p>
+                <p><strong className="text-white">犬舎名</strong> サミースマイル犬舎（SAMMY.SMILE JP'S）</p>
                 <p><strong className="text-white">住所</strong> 熊本県熊本市北区龍田2丁目14-16</p>
                 <p><strong className="text-white">動物取扱業登録番号</strong> 第一種動物取扱業熊市販第R7-12号</p>
                 <p><strong className="text-white">動物取扱責任者</strong> 松本 亜理沙</p>
