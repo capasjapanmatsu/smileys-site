@@ -15,7 +15,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "お問い合わせからお引き渡しまで、5つのステップでご案内します。",
     date: "2026-06-20",
     category: "お迎え案内",
-    image: "/blog/welcome-flow-guide.png",
+    image: "/blog/welcome-flow-guide.webp",
     content: `
       <p>当犬舎でサモエドをお迎えいただくまでの流れを、5つのステップでご説明します。</p>
       <h3>01 お問い合わせ</h3>
@@ -37,7 +37,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "当犬舎が出産前の事前予約制を採用している理由をご説明します。",
     date: "2026-04-01",
     category: "お迎え案内",
-    image: "/blog/why-pre-reservation.png",
+    image: "/blog/why-pre-reservation.webp",
     content: `
       <p>当犬舎では、子犬の出産後に募集するのではなく、出産前の段階から事前予約でお迎えのご相談を承っております。</p>
       <h3>少頭数・計画繁殖のため</h3>
@@ -95,7 +95,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "暑さに弱いサモエドの夏のケアと熱中症対策について。",
     date: "2025-06-20",
     category: "飼育のヒント",
-    image: "/blog/samoyed-summer-care.png",
+    image: "/blog/samoyed-summer-care.webp",
     content: `
       <p>サモエドは寒冷地原産の犬種のため、暑さにはあまり強くありません。夏場は特に注意が必要です。</p>
       <h3>室内環境</h3>
@@ -113,7 +113,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "生後3〜12週齢の社会化期に大切にしたいこと。",
     date: "2025-05-10",
     category: "繁殖・子犬",
-    image: "/blog/puppy-socialization.png",
+    image: "/blog/puppy-socialization.webp",
     content: `
       <p>子犬の社会化期は、性格形成に大きく関わる重要な時期です。</p>
       <p>生後3〜12週齢頃、さまざまな音・匂い・人・環境に触れさせることで、穏やかで適応力の高い成犬へと成長します。</p>
