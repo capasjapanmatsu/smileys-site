@@ -85,7 +85,7 @@ export function BloodlinePage() {
                 スタンダードに忠実に
               </h2>
               <p className="text-gray-700 font-light leading-relaxed">
-                日本犬畜犬団体（JKC）のスタンダードに基づき、
+                FCI（Fédération Cynologique Internationale／国際畜犬連盟）のスタンダードに基づき、
                 体型・被毛・歩様・気質のすべてにおいて
                 優れた個体を選んで繁殖を行っています。
                 見た目の美しさだけでなく、健全な遺伝と健康を最優先に考えています。
