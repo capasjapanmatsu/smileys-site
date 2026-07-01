@@ -111,6 +111,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "生後3〜12週齢の社会化期に大切にしたいこと。",
     date: "2025-05-10",
     category: "繁殖・子犬",
+    image: "/blog/puppy-socialization.png",
     content: `
       <p>子犬の社会化期は、性格形成に大きく関わる重要な時期です。</p>
       <p>生後3〜12週齢頃、さまざまな音・匂い・人・環境に触れさせることで、穏やかで適応力の高い成犬へと成長します。</p>
