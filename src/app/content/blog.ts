@@ -15,6 +15,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "お問い合わせからお引き渡しまで、5つのステップでご案内します。",
     date: "2026-06-20",
     category: "お迎え案内",
+    image: "/blog/welcome-flow-guide.png",
     content: `
       <p>当犬舎でサモエドをお迎えいただくまでの流れを、5つのステップでご説明します。</p>
       <h3>01 お問い合わせ</h3>
@@ -36,6 +37,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "当犬舎が出産前の事前予約制を採用している理由をご説明します。",
     date: "2026-04-01",
     category: "お迎え案内",
+    image: "/blog/why-pre-reservation.png",
     content: `
       <p>当犬舎では、子犬の出産後に募集するのではなく、出産前の段階から事前予約でお迎えのご相談を承っております。</p>
       <h3>少頭数・計画繁殖のため</h3>
