@@ -49,14 +49,14 @@ export function PageLayout({ children, title, description, canonicalPath, ogImag
             <img
               src="/samoyed-icon.webp"
               alt="サモエドシルエット"
-              className="h-11 sm:h-12 md:h-14 w-auto object-contain shrink-0"
+              className="h-14 sm:h-16 md:h-[4.5rem] w-auto object-contain shrink-0"
               width={40}
               height={40}
             />
             <img
               src="/logo.webp"
               alt="Smiley's - サミースマイル犬舎"
-              className="w-32 sm:w-[8.5rem] md:w-36 h-auto object-contain shrink-0"
+              className="h-16 sm:h-[4.75rem] md:h-[5.25rem] w-auto object-contain shrink-0"
               width={876}
               height={460}
             />
@@ -102,10 +102,10 @@ export function PageLayout({ children, title, description, canonicalPath, ogImag
             <div className="space-y-4">
               <div className="flex items-center">
                 <img
-                  src="/logo-emblem.webp"
+                  src="/logo.webp"
                   alt="Smiley's - サミースマイル犬舎"
-                  className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover shrink-0"
-                  width={464}
+                  className="h-12 sm:h-14 md:h-16 w-auto object-contain shrink-0 brightness-0 invert"
+                  width={876}
                   height={460}
                   loading="lazy"
                 />

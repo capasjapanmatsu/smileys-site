@@ -111,7 +111,7 @@ export function SamoyedBreederSite() {
       name: "Smiley's Kennel",
       alternateName: ["Smiley's", "SAMMY.SMILE JP'S", "サミースマイル犬舎", "SammySmile", "Sammy Smile Kennel"],
       url: "https://smileys.one/",
-      logo: "https://smileys.one/logo-emblem.webp",
+      logo: "https://smileys.one/logo.webp",
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "customer support",
@@ -129,7 +129,7 @@ export function SamoyedBreederSite() {
       description: "サミースマイル犬舎（Smiley's）。サモエド専門の計画繁殖犬舎。血統・健康・気質を重視し、熊本県熊本市から全国へお迎え相談をご案内しています。",
       image: "https://smileys.one/hero.webp",
       url: "https://smileys.one/",
-      logo: "https://smileys.one/logo-emblem.webp",
+      logo: "https://smileys.one/logo.webp",
       sameAs: ["https://lin.ee/Ngs8RXx"],
       address: {
         "@type": "PostalAddress",
@@ -275,14 +275,14 @@ export function SamoyedBreederSite() {
             <img
               src="/samoyed-icon.webp"
               alt="サモエドシルエット"
-              className="h-11 sm:h-12 md:h-14 w-auto object-contain shrink-0"
+              className="h-14 sm:h-16 md:h-[4.5rem] w-auto object-contain shrink-0"
               width={40}
               height={40}
             />
             <motion.img 
               src="/logo.webp" 
               alt="Smiley's - サミースマイル犬舎" 
-              className="w-32 sm:w-[8.5rem] md:w-36 h-auto object-contain shrink-0"
+              className="h-16 sm:h-[4.75rem] md:h-[5.25rem] w-auto object-contain shrink-0"
               width={876}
               height={460}
               whileHover={{ scale: 1.02 }}
@@ -1206,10 +1206,10 @@ export function SamoyedBreederSite() {
             <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-4 border-t border-gray-700">
               <div className="flex items-center">
                 <img
-                  src="/logo-emblem.webp"
+                  src="/logo.webp"
                   alt="Smiley's - サミースマイル犬舎"
-                  className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover shrink-0"
-                  width={464}
+                  className="h-12 sm:h-14 md:h-16 w-auto object-contain shrink-0 brightness-0 invert"
+                  width={876}
                   height={460}
                   loading="lazy"
                 />
