@@ -111,7 +111,7 @@ export function SamoyedBreederSite() {
       name: "Smiley's Kennel",
       alternateName: ["Smiley's", "SAMMY.SMILE JP'S", "サミースマイル犬舎", "SammySmile", "Sammy Smile Kennel"],
       url: "https://smileys.one/",
-      logo: "https://smileys.one/logo.webp",
+      logo: "https://smileys.one/logo-emblem.webp",
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "customer support",
@@ -129,7 +129,7 @@ export function SamoyedBreederSite() {
       description: "サミースマイル犬舎（Smiley's）。サモエド専門の計画繁殖犬舎。血統・健康・気質を重視し、熊本県熊本市から全国へお迎え相談をご案内しています。",
       image: "https://smileys.one/hero.webp",
       url: "https://smileys.one/",
-      logo: "https://smileys.one/logo.webp",
+      logo: "https://smileys.one/logo-emblem.webp",
       sameAs: ["https://lin.ee/Ngs8RXx"],
       address: {
         "@type": "PostalAddress",
@@ -271,21 +271,21 @@ export function SamoyedBreederSite() {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="container mx-auto px-4 sm:px-6 md:px-12 py-4 flex justify-between items-center gap-3">
-          <Link to="/" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-2 sm:gap-3">
             <img
               src="/samoyed-icon.webp"
-              alt="サモエドアイコン"
-              className="h-10 md:h-12 w-auto object-contain"
+              alt="サモエドシルエット"
+              className="h-11 sm:h-12 md:h-14 w-auto object-contain shrink-0"
               width={40}
               height={40}
             />
             <motion.img 
               src="/logo.webp" 
-              alt="Smiley's Kennel - サモエド専門犬舎" 
-              className="h-10 md:h-12 w-auto object-contain ml-2"
-              width={264}
-              height={80}
-              whileHover={{ scale: 1.05 }}
+              alt="Smiley's - サミースマイル犬舎" 
+              className="w-32 sm:w-[8.5rem] md:w-36 h-auto object-contain shrink-0"
+              width={876}
+              height={460}
+              whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2 }}
             />
           </Link>
@@ -1204,18 +1204,15 @@ export function SamoyedBreederSite() {
               </div>
             </div>
             <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-4 border-t border-gray-700">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center">
                 <img
-                  src="/samoyed-icon.webp"
-                  alt="サモエドシルエット"
-                  className="w-8 h-8 object-contain"
-                  width={32}
-                  height={32}
+                  src="/logo-emblem.webp"
+                  alt="Smiley's - サミースマイル犬舎"
+                  className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover shrink-0"
+                  width={464}
+                  height={460}
                   loading="lazy"
                 />
-                <span className="text-lg font-light tracking-widest" style={{ fontFamily: "'Playfair Display', serif" }}>
-                  Smiley's
-                </span>
               </div>
               <div className="text-base md:text-sm text-gray-400 font-light">
                 <p>copyright © Smiley's All Rights Reserved.</p>
