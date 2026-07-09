@@ -68,6 +68,7 @@
   "devDependencies": {
     "@tailwindcss/vite": "4.1.12",
     "@vitejs/plugin-react": "4.7.0",
+    "potrace": "^2.1.8",
     "react-snap": "^1.23.0",
     "tailwindcss": "4.1.12",
     "vite": "6.3.5",
