@@ -271,18 +271,11 @@ export function SamoyedBreederSite() {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="container mx-auto px-4 sm:px-6 md:px-12 py-4 flex justify-between items-center gap-3">
-          <Link to="/" className="flex items-center gap-2 sm:gap-3">
-            <img
-              src="/samoyed-icon.webp"
-              alt="サモエドシルエット"
-              className="h-14 sm:h-16 md:h-[4.5rem] w-auto object-contain shrink-0"
-              width={40}
-              height={40}
-            />
+          <Link to="/" className="flex items-center">
             <motion.img 
               src="/logo.webp" 
               alt="Smiley's - サミースマイル犬舎" 
-              className="h-16 sm:h-[4.75rem] md:h-[5.25rem] w-auto object-contain shrink-0"
+              className="h-[4.75rem] sm:h-20 md:h-24 w-auto object-contain shrink-0"
               width={876}
               height={460}
               whileHover={{ scale: 1.02 }}
@@ -1206,7 +1199,7 @@ export function SamoyedBreederSite() {
             <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-4 border-t border-gray-700">
               <div className="flex items-center">
                 <img
-                  src="/logo.webp"
+                  src="/logo-footer.webp"
                   alt="Smiley's - サミースマイル犬舎"
                   className="h-12 sm:h-14 md:h-16 w-auto object-contain shrink-0 brightness-0 invert"
                   width={876}

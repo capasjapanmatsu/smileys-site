@@ -45,18 +45,11 @@ export function PageLayout({ children, title, description, canonicalPath, ogImag
 
       <header className="fixed top-0 w-full bg-white/90 backdrop-blur-xl z-40 border-b border-gray-100">
         <div className="container mx-auto px-4 sm:px-6 md:px-12 py-4 flex justify-between items-center gap-3">
-          <Link to="/" className="flex items-center gap-2 sm:gap-3">
-            <img
-              src="/samoyed-icon.webp"
-              alt="サモエドシルエット"
-              className="h-14 sm:h-16 md:h-[4.5rem] w-auto object-contain shrink-0"
-              width={40}
-              height={40}
-            />
+          <Link to="/" className="flex items-center">
             <img
               src="/logo.webp"
               alt="Smiley's - サミースマイル犬舎"
-              className="h-16 sm:h-[4.75rem] md:h-[5.25rem] w-auto object-contain shrink-0"
+              className="h-[4.75rem] sm:h-20 md:h-24 w-auto object-contain shrink-0"
               width={876}
               height={460}
             />
@@ -71,7 +64,7 @@ export function PageLayout({ children, title, description, canonicalPath, ogImag
       </header>
 
       <motion.main
-        className="pt-28 pb-32"
+        className="pt-32 pb-32"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease: "easeOut" }}
@@ -102,7 +95,7 @@ export function PageLayout({ children, title, description, canonicalPath, ogImag
             <div className="space-y-4">
               <div className="flex items-center">
                 <img
-                  src="/logo.webp"
+                  src="/logo-footer.webp"
                   alt="Smiley's - サミースマイル犬舎"
                   className="h-12 sm:h-14 md:h-16 w-auto object-contain shrink-0 brightness-0 invert"
                   width={876}
