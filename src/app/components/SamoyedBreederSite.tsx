@@ -389,7 +389,7 @@ export function SamoyedBreederSite() {
               お問い合わせ・事前予約
               <ChevronRight className="w-4 h-4" />
             </motion.button>
-            <motion.div whileHover={{ scale: 1.05 }}>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
               <Link
                 to="/breeding-schedule"
                 className="group inline-flex items-center gap-3 text-base tracking-widest border-b-2 border-gray-900 py-2 hover:gap-5 transition-all duration-300 min-h-[44px]"
@@ -441,6 +441,7 @@ export function SamoyedBreederSite() {
               <div className="mt-8 flex flex-wrap items-start gap-x-8 gap-y-4">
                 <motion.div
                   whileHover={{ x: 4, scale: 1.05 }}
+                  whileTap={{ scale: 0.97 }}
                   transition={{ duration: 0.25 }}
                 >
                   <Link
@@ -453,6 +454,7 @@ export function SamoyedBreederSite() {
                 </motion.div>
                 <motion.div
                   whileHover={{ x: 4, scale: 1.05 }}
+                  whileTap={{ scale: 0.97 }}
                   transition={{ duration: 0.25 }}
                 >
                   <Link
@@ -642,6 +644,7 @@ export function SamoyedBreederSite() {
             <motion.div
               className="inline-block"
               whileHover={{ x: 4, scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.25 }}
             >
               <Link
@@ -679,6 +682,7 @@ export function SamoyedBreederSite() {
               <motion.div
                 className="inline-block mt-4"
                 whileHover={{ x: 4, scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
                 transition={{ duration: 0.25 }}
               >
                 <Link
@@ -801,17 +805,17 @@ export function SamoyedBreederSite() {
             </div>
           </div>
           <div className="mt-10 flex flex-wrap justify-center gap-6 text-sm md:text-base">
-            <motion.div whileHover={{ x: 4, scale: 1.05 }} transition={{ duration: 0.25 }}>
+            <motion.div whileHover={{ x: 4, scale: 1.05 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.25 }}>
               <Link to="/kubitka#sam" className="underline underline-offset-4 hover:text-gray-900 transition-colors">
                 サムの詳細を見る
               </Link>
             </motion.div>
-            <motion.div whileHover={{ x: 4, scale: 1.05 }} transition={{ duration: 0.25 }}>
+            <motion.div whileHover={{ x: 4, scale: 1.05 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.25 }}>
               <Link to="/kubitka#kubitka" className="underline underline-offset-4 hover:text-gray-900 transition-colors">
                 クビトカの詳細を見る
               </Link>
             </motion.div>
-            <motion.div whileHover={{ x: 4, scale: 1.05 }} transition={{ duration: 0.25 }}>
+            <motion.div whileHover={{ x: 4, scale: 1.05 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.25 }}>
               <Link to="/kubitka#kai" className="underline underline-offset-4 hover:text-gray-900 transition-colors">
                 カイの詳細を見る
               </Link>
@@ -887,6 +891,7 @@ export function SamoyedBreederSite() {
                 onClick={() => setChecklistModalOpen(true)}
                 className="inline-flex items-center gap-2 mt-8 text-base tracking-widest border-b border-white py-2 hover:border-gray-400 transition-colors text-white cursor-pointer bg-transparent min-h-[44px]"
                 whileHover={{ x: 4, scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
                 transition={{ duration: 0.25 }}
               >
                 詳細をご確認ください
@@ -1059,6 +1064,7 @@ export function SamoyedBreederSite() {
                 <motion.div
                   className="inline-block"
                   whileHover={{ x: 4, scale: 1.05 }}
+                  whileTap={{ scale: 0.97 }}
                   transition={{ duration: 0.25 }}
                 >
                   <Link
@@ -1342,6 +1348,7 @@ function ParentDogCard({
           <motion.div
             className="inline-block pt-2"
             whileHover={{ x: 4, scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
             transition={{ duration: 0.25 }}
           >
             <Link
