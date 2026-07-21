@@ -438,20 +438,32 @@ export function SamoyedBreederSite() {
                   <span>今年度の予約はキャンセル待ちとなります。</span>
                 </li>
               </ul>
-              <Link
-                to="/blog"
-                className="inline-flex items-center gap-2 mt-8 text-base tracking-widest border-b border-gray-900 py-2 hover:border-gray-500 transition-colors min-h-[44px]"
-              >
-                ブログをもっと読む
-                <ChevronRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/breeding-schedule"
-                className="inline-flex items-center gap-2 mt-8 text-base tracking-widest border-b border-gray-900 py-2 hover:border-gray-500 transition-colors min-h-[44px]"
-              >
-                オーナー様募集案内
-                <ChevronRight className="w-4 h-4" />
-              </Link>
+              <div className="mt-8 flex flex-wrap items-start gap-x-8 gap-y-4">
+                <motion.div
+                  whileHover={{ x: 4, scale: 1.05 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  <Link
+                    to="/blog"
+                    className="inline-flex items-center gap-2 text-base tracking-widest border-b border-gray-900 py-2 hover:border-gray-500 transition-colors min-h-[44px]"
+                  >
+                    ブログをもっと読む
+                    <ChevronRight className="w-4 h-4" />
+                  </Link>
+                </motion.div>
+                <motion.div
+                  whileHover={{ x: 4, scale: 1.05 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  <Link
+                    to="/breeding-schedule"
+                    className="inline-flex items-center gap-2 text-base tracking-widest border-b border-gray-900 py-2 hover:border-gray-500 transition-colors min-h-[44px]"
+                  >
+                    オーナー様募集案内
+                    <ChevronRight className="w-4 h-4" />
+                  </Link>
+                </motion.div>
+              </div>
             </div>
           </AnimatedSection>
         </div>
@@ -627,13 +639,19 @@ export function SamoyedBreederSite() {
           </div>
 
           <div className="text-center mt-12">
-            <Link
-              to="/testimonials"
-              className="inline-flex items-center gap-2 text-base tracking-widest border-b border-gray-900 py-2 hover:border-gray-500 transition-colors min-h-[44px]"
+            <motion.div
+              className="inline-block"
+              whileHover={{ x: 4, scale: 1.05 }}
+              transition={{ duration: 0.25 }}
             >
-              お客様の声をもっと見る
-              <ChevronRight className="w-4 h-4" />
-            </Link>
+              <Link
+                to="/testimonials"
+                className="inline-flex items-center gap-2 text-base tracking-widest border-b border-gray-900 py-2 hover:border-gray-500 transition-colors min-h-[44px]"
+              >
+                お客様の声をもっと見る
+                <ChevronRight className="w-4 h-4" />
+              </Link>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -658,13 +676,19 @@ export function SamoyedBreederSite() {
               <p className="text-lg text-gray-600 font-light tracking-wide">
                 現在は２０２８年度出産予定のご予約を受け付けております。
               </p>
-              <Link
-                to="/breeding-schedule"
-                className="inline-flex items-center gap-2 mt-4 text-base tracking-widest border-b border-gray-900 py-2 hover:border-gray-500 transition-colors min-h-[44px]"
+              <motion.div
+                className="inline-block mt-4"
+                whileHover={{ x: 4, scale: 1.05 }}
+                transition={{ duration: 0.25 }}
               >
-                繁殖予定
-                <ChevronRight className="w-4 h-4" />
-              </Link>
+                <Link
+                  to="/breeding-schedule"
+                  className="inline-flex items-center gap-2 text-base tracking-widest border-b border-gray-900 py-2 hover:border-gray-500 transition-colors min-h-[44px]"
+                >
+                  繁殖予定
+                  <ChevronRight className="w-4 h-4" />
+                </Link>
+              </motion.div>
             </div>
           </AnimatedSection>
 
@@ -777,15 +801,21 @@ export function SamoyedBreederSite() {
             </div>
           </div>
           <div className="mt-10 flex flex-wrap justify-center gap-6 text-sm md:text-base">
-            <Link to="/kubitka#sam" className="underline underline-offset-4 hover:text-gray-900 transition-colors">
-              サムの詳細を見る
-            </Link>
-            <Link to="/kubitka#kubitka" className="underline underline-offset-4 hover:text-gray-900 transition-colors">
-              クビトカの詳細を見る
-            </Link>
-            <Link to="/kubitka#kai" className="underline underline-offset-4 hover:text-gray-900 transition-colors">
-              カイの詳細を見る
-            </Link>
+            <motion.div whileHover={{ x: 4, scale: 1.05 }} transition={{ duration: 0.25 }}>
+              <Link to="/kubitka#sam" className="underline underline-offset-4 hover:text-gray-900 transition-colors">
+                サムの詳細を見る
+              </Link>
+            </motion.div>
+            <motion.div whileHover={{ x: 4, scale: 1.05 }} transition={{ duration: 0.25 }}>
+              <Link to="/kubitka#kubitka" className="underline underline-offset-4 hover:text-gray-900 transition-colors">
+                クビトカの詳細を見る
+              </Link>
+            </motion.div>
+            <motion.div whileHover={{ x: 4, scale: 1.05 }} transition={{ duration: 0.25 }}>
+              <Link to="/kubitka#kai" className="underline underline-offset-4 hover:text-gray-900 transition-colors">
+                カイの詳細を見る
+              </Link>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -856,7 +886,8 @@ export function SamoyedBreederSite() {
               <motion.button
                 onClick={() => setChecklistModalOpen(true)}
                 className="inline-flex items-center gap-2 mt-8 text-base tracking-widest border-b border-white py-2 hover:border-gray-400 transition-colors text-white cursor-pointer bg-transparent min-h-[44px]"
-                whileHover={{ x: 4 }}
+                whileHover={{ x: 4, scale: 1.05 }}
+                transition={{ duration: 0.25 }}
               >
                 詳細をご確認ください
                 <ChevronRight className="w-4 h-4" />
@@ -1025,10 +1056,19 @@ export function SamoyedBreederSite() {
                 ))}
               </div>
               <div className="text-center mt-8">
-                <Link to="/faq" className="inline-flex items-center gap-2 text-base border-b border-gray-900 pb-1 hover:gap-3 transition-all">
-                  FAQ詳細を見る
-                  <ChevronRight className="w-4 h-4" />
-                </Link>
+                <motion.div
+                  className="inline-block"
+                  whileHover={{ x: 4, scale: 1.05 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  <Link
+                    to="/faq"
+                    className="inline-flex items-center gap-2 text-base tracking-widest border-b border-gray-900 py-2 hover:border-gray-500 transition-colors min-h-[44px]"
+                  >
+                    FAQ詳細を見る
+                    <ChevronRight className="w-4 h-4" />
+                  </Link>
+                </motion.div>
               </div>
             </div>
           </AnimatedSection>
@@ -1299,13 +1339,19 @@ function ParentDogCard({
           </h3>
           <div className="text-base md:text-sm text-gray-600 font-light">{title}</div>
           <p className="text-base md:text-sm text-gray-700 font-light leading-relaxed pt-2">{description}</p>
-          <Link
-            to={detailPath}
-            className="inline-flex items-center gap-2 pt-2 text-base md:text-sm underline underline-offset-4 hover:text-gray-900 transition-colors"
+          <motion.div
+            className="inline-block pt-2"
+            whileHover={{ x: 4, scale: 1.05 }}
+            transition={{ duration: 0.25 }}
           >
-            詳しくは
-            <ChevronRight className="w-4 h-4" />
-          </Link>
+            <Link
+              to={detailPath}
+              className="inline-flex items-center gap-2 text-base md:text-sm underline underline-offset-4 hover:text-gray-900 transition-colors"
+            >
+              詳しくは
+              <ChevronRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
         </div>
       </div>
     </AnimatedSection>
