@@ -389,14 +389,15 @@ export function SamoyedBreederSite() {
               お問い合わせ・事前予約
               <ChevronRight className="w-4 h-4" />
             </motion.button>
-            <motion.button
-              onClick={() => scrollToSection('puppies')}
-              className="group inline-flex items-center gap-3 text-base tracking-widest border-b-2 border-gray-900 py-2 hover:gap-5 transition-all duration-300 min-h-[44px]"
-              whileHover={{ scale: 1.05 }}
-            >
-              オーナー様募集案内
-              <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </motion.button>
+            <motion.div whileHover={{ scale: 1.05 }}>
+              <Link
+                to="/breeding-schedule"
+                className="group inline-flex items-center gap-3 text-base tracking-widest border-b-2 border-gray-900 py-2 hover:gap-5 transition-all duration-300 min-h-[44px]"
+              >
+                オーナー様募集案内
+                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
 
@@ -444,14 +445,13 @@ export function SamoyedBreederSite() {
                 ブログをもっと読む
                 <ChevronRight className="w-4 h-4" />
               </Link>
-              <motion.button
-                onClick={() => scrollToSection('puppies')}
-                className="inline-flex items-center gap-2 mt-8 text-base tracking-widest border-b border-gray-900 py-2 hover:border-gray-500 transition-colors bg-transparent cursor-pointer text-left min-h-[44px]"
-                whileHover={{ x: 4 }}
+              <Link
+                to="/breeding-schedule"
+                className="inline-flex items-center gap-2 mt-8 text-base tracking-widest border-b border-gray-900 py-2 hover:border-gray-500 transition-colors min-h-[44px]"
               >
                 オーナー様募集案内
                 <ChevronRight className="w-4 h-4" />
-              </motion.button>
+              </Link>
             </div>
           </AnimatedSection>
         </div>
@@ -555,7 +555,7 @@ export function SamoyedBreederSite() {
                   </p>
                   <p>
                     子犬はご予約で埋まることがほとんどですので、事前のご予約をお願いいたします。
-                    HP上ではその年のご予約のみ承っております。
+                    現在は２０２８年度出産予定のご相談を承っております。２０２６・２０２７年度はキャンセル待ちとなります。
                   </p>
                   <p>
                     なお、お問い合わせをいただいても、常に無条件でお譲りできるわけではないことを予めご了承頂きますようお願い致します。
