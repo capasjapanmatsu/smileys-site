@@ -222,6 +222,16 @@ export const sortedBlogPosts = [...blogPosts].sort(
   (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
 );
 
+/** 一覧の絞り込み用（表示順） */
+export const blogCategories = [
+  "飼育のヒント",
+  "お迎え案内",
+  "繁殖・子犬",
+  "お知らせ",
+] as const;
+
+export type BlogCategory = (typeof blogCategories)[number];
+
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find((post) => post.slug === slug);
 }
