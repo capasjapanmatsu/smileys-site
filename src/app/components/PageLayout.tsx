@@ -107,7 +107,11 @@ export function PageLayout({ children, title, description, canonicalPath, ogImag
                 サミースマイル犬舎（SAMMY.SMILE JP'S）
               </p>
               <div className="text-base md:text-sm text-gray-500 font-light space-y-2 leading-relaxed">
-                <p>熊本県熊本市北区龍田2丁目14-16</p>
+                <p>
+                  熊本県熊本市北区龍田2丁目14-16
+                  <span className="mx-2 text-gray-600">/</span>
+                  TEL 080-5795-0125
+                </p>
                 <p>第一種動物取扱業熊市販第R7-12号</p>
                 <p>
                   <Link
