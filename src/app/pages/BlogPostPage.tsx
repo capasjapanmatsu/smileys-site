@@ -95,7 +95,7 @@ export function BlogPostPage() {
               )}
 
               <div
-                className="prose-blog text-gray-700 font-light leading-relaxed space-y-4 [&_h3]:text-lg [&_h3]:font-medium [&_h3]:text-gray-900 [&_h3]:mt-8 [&_h3]:mb-2 [&_p]:leading-relaxed"
+                className="prose-blog text-gray-700 font-light leading-relaxed space-y-4 [&_h3]:text-lg [&_h3]:font-medium [&_h3]:text-gray-900 [&_h3]:mt-8 [&_h3]:mb-2 [&_p]:leading-relaxed [&_a]:underline [&_a]:underline-offset-4 [&_a]:decoration-gray-400 [&_a]:text-gray-900 [&_a]:hover:decoration-gray-900 [&_a]:transition-colors [&_a.blog-cta]:no-underline [&_a.blog-cta]:inline-flex [&_a.blog-cta]:items-center [&_a.blog-cta]:justify-center [&_a.blog-cta]:min-h-[48px] [&_a.blog-cta]:px-8 [&_a.blog-cta]:py-3 [&_a.blog-cta]:bg-gray-900 [&_a.blog-cta]:text-white [&_a.blog-cta]:tracking-widest [&_a.blog-cta]:hover:bg-gray-800 [&_a.blog-cta]:hover:text-white"
                 dangerouslySetInnerHTML={{ __html: post.content.trim() }}
               />
             </article>
