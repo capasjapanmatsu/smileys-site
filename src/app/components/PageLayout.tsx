@@ -1,7 +1,7 @@
 "use client";
 
 import { Link } from "react-router-dom";
-import { FileText, Mail, ShoppingBag, BookOpen } from "lucide-react";
+import { FileText, Mail, ShoppingBag, BookOpen, Heart } from "lucide-react";
 import { motion } from "motion/react";
 import { SeoHead } from "./SeoHead";
 
@@ -142,6 +142,15 @@ export function PageLayout({ children, title, description, canonicalPath, ogImag
                 </p>
                 <p>
                   <Link
+                    to="/recommended"
+                    className="inline-flex items-center gap-2 underline underline-offset-4 hover:text-gray-300 transition-colors"
+                  >
+                    <Heart className="w-4 h-4" />
+                    お迎え後のおすすめ
+                  </Link>
+                </p>
+                <p>
+                  <Link
                     to="/?openContact=1#contact"
                     className="inline-flex items-center gap-2 underline underline-offset-4 hover:text-gray-300 transition-colors"
                   >
@@ -168,7 +177,7 @@ export function PageLayout({ children, title, description, canonicalPath, ogImag
                     className="inline-flex items-center gap-2 underline underline-offset-4 hover:text-gray-300 transition-colors"
                   >
                     <ShoppingBag className="w-4 h-4" />
-                    MOFU LAB（おやつ販売）
+                    犬舎おすすめのおやつ（MOFU LAB）
                   </a>
                 </p>
               </div>

@@ -1,6 +1,7 @@
 import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { SamoyedBreederSite } from './components/SamoyedBreederSite';
+import { ScrollToTop } from './components/ScrollToTop';
 import { APP_ROUTE_PATHS } from './routePaths';
 
 const SamoyedCharacterPage = lazy(() =>
@@ -39,10 +40,15 @@ const FaqPage = lazy(() =>
 const TestimonialsPage = lazy(() =>
   import('./pages/TestimonialsPage').then((m) => ({ default: m.TestimonialsPage }))
 );
+const RecommendedPage = lazy(() =>
+  import('./pages/RecommendedPage').then((m) => ({ default: m.RecommendedPage }))
+);
 
 export default function App() {
   return (
-    <Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
       <Route path={APP_ROUTE_PATHS.home} element={<SamoyedBreederSite />} />
       <Route
         path={APP_ROUTE_PATHS.samoyed}
@@ -156,6 +162,15 @@ export default function App() {
           </Suspense>
         }
       />
+      <Route
+        path={APP_ROUTE_PATHS.recommended}
+        element={
+          <Suspense fallback={null}>
+            <RecommendedPage />
+          </Suspense>
+        }
+      />
     </Routes>
+    </>
   );
 }

@@ -17,6 +17,7 @@ const ContactFormModal = lazy(() =>
 
 export function SamoyedBreederSite() {
   const [activeSection, setActiveSection] = useState('home');
+  const [nearPageBottom, setNearPageBottom] = useState(false);
   const [checklistModalOpen, setChecklistModalOpen] = useState(false);
   const [contactFormModalOpen, setContactFormModalOpen] = useState(false);
   const location = useLocation();
@@ -163,6 +164,9 @@ export function SamoyedBreederSite() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 100;
+      const remaining =
+        document.documentElement.scrollHeight - window.scrollY - window.innerHeight;
+      setNearPageBottom(remaining < 320);
       
       for (const section of sections) {
         const element = document.getElementById(section.id);
@@ -176,7 +180,8 @@ export function SamoyedBreederSite() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -516,6 +521,12 @@ export function SamoyedBreederSite() {
                 className="border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors block"
               >
                 <h3 className="text-lg font-medium text-gray-900">ブログ</h3>
+              </Link>
+              <Link
+                to="/recommended"
+                className="border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors block"
+              >
+                <h3 className="text-lg font-medium text-gray-900">お迎え後のおすすめ</h3>
               </Link>
               <button
                 onClick={() => scrollToSection('welcome-flow', 1800)}
@@ -1122,11 +1133,11 @@ export function SamoyedBreederSite() {
 
       {/* スクロール時固定CTA（スマホで押しやすい） */}
       <motion.div
-        className="fixed bottom-0 left-0 right-0 z-30 lg:hidden pointer-events-none"
-        style={{ opacity: stickyCtaOpacity }}
+        className={`fixed bottom-0 left-0 right-0 z-30 lg:hidden pointer-events-none ${nearPageBottom ? "invisible" : ""}`}
+        style={{ opacity: nearPageBottom ? 0 : stickyCtaOpacity }}
         aria-hidden
       >
-        <div className="p-3 pointer-events-auto">
+        <div className={`p-3 ${nearPageBottom ? "pointer-events-none" : "pointer-events-auto"}`}>
           <div className="flex gap-3 max-w-md mx-auto">
             <button
               onClick={() => setContactFormModalOpen(true)}
@@ -1201,6 +1212,15 @@ export function SamoyedBreederSite() {
                   </a>
                 </p>
                 <p>
+                  <Link
+                    to="/recommended"
+                    className="inline-flex items-center gap-2 underline underline-offset-4 hover:text-white transition-colors"
+                  >
+                    <Heart className="w-4 h-4" />
+                    お迎え後のおすすめ
+                  </Link>
+                </p>
+                <p>
                   <a
                     href="https://umaoyatsu.base.shop/"
                     target="_blank"
@@ -1208,7 +1228,7 @@ export function SamoyedBreederSite() {
                     className="inline-flex items-center gap-2 underline underline-offset-4 hover:text-white transition-colors"
                   >
                     <ShoppingBag className="w-4 h-4" />
-                    MOFU LAB（おやつ販売）
+                    犬舎おすすめのおやつ（MOFU LAB）
                   </a>
                 </p>
               </div>
