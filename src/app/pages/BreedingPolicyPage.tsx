@@ -39,7 +39,7 @@ export function BreedingPolicyPage() {
             <div className="border border-gray-200 bg-gray-50 p-6 md:p-8 mb-12">
               <ul className="space-y-2 text-gray-700 font-light leading-relaxed">
                 <li>・サモエド専門の計画繁殖犬舎です（熊本県熊本市）。</li>
-                <li>・少頭数制で、一頭一頭に向き合いながらサモエドの子犬をご紹介しています。</li>
+                <li>・少頭数制で一頭一頭と丁寧に向き合い、心身ともに健やかな子犬をご紹介しています。</li>
                 <li>・血統・健康・気質の調和を大切にした計画繁殖を行っています。</li>
               </ul>
             </div>
