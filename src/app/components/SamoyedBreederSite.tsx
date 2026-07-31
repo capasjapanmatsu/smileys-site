@@ -18,6 +18,8 @@ const ContactFormModal = lazy(() =>
 export function SamoyedBreederSite() {
   const [activeSection, setActiveSection] = useState('home');
   const [nearPageBottom, setNearPageBottom] = useState(false);
+  const [footerVisible, setFooterVisible] = useState(false);
+  const footerRef = useRef<HTMLElement>(null);
   const [checklistModalOpen, setChecklistModalOpen] = useState(false);
   const [contactFormModalOpen, setContactFormModalOpen] = useState(false);
   const location = useLocation();
@@ -186,6 +188,18 @@ export function SamoyedBreederSite() {
   }, []);
 
   useEffect(() => {
+    const el = footerRef.current;
+    if (!el) return;
+    // フッターが画面の下半分に入ったらサイドナビを隠す
+    const observer = new IntersectionObserver(
+      ([entry]) => setFooterVisible(entry.isIntersecting),
+      { rootMargin: '-50% 0px 0px 0px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
     const params = new URLSearchParams(location.search);
     if (params.get('openContact') !== '1') return;
     setContactFormModalOpen(true);
@@ -242,8 +256,12 @@ export function SamoyedBreederSite() {
         ogImage="/hero.webp"
         jsonLd={homeSchemas}
       />
-      {/* Side Navigation */}
-      <nav className="fixed left-8 top-1/2 -translate-y-1/2 z-50 hidden lg:block">
+      {/* Side Navigation（フッター表示中は非表示にして重なりを防ぐ） */}
+      <nav
+        className={`fixed left-8 top-1/2 -translate-y-1/2 z-50 hidden lg:block transition-opacity duration-300 ${
+          footerVisible ? "opacity-0 pointer-events-none" : "opacity-100"
+        }`}
+      >
         <div className="flex flex-col gap-6">
           {sections.map((section) => (
             <button
@@ -1158,7 +1176,7 @@ export function SamoyedBreederSite() {
       </motion.div>
 
       {/* Footer */}
-      <footer className="py-12 bg-gray-900 text-white">
+      <footer ref={footerRef} className="py-12 bg-gray-900 text-white">
         <div className="container mx-auto px-6 md:px-12">
           <div className="flex flex-col gap-8">
             <div className="flex flex-col lg:flex-row justify-between gap-8">
