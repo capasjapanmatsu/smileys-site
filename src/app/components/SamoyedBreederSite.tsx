@@ -968,7 +968,7 @@ export function SamoyedBreederSite() {
                   </h2>
                   <p className="text-lg text-gray-600 font-light leading-relaxed">
                     子犬の見学やお問い合わせは、土日祝13:00～17:00に承っております。
-                    公式サイト（https://smileys.one）からお問い合わせ・事前予約を承ります。
+                    メールフォームまたは公式LINEからお問い合わせ・事前予約を承ります。
                     当店はペットショップではありませんので見学は事前のご予約が必要です。土日祝のみ見学可能となります。
                   </p>
                 </div>
@@ -1016,7 +1016,7 @@ export function SamoyedBreederSite() {
             <AnimatedSection delay={0.2}>
               <div className="space-y-8 p-8 md:p-12 bg-gray-50 border border-gray-100">
                 <p className="text-gray-600 font-light text-lg leading-relaxed">
-                  見学・お問い合わせは公式サイト（https://smileys.one）よりお願いいたします。
+                  見学・お問い合わせは下記のフォームまたはLINEよりお願いいたします。
                   土日祝13:00～17:00、事前予約制となります。
                 </p>
                 <motion.button
@@ -1025,7 +1025,7 @@ export function SamoyedBreederSite() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  お問い合わせフォーム
+                  メールでお問い合わせ
                   <ChevronRight className="w-4 h-4" />
                 </motion.button>
                 <a
@@ -1034,7 +1034,7 @@ export function SamoyedBreederSite() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center w-full py-4 min-h-[48px] border border-gray-900 text-gray-900 text-base tracking-widest hover:bg-gray-100 transition-colors"
                 >
-                  公式LINEを追加
+                  LINEでお問い合わせ
                 </a>
                 <div className="pt-2">
                   <img
