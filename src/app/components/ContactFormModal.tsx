@@ -301,6 +301,18 @@ export function ContactFormModal({ isOpen, onClose }: ContactFormModalProps) {
                     >
                       お問い合わせフォーム
                     </h2>
+                    <p className="mt-2 text-center text-base md:text-sm text-gray-500">
+                      LINEでのお問い合わせをご希望の方は
+                      <a
+                        href="https://lin.ee/Ngs8RXx"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline underline-offset-4 mx-1 hover:text-gray-900 transition-colors"
+                      >
+                        公式LINE
+                      </a>
+                      からどうぞ
+                    </p>
                   </div>
 
                   <div className="flex-1 overflow-y-auto overscroll-contain px-6 py-6">

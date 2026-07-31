@@ -109,15 +109,25 @@ export function BreedingSchedulePage() {
 
             <div className="text-center">
               <p className="text-gray-600 font-light mb-6">
-                事前予約・見学希望（お問い合わせ）をご希望の方は、下記よりお申し込みください。
+                事前予約・見学希望（お問い合わせ）は、メールまたはLINEよりお申し込みください。
               </p>
-              <button
-                onClick={() => setContactFormModalOpen(true)}
-                className="inline-flex items-center gap-3 text-sm tracking-widest border-b-2 border-gray-900 pb-2 hover:gap-5 transition-all duration-300 group"
-              >
-                事前予約（お問い合わせ）
-                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-xl mx-auto">
+                <button
+                  onClick={() => setContactFormModalOpen(true)}
+                  className="flex-1 inline-flex items-center justify-center gap-2 min-h-[48px] px-8 py-3 bg-gray-900 text-white text-base tracking-widest hover:bg-gray-800 transition-colors"
+                >
+                  メールで事前予約
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+                <a
+                  href="https://lin.ee/Ngs8RXx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 inline-flex items-center justify-center min-h-[48px] px-8 py-3 border border-gray-900 text-gray-900 text-base tracking-widest hover:bg-gray-100 transition-colors"
+                >
+                  LINEでお問い合わせ
+                </a>
+              </div>
             </div>
           </div>
         </FadeInSection>
