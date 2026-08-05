@@ -16,9 +16,8 @@ export const blogPosts: BlogPost[] = [
     title: "犬を飼う前に勉強する国があるって知っていますか？",
     excerpt:
       "ドイツ・ニーダーザクセン州の飼い主資格を手がかりに、犬を迎える準備と学びの大切さを考えます。",
-    date: "2026-07-24",
+    date: "2026-08-05",
     category: "飼育のヒント",
-    draft: true,
     image: "/blog/dog-owner-responsibility.webp",
     content: `
       <p>犬を飼う前に勉強する国があるって知っていますか？</p>
@@ -339,9 +338,12 @@ export const blogPosts: BlogPost[] = [
   },
 ];
 
-// 新しい順（日付降順）でソート（下書きは除く）
+/** 開発中だけ下書きも見る（本番ビルドでは出さない） */
+const showDrafts = import.meta.env.DEV;
+
+// 新しい順（日付降順）でソート（本番では下書きを除く）
 export const sortedBlogPosts = [...blogPosts]
-  .filter((post) => !post.draft)
+  .filter((post) => showDrafts || !post.draft)
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 /** 一覧の絞り込み用（表示順） */
@@ -356,10 +358,12 @@ export type BlogCategory = (typeof blogCategories)[number];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
   const post = blogPosts.find((p) => p.slug === slug);
-  if (!post || post.draft) return undefined;
+  if (!post || (!showDrafts && post.draft)) return undefined;
   return post;
 }
 
 export function getBlogPostSlugs(): string[] {
-  return blogPosts.filter((post) => !post.draft).map((post) => post.slug);
+  return blogPosts
+    .filter((post) => showDrafts || !post.draft)
+    .map((post) => post.slug);
 }
