@@ -338,12 +338,9 @@ export const blogPosts: BlogPost[] = [
   },
 ];
 
-/** 開発中だけ下書きも見る（本番ビルドでは出さない） */
-const showDrafts = import.meta.env.DEV;
-
-// 新しい順（日付降順）でソート（本番では下書きを除く）
+// 新しい順（日付降順）でソート（下書きは除く）
 export const sortedBlogPosts = [...blogPosts]
-  .filter((post) => showDrafts || !post.draft)
+  .filter((post) => !post.draft)
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 /** 一覧の絞り込み用（表示順） */
@@ -358,12 +355,10 @@ export type BlogCategory = (typeof blogCategories)[number];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
   const post = blogPosts.find((p) => p.slug === slug);
-  if (!post || (!showDrafts && post.draft)) return undefined;
+  if (!post || post.draft) return undefined;
   return post;
 }
 
 export function getBlogPostSlugs(): string[] {
-  return blogPosts
-    .filter((post) => showDrafts || !post.draft)
-    .map((post) => post.slug);
+  return blogPosts.filter((post) => !post.draft).map((post) => post.slug);
 }
