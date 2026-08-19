@@ -981,9 +981,6 @@ export function SamoyedBreederSite() {
                       <div className="text-lg font-light text-gray-900">
                         熊本県熊本市北区龍田2丁目14-16
                       </div>
-                      <div className="text-lg font-light text-gray-900 mt-1">
-                        TEL 080-5795-0125
-                      </div>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -1185,8 +1182,6 @@ export function SamoyedBreederSite() {
                 <p><strong className="text-white">犬舎名</strong> サミースマイル犬舎（SAMMY.SMILE JP'S）</p>
                 <p>
                   <strong className="text-white">住所</strong> 熊本県熊本市北区龍田2丁目14-16
-                  <span className="mx-2 text-gray-500">/</span>
-                  TEL 080-5795-0125
                 </p>
                 <p><strong className="text-white">動物取扱業登録番号</strong> 第一種動物取扱業熊市販第R7-12号</p>
                 <p><strong className="text-white">動物取扱責任者</strong> 松本 亜理沙</p>
