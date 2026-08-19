@@ -6,7 +6,7 @@ import { createBreadcrumbList, createFaqPageSchema } from "../lib/schema";
 
 export function FaqPage() {
   const faqSchemas: Record<string, unknown>[] = [
-    createFaqPageSchema(aeoFaqs, "https://smileys.one/faq#faqpage"),
+    createFaqPageSchema(aeoFaqs, "https://smileys.one/faq/#faqpage"),
     createBreadcrumbList([{ label: "FAQ" }], "/faq"),
   ];
 

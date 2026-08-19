@@ -13,7 +13,7 @@ export function BreedingPolicyPage() {
       inLanguage: "ja-JP",
       author: { "@type": "Organization", name: "Smiley's Kennel" },
       publisher: { "@type": "Organization", name: "Smiley's Kennel" },
-      mainEntityOfPage: "https://smileys.one/policy",
+      mainEntityOfPage: "https://smileys.one/policy/",
       description:
         "少頭数・予約制で行う計画繁殖の理念と、お迎えまでの方針をまとめたページです。",
     },

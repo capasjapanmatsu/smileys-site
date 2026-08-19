@@ -5,6 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 import Sitemap from 'vite-plugin-sitemap'
 import { SITEMAP_ROUTE_PATHS } from './src/app/routePaths'
+import { withTrailingSlash } from './src/app/lib/canonicalUrl'
 
 export default defineConfig({
   plugins: [
@@ -17,7 +18,7 @@ export default defineConfig({
       // Use routePaths as the single source of truth to avoid duplicate "/" entries
       // from dist HTML scanning + dynamicRoutes.
       extensions: [],
-      dynamicRoutes: [...SITEMAP_ROUTE_PATHS],
+      dynamicRoutes: [...SITEMAP_ROUTE_PATHS].map((path) => withTrailingSlash(path)),
       exclude: ['/404', '/404.html', '/samoyed-character', '/breeding-policy'],
       readable: true,
       generateRobotsTxt: true,

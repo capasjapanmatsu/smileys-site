@@ -14,7 +14,7 @@ export function BloodlinePage() {
       inLanguage: "ja-JP",
       author: { "@type": "Organization", name: "Smiley's Kennel" },
       publisher: { "@type": "Organization", name: "Smiley's Kennel" },
-      mainEntityOfPage: "https://smileys.one/bloodline",
+      mainEntityOfPage: "https://smileys.one/bloodline/",
       description:
         "ロシア・ウクライナ・英国系の血統背景を重視した計画繁殖と、健康・気質のバランスを確認できる方針をまとめたページです。",
     },

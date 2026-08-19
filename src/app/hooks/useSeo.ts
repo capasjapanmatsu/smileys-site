@@ -1,6 +1,5 @@
 import { useEffect } from "react";
-
-const BASE_URL = "https://smileys.one";
+import { toCanonicalUrl, BASE_URL } from "../lib/canonicalUrl";
 
 type SeoOptions = {
   title: string;
@@ -50,7 +49,7 @@ function removeImagePreload(id: string) {
 
 export function useSeo({ title, description, canonicalPath, ogImage = "/hero.webp" }: SeoOptions) {
   useEffect(() => {
-    const canonicalUrl = `${BASE_URL}${canonicalPath}`;
+    const canonicalUrl = toCanonicalUrl(canonicalPath);
     const imageUrl = `${BASE_URL}${ogImage}`;
 
     document.title = title;

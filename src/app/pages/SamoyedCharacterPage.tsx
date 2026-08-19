@@ -13,7 +13,7 @@ export function SamoyedCharacterPage() {
       inLanguage: "ja-JP",
       author: { "@type": "Organization", name: "Smiley's Kennel" },
       publisher: { "@type": "Organization", name: "Smiley's Kennel" },
-      mainEntityOfPage: "https://smileys.one/samoyed",
+      mainEntityOfPage: "https://smileys.one/samoyed/",
       description:
         "サモエドの起源、性格、運動量、被毛ケア、暑さ対策をまとめた犬種解説ページです。",
     },

@@ -2,7 +2,7 @@
  * JSON-LD 構造化データ用ヘルパー
  */
 
-const BASE_URL = "https://smileys.one";
+import { BASE_URL, toCanonicalUrl } from "./canonicalUrl";
 
 export type BreadcrumbItem = { label: string; path?: string };
 
@@ -16,7 +16,7 @@ export function createFaqPageSchema(
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    ...(pageId ? { "@id": pageId } : {}),
+    ...(pageId ? { "@id": toCanonicalUrl(pageId) } : {}),
     mainEntity: faqs.map((item) => ({
       "@type": "Question",
       name: item.q,
@@ -68,7 +68,7 @@ export function createBreadcrumbList(
   breadcrumbs.forEach((item, i) => {
     const position = i + 2;
     const path = item.path ?? currentPath;
-    const url = `${BASE_URL}${path}`;
+    const url = toCanonicalUrl(path);
     itemListElement.push({
       "@type": "ListItem",
       position,

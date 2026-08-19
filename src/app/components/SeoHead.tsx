@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet-async";
-
-const BASE_URL = "https://smileys.one";
+import { toCanonicalUrl, BASE_URL } from "../lib/canonicalUrl";
 
 type SeoHeadProps = {
   title: string;
@@ -19,7 +18,7 @@ export function SeoHead({
   jsonLd = [],
   keywords = "サモエド,サモエド ブリーダー,犬舎,血統,計画繁殖,熊本,九州",
 }: SeoHeadProps) {
-  const canonicalUrl = `${BASE_URL}${canonicalPath}`;
+  const canonicalUrl = toCanonicalUrl(canonicalPath);
   const imageUrl = `${BASE_URL}${ogImage}`;
 
   return (
