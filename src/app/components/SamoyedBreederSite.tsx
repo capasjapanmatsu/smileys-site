@@ -49,12 +49,13 @@ export function SamoyedBreederSite() {
     { id: 'home', label: 'Home' },
     { id: 'news', label: 'News' },
     { id: 'about', label: 'Philosophy' },
-    { id: 'testimonials', label: 'Voice' },
-    { id: 'puppies', label: 'Puppies' },
     { id: 'parents', label: 'Bloodline' },
+    { id: 'welcome-flow', label: 'Flow' },
+    { id: 'testimonials', label: 'Voice' },
+    { id: 'schedule', label: 'Schedule' },
     { id: 'gallery', label: 'Gallery' },
+    { id: 'faq', label: 'FAQ' },
     { id: 'contact', label: 'Contact' },
-    { id: 'faq', label: 'FAQ' }
   ];
 
   const galleryImages = Array.from(
@@ -240,12 +241,6 @@ export function SamoyedBreederSite() {
 
     requestAnimationFrame(animateScroll);
   };
-
-  const puppies = [
-    { id: 1, gender: "♀女の子", image: "/puppy-01.webp" },
-    { id: 2, gender: "♂男の子", image: "/puppy-02.webp" },
-    { id: 3, gender: "♀女の子", image: "/puppy-03.webp" }
-  ];
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden" style={{ fontFamily: "'Montserrat', 'Noto Sans JP', sans-serif" }}>
@@ -494,69 +489,6 @@ export function SamoyedBreederSite() {
         </div>
       </section>
 
-      {/* AEO Definition Blocks */}
-      <section className="py-14 bg-white border-y border-gray-100">
-        <div className="container mx-auto px-6 md:px-12 lg:px-24">
-          <div className="max-w-5xl mx-auto space-y-6">
-            <ul className="space-y-3 text-gray-700 font-light">
-              {tldrs.home.map((line) => (
-                <li key={line}>・{line}</li>
-              ))}
-            </ul>
-            <div className="grid md:grid-cols-3 gap-4 pt-6">
-              <Link
-                to="/samoyed"
-                className="border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors block"
-              >
-                <h3 className="text-lg font-medium text-gray-900">サモエドとは</h3>
-              </Link>
-              <Link
-                to="/samoyed-life"
-                className="border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors block"
-              >
-                <h3 className="text-lg font-medium text-gray-900">サモエドがいる暮らし</h3>
-              </Link>
-              <Link
-                to="/policy"
-                className="border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors block"
-              >
-                <h3 className="text-lg font-medium text-gray-900">当犬舎の方針</h3>
-              </Link>
-              <Link
-                to="/bloodline"
-                className="border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors block"
-              >
-                <h3 className="text-lg font-medium text-gray-900">血統</h3>
-              </Link>
-              <Link
-                to="/faq"
-                className="border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors block"
-              >
-                <h3 className="text-lg font-medium text-gray-900">よくある質問</h3>
-              </Link>
-              <Link
-                to="/blog"
-                className="border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors block"
-              >
-                <h3 className="text-lg font-medium text-gray-900">ブログ</h3>
-              </Link>
-              <Link
-                to="/recommended"
-                className="border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors block"
-              >
-                <h3 className="text-lg font-medium text-gray-900">お迎え後のおすすめ</h3>
-              </Link>
-              <button
-                onClick={() => scrollToSection('welcome-flow', 1800)}
-                className="text-left border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors"
-              >
-                <h3 className="text-lg font-medium text-gray-900">お迎えの流れ</h3>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* About / Philosophy Section */}
       <section id="about" className="py-32 bg-white">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
@@ -631,156 +563,8 @@ export function SamoyedBreederSite() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section id="testimonials" className="py-24 bg-gray-50">
-        <div className="container mx-auto px-6 md:px-12 lg:px-24">
-          <AnimatedSection>
-            <div className="text-center mb-12">
-              <motion.div
-                initial={{ width: 0 }}
-                whileInView={{ width: 60 }}
-                transition={{ duration: 0.8 }}
-                className="h-px bg-gray-900 mb-6 mx-auto"
-              />
-              <h2
-                className="text-5xl md:text-6xl font-light mb-6"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                お客様の声
-              </h2>
-              <p className="text-lg text-gray-600 font-light tracking-wide">
-                当犬舎からお迎えいただいたオーナー様の声をご紹介します
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <div className="max-w-4xl mx-auto space-y-8">
-            {featuredTestimonials.map((item, index) => (
-              <AnimatedSection key={item.id} delay={index * 0.08}>
-                <div className="bg-white border border-gray-200 p-6 md:p-8">
-                  <p className="text-gray-700 font-light leading-relaxed whitespace-pre-line">
-                    {item.text}
-                  </p>
-                  <p className="mt-6 text-sm text-gray-500 font-light">
-                    {item.prefecture} {item.name}
-                  </p>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <motion.div
-              className="inline-block"
-              whileHover={{ x: 4, scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              transition={{ duration: 0.25 }}
-            >
-              <Link
-                to="/testimonials"
-                className="inline-flex items-center gap-2 text-base tracking-widest border-b border-gray-900 py-2 hover:border-gray-500 transition-colors min-h-[44px]"
-              >
-                お客様の声をもっと見る
-                <ChevronRight className="w-4 h-4" />
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Puppies Section */}
-      <section id="puppies" className="py-32 bg-gray-50">
-        <div className="container mx-auto px-6 md:px-12 lg:px-24">
-          <AnimatedSection>
-            <div className="text-center mb-20">
-              <motion.div
-                initial={{ width: 0 }}
-                whileInView={{ width: 60 }}
-                transition={{ duration: 0.8 }}
-                className="h-px bg-gray-900 mb-6 mx-auto"
-              />
-              <h2 
-                className="text-5xl md:text-6xl font-light mb-6"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                子犬紹介
-              </h2>
-              <p className="text-lg text-gray-600 font-light tracking-wide">
-                現在は２０２８年度出産予定のご予約を受け付けております。
-              </p>
-              <motion.div
-                className="inline-block mt-4"
-                whileHover={{ x: 4, scale: 1.05 }}
-                whileTap={{ scale: 0.97 }}
-                transition={{ duration: 0.25 }}
-              >
-                <Link
-                  to="/breeding-schedule"
-                  className="inline-flex items-center gap-2 text-base tracking-widest border-b border-gray-900 py-2 hover:border-gray-500 transition-colors min-h-[44px]"
-                >
-                  繁殖予定
-                  <ChevronRight className="w-4 h-4" />
-                </Link>
-              </motion.div>
-            </div>
-          </AnimatedSection>
-
-          <div className="relative">
-            <div className="grid md:grid-cols-3 gap-12">
-              {puppies.map((puppy, index) => (
-                <AnimatedSection key={puppy.id} delay={index * 0.2}>
-                  <motion.div
-                    className="group cursor-pointer"
-                    whileHover={{ y: -10 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="relative overflow-hidden mb-6">
-                      <motion.div
-                        whileHover={{ scale: 1.1 }}
-                        transition={{ duration: 0.6 }}
-                      >
-                        <ImageWithFallback
-                          src={puppy.image}
-                          alt={`サモエドの子犬（${puppy.gender}）- 2028年度出産予定`}
-                          className="w-full h-96 object-cover"
-                          loading="lazy"
-                          width={1200}
-                          height={900}
-                        />
-                      </motion.div>
-                    </div>
-
-                    <div className="space-y-3">
-                      <div className="text-xl font-light text-gray-900">
-                        {puppy.gender}
-                      </div>
-
-                      <div className="pt-4">
-                        <button 
-                          onClick={() => setContactFormModalOpen(true)}
-                          className="text-base tracking-widest border-b border-gray-900 py-2 hover:border-gray-500 transition-colors inline-flex items-center gap-2 group min-h-[44px]"
-                        >
-                          お問い合わせ
-                          <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </button>
-                      </div>
-                    </div>
-                  </motion.div>
-                </AnimatedSection>
-              ))}
-            </div>
-
-            <div className="absolute inset-0 bg-gray-900/45 backdrop-blur-[1px] flex items-center justify-center pointer-events-none">
-              <p className="text-white text-xl md:text-3xl tracking-wide font-light text-center px-6">
-                現在募集中の子犬はいません。
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Parents Section */}
-      <section id="parents" className="py-32 bg-white">
+      <section id="parents" className="py-32 bg-gray-50">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
           <AnimatedSection>
             <div className="text-center mb-20">
@@ -853,8 +637,148 @@ export function SamoyedBreederSite() {
         </div>
       </section>
 
+      {/* Welcome Flow Section */}
+      <section id="welcome-flow" className="py-24 bg-[#f7f6f2] border-t border-gray-100">
+        <div className="container mx-auto px-6 md:px-12 lg:px-24">
+          <AnimatedSection>
+            <div className="text-center mb-14">
+              <h2
+                className="text-4xl md:text-5xl font-light mb-4 text-gray-900"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                お迎えまでの流れ
+              </h2>
+              <p className="text-lg text-gray-600 font-light">
+                安心してお迎えいただくための5つのステップ
+              </p>
+            </div>
+          </AnimatedSection>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6">
+            {welcomeSteps.map((step, index) => (
+              <AnimatedSection key={step.number} delay={index * 0.08}>
+                <div className="text-center">
+                  <div className="w-24 h-24 mx-auto rounded-full bg-[#f3e9c9] flex items-center justify-center mb-6">
+                    {step.icon}
+                  </div>
+                  <div className="text-4xl font-light text-amber-700 mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
+                    {step.number}
+                  </div>
+                  <h3 className="text-3xl font-light text-gray-900 mb-3 leading-tight">{step.title}</h3>
+                  <p className="text-gray-600 font-light leading-relaxed text-base md:text-sm">{step.description}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-24 bg-white">
+        <div className="container mx-auto px-6 md:px-12 lg:px-24">
+          <AnimatedSection>
+            <div className="text-center mb-12">
+              <motion.div
+                initial={{ width: 0 }}
+                whileInView={{ width: 60 }}
+                transition={{ duration: 0.8 }}
+                className="h-px bg-gray-900 mb-6 mx-auto"
+              />
+              <h2
+                className="text-5xl md:text-6xl font-light mb-6"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                お客様の声
+              </h2>
+              <p className="text-lg text-gray-600 font-light tracking-wide">
+                当犬舎からお迎えいただいたオーナー様の声をご紹介します
+              </p>
+            </div>
+          </AnimatedSection>
+
+          <div className="max-w-4xl mx-auto space-y-8">
+            {featuredTestimonials.map((item, index) => (
+              <AnimatedSection key={item.id} delay={index * 0.08}>
+                <div className="bg-gray-50 border border-gray-200 p-6 md:p-8">
+                  <p className="text-gray-700 font-light leading-relaxed whitespace-pre-line">
+                    {item.text}
+                  </p>
+                  <p className="mt-6 text-sm text-gray-500 font-light">
+                    {item.prefecture} {item.name}
+                  </p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <motion.div
+              className="inline-block"
+              whileHover={{ x: 4, scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.25 }}
+            >
+              <Link
+                to="/testimonials"
+                className="inline-flex items-center gap-2 text-base tracking-widest border-b border-gray-900 py-2 hover:border-gray-500 transition-colors min-h-[44px]"
+              >
+                お客様の声をもっと見る
+                <ChevronRight className="w-4 h-4" />
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Breeding Schedule CTA */}
+      <section id="schedule" className="py-24 bg-gray-50">
+        <div className="container mx-auto px-6 md:px-12 lg:px-24">
+          <AnimatedSection>
+            <div className="max-w-3xl mx-auto text-center">
+              <motion.div
+                initial={{ width: 0 }}
+                whileInView={{ width: 60 }}
+                transition={{ duration: 0.8 }}
+                className="h-px bg-gray-900 mb-6 mx-auto"
+              />
+              <h2
+                className="text-4xl md:text-5xl font-light mb-6"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                繁殖予定
+              </h2>
+              <p className="text-lg text-gray-600 font-light leading-relaxed mb-8">
+                ２０２８年度出産予定のご予約を受け付けております。
+                ２０２６・２０２７年度はキャンセル待ちとなります。
+                子犬はご予約で埋まることがほとんどですので、事前のご予約をお願いいたします。
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
+                  <Link
+                    to="/breeding-schedule"
+                    className="inline-flex items-center justify-center gap-2 min-h-[48px] px-8 py-4 bg-gray-900 text-white text-base tracking-widest hover:bg-gray-800 transition-colors"
+                  >
+                    繁殖予定を見る
+                    <ChevronRight className="w-4 h-4" />
+                  </Link>
+                </motion.div>
+                <motion.button
+                  onClick={() => setContactFormModalOpen(true)}
+                  className="inline-flex items-center justify-center gap-2 min-h-[48px] px-8 py-4 border border-gray-900 text-gray-900 text-base tracking-widest hover:bg-gray-100 transition-colors"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  お問い合わせ・事前予約
+                  <ChevronRight className="w-4 h-4" />
+                </motion.button>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* Gallery Section */}
-      <section id="gallery" className="pt-8 pb-24 bg-gray-50">
+      <section id="gallery" className="pt-8 pb-24 bg-white">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
           <AnimatedSection>
             <div className="text-center mb-14">
@@ -947,8 +871,69 @@ export function SamoyedBreederSite() {
         />
       </Suspense>
 
+      {/* FAQ Section */}
+      <section id="faq" className="py-24 bg-white">
+        <div className="container mx-auto px-6 md:px-12 lg:px-24">
+          <AnimatedSection>
+            <div className="max-w-5xl mx-auto">
+              <div className="text-center mb-12">
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: 60 }}
+                  transition={{ duration: 0.8 }}
+                  className="h-px bg-gray-900 mb-6 mx-auto"
+                />
+                <h2
+                  className="text-4xl md:text-5xl font-light"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
+                  FAQ
+                </h2>
+              </div>
+
+              <div className="space-y-4">
+                {faqs.map((item, index) => (
+                  <AnimatedSection key={item.q} delay={index * 0.05}>
+                    <div className="bg-gray-50 border border-gray-200 p-6 md:p-7">
+                      <h3 className="text-lg md:text-xl text-gray-900 mb-3 font-medium">{item.q}</h3>
+                      {item.q === "現在、子犬の募集はありますか？" ? (
+                        <p className="text-gray-700 font-light leading-relaxed">
+                          出産後の募集ではなく、事前予約より受け付けております。その為、出産前に予約で埋まってしまうことがあります。詳しくは
+                          <Link to="/breeding-schedule" className="underline underline-offset-4 hover:text-gray-900 mx-1">
+                            繁殖予定
+                          </Link>
+                          をご覧ください。
+                        </p>
+                      ) : (
+                        <p className="text-gray-700 font-light leading-relaxed">{item.a}</p>
+                      )}
+                    </div>
+                  </AnimatedSection>
+                ))}
+              </div>
+              <div className="text-center mt-8">
+                <motion.div
+                  className="inline-block"
+                  whileHover={{ x: 4, scale: 1.05 }}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  <Link
+                    to="/faq"
+                    className="inline-flex items-center gap-2 text-base tracking-widest border-b border-gray-900 py-2 hover:border-gray-500 transition-colors min-h-[44px]"
+                  >
+                    FAQ詳細を見る
+                    <ChevronRight className="w-4 h-4" />
+                  </Link>
+                </motion.div>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* Contact Section */}
-      <section id="contact" className="py-32 bg-white">
+      <section id="contact" className="py-32 bg-gray-50">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
           <div className="grid md:grid-cols-2 gap-20">
             <AnimatedSection>
@@ -1011,7 +996,7 @@ export function SamoyedBreederSite() {
             </AnimatedSection>
 
             <AnimatedSection delay={0.2}>
-              <div className="space-y-8 p-8 md:p-12 bg-gray-50 border border-gray-100">
+              <div className="space-y-8 p-8 md:p-12 bg-white border border-gray-100">
                 <p className="text-gray-600 font-light text-lg leading-relaxed">
                   見学・お問い合わせは下記のフォームまたはLINEよりお願いいたします。
                   土日祝13:00～17:00、事前予約制となります。
@@ -1049,99 +1034,65 @@ export function SamoyedBreederSite() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section id="faq" className="py-24 bg-gray-50 border-t border-gray-100">
+      {/* AEO Definition Blocks */}
+      <section className="py-14 bg-white border-t border-gray-100">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
-          <AnimatedSection>
-            <div className="max-w-5xl mx-auto">
-              <div className="text-center mb-12">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: 60 }}
-                  transition={{ duration: 0.8 }}
-                  className="h-px bg-gray-900 mb-6 mx-auto"
-                />
-                <h2
-                  className="text-4xl md:text-5xl font-light"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
-                >
-                  FAQ
-                </h2>
-              </div>
-
-              <div className="space-y-4">
-                {faqs.map((item, index) => (
-                  <AnimatedSection key={item.q} delay={index * 0.05}>
-                    <div className="bg-white border border-gray-200 p-6 md:p-7">
-                      <h3 className="text-lg md:text-xl text-gray-900 mb-3 font-medium">{item.q}</h3>
-                      {item.q === "現在、子犬の募集はありますか？" ? (
-                        <p className="text-gray-700 font-light leading-relaxed">
-                          出産後の募集ではなく、事前予約より受け付けております。その為、出産前に予約で埋まってしまうことがあります。詳しくは
-                          <Link to="/breeding-schedule" className="underline underline-offset-4 hover:text-gray-900 mx-1">
-                            繁殖予定
-                          </Link>
-                          をご覧ください。
-                        </p>
-                      ) : (
-                        <p className="text-gray-700 font-light leading-relaxed">{item.a}</p>
-                      )}
-                    </div>
-                  </AnimatedSection>
-                ))}
-              </div>
-              <div className="text-center mt-8">
-                <motion.div
-                  className="inline-block"
-                  whileHover={{ x: 4, scale: 1.05 }}
-                  whileTap={{ scale: 0.97 }}
-                  transition={{ duration: 0.25 }}
-                >
-                  <Link
-                    to="/faq"
-                    className="inline-flex items-center gap-2 text-base tracking-widest border-b border-gray-900 py-2 hover:border-gray-500 transition-colors min-h-[44px]"
-                  >
-                    FAQ詳細を見る
-                    <ChevronRight className="w-4 h-4" />
-                  </Link>
-                </motion.div>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Welcome Flow Section */}
-      <section id="welcome-flow" className="py-24 bg-[#f7f6f2] border-t border-gray-100">
-        <div className="container mx-auto px-6 md:px-12 lg:px-24">
-          <AnimatedSection>
-            <div className="text-center mb-14">
-              <h2
-                className="text-4xl md:text-5xl font-light mb-4 text-gray-900"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+          <div className="max-w-5xl mx-auto space-y-6">
+            <ul className="space-y-3 text-gray-700 font-light">
+              {tldrs.home.map((line) => (
+                <li key={line}>・{line}</li>
+              ))}
+            </ul>
+            <div className="grid md:grid-cols-3 gap-4 pt-6">
+              <Link
+                to="/samoyed"
+                className="border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors block"
               >
-                お迎えまでの流れ
-              </h2>
-              <p className="text-lg text-gray-600 font-light">
-                安心してお迎えいただくための5つのステップ
-              </p>
+                <h3 className="text-lg font-medium text-gray-900">サモエドとは</h3>
+              </Link>
+              <Link
+                to="/samoyed-life"
+                className="border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors block"
+              >
+                <h3 className="text-lg font-medium text-gray-900">サモエドがいる暮らし</h3>
+              </Link>
+              <Link
+                to="/policy"
+                className="border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors block"
+              >
+                <h3 className="text-lg font-medium text-gray-900">当犬舎の方針</h3>
+              </Link>
+              <Link
+                to="/bloodline"
+                className="border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors block"
+              >
+                <h3 className="text-lg font-medium text-gray-900">血統</h3>
+              </Link>
+              <Link
+                to="/faq"
+                className="border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors block"
+              >
+                <h3 className="text-lg font-medium text-gray-900">よくある質問</h3>
+              </Link>
+              <Link
+                to="/blog"
+                className="border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors block"
+              >
+                <h3 className="text-lg font-medium text-gray-900">ブログ</h3>
+              </Link>
+              <Link
+                to="/recommended"
+                className="border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors block"
+              >
+                <h3 className="text-lg font-medium text-gray-900">お迎え後のおすすめ</h3>
+              </Link>
+              <button
+                onClick={() => scrollToSection('welcome-flow', 1800)}
+                className="text-left border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors"
+              >
+                <h3 className="text-lg font-medium text-gray-900">お迎えの流れ</h3>
+              </button>
             </div>
-          </AnimatedSection>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6">
-            {welcomeSteps.map((step, index) => (
-              <AnimatedSection key={step.number} delay={index * 0.08}>
-                <div className="text-center">
-                  <div className="w-24 h-24 mx-auto rounded-full bg-[#f3e9c9] flex items-center justify-center mb-6">
-                    {step.icon}
-                  </div>
-                  <div className="text-4xl font-light text-amber-700 mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
-                    {step.number}
-                  </div>
-                  <h3 className="text-3xl font-light text-gray-900 mb-3 leading-tight">{step.title}</h3>
-                  <p className="text-gray-600 font-light leading-relaxed text-base md:text-sm">{step.description}</p>
-                </div>
-              </AnimatedSection>
-            ))}
           </div>
         </div>
       </section>
