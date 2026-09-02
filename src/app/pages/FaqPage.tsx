@@ -48,6 +48,14 @@ export function FaqPage() {
                     </Link>
                     をご覧ください。
                   </p>
+                ) : item.q === "お留守番はできますか？" ? (
+                  <p className="text-gray-700 font-light leading-relaxed">
+                    短時間なら可能ですが、長時間は不向きです。人との関わりを好む犬種のため、生活リズムの確認をお願いしています。詳しくは
+                    <Link to="/blog/samoyed-alone-time" className="underline underline-offset-4 hover:text-gray-900 mx-1">
+                      サモエドのお留守番
+                    </Link>
+                    もご覧ください。
+                  </p>
                 ) : (
                   <p className="text-gray-700 font-light leading-relaxed">{item.a}</p>
                 )}
