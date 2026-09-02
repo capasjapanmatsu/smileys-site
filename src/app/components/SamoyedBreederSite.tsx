@@ -412,7 +412,7 @@ export function SamoyedBreederSite() {
                 to="/breeding-schedule"
                 className="group inline-flex items-center gap-3 text-base tracking-widest border-b-2 border-gray-900 py-2 hover:gap-5 transition-all duration-300 min-h-[44px]"
               >
-                オーナー様募集案内
+                繁殖予定
                 <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
@@ -479,7 +479,7 @@ export function SamoyedBreederSite() {
                     to="/breeding-schedule"
                     className="inline-flex items-center gap-2 text-base tracking-widest border-b border-gray-900 py-2 hover:border-gray-500 transition-colors min-h-[44px]"
                   >
-                    オーナー様募集案内
+                    繁殖予定
                     <ChevronRight className="w-4 h-4" />
                   </Link>
                 </motion.div>
@@ -954,7 +954,7 @@ export function SamoyedBreederSite() {
                   <p className="text-lg text-gray-600 font-light leading-relaxed">
                     子犬の見学やお問い合わせは、土日祝13:00～17:00に承っております。
                     メールフォームまたは公式LINEからお問い合わせ・事前予約を承ります。
-                    当店はペットショップではありませんので見学は事前のご予約が必要です。土日祝のみ見学可能となります。
+                    当犬舎はペットショップではありませんので見学は事前のご予約が必要です。土日祝のみ見学可能となります。
                   </p>
                 </div>
 
@@ -1067,6 +1067,12 @@ export function SamoyedBreederSite() {
                 className="border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors block"
               >
                 <h3 className="text-lg font-medium text-gray-900">血統</h3>
+              </Link>
+              <Link
+                to="/breeding-schedule"
+                className="border border-gray-200 p-5 bg-gray-50 hover:border-gray-400 transition-colors block"
+              >
+                <h3 className="text-lg font-medium text-gray-900">繁殖予定</h3>
               </Link>
               <Link
                 to="/faq"
