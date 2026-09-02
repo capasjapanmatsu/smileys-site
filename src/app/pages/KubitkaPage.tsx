@@ -64,7 +64,7 @@ export function KubitkaPage() {
 
   return (
     <PageLayout
-      title="親犬紹介（サム・クビトカ・カイ）| Smiley's Kennel"
+      title="親犬紹介（サム・クビトカ・カイ）| Smiley's（熊本・九州）"
       description="サム・クビトカ（クイティカ）・カイの血統背景、タイトル実績、遺伝子検査結果をご紹介します。"
       canonicalPath="/kubitka"
       ogImage="/parent-kubitka.webp"

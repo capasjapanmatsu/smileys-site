@@ -6,8 +6,8 @@ import { createBreadcrumbList } from "../lib/schema";
 export function TestimonialsPage() {
   return (
     <PageLayout
-      title="お客様の声 | Smiley's Kennel"
-      description="Smiley's からお迎えいただいたオーナー様の声。福岡・長崎など各地からご家族が増えています。"
+      title="お客様の声 | Smiley's（熊本・九州）"
+      description="サミースマイル犬舎（SAMMY.SMILE JP'S）からお迎えいただいたオーナー様の声。福岡・長崎など各地からご家族が増えています。"
       canonicalPath="/testimonials"
       ogImage="/hero.webp"
       breadcrumbs={[{ label: "お客様の声" }]}

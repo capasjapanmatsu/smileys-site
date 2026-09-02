@@ -4,8 +4,8 @@ import { PageLayout } from "../components/PageLayout";
 export function PrivacyPolicyPage() {
   return (
     <PageLayout
-      title="プライバシーポリシー | Smiley's Kennel"
-      description="Smiley's Kennel（サミースマイル犬舎）のプライバシーポリシーです。お客様の個人情報の取り扱いについてご説明します。"
+      title="プライバシーポリシー | Smiley's（熊本・九州）"
+      description="サミースマイル犬舎（SAMMY.SMILE JP'S）のプライバシーポリシーです。お客様の個人情報の取り扱いについてご説明します。"
       canonicalPath="/privacy"
       ogImage="/hero.webp"
     >
@@ -27,7 +27,7 @@ export function PrivacyPolicyPage() {
               <section>
                 <h2 className="text-xl font-medium text-gray-900 mb-3">1. はじめに</h2>
                 <p>
-                  Smiley's（以下「当犬舎」といいます）は、お客様の個人情報の保護を重要な責務と認識し、個人情報の適切な取り扱いと保護に努めています。本プライバシーポリシーは、当犬舎が提供するサービスにおいて収集する個人情報の取り扱いについて定めるものです。
+                  サミースマイル犬舎（SAMMY.SMILE JP'S）（以下「当犬舎」といいます）は、お客様の個人情報の保護を重要な責務と認識し、個人情報の適切な取り扱いと保護に努めています。本プライバシーポリシーは、当犬舎が提供するサービスにおいて収集する個人情報の取り扱いについて定めるものです。
                 </p>
               </section>
 
@@ -93,7 +93,8 @@ export function PrivacyPolicyPage() {
                   個人情報の取り扱いに関するお問い合わせや、ご本人からの開示・訂正・削除のご請求は、お問い合わせフォームまたは公式LINEにてお申し込みください。
                 </p>
                 <p className="mt-4">
-                  事業所名：Smiley's（サミースマイル犬舎）<br />
+                  事業所名：Smiley's<br />
+                  犬舎名：サミースマイル犬舎（SAMMY.SMILE JP'S）<br />
                   所在地：熊本県熊本市北区龍田2丁目14-16
                 </p>
               </section>

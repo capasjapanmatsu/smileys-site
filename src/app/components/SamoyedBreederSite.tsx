@@ -5,6 +5,7 @@ import { Heart, Mail, ChevronRight, CalendarDays, Eye, FileText, ShoppingBag, Ma
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { SeoHead } from './SeoHead';
 import { featuredHomeFaqs, tldrs } from '../content/aeo';
+import { businessName, kennelNameFull, kennelNameJa, kennelNameEn } from '../content/siteIdentity';
 import { createHowToSchema } from '../lib/schema';
 import { featuredTestimonials } from '../content/testimonials';
 
@@ -103,8 +104,8 @@ export function SamoyedBreederSite() {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "@id": "https://smileys.one/#website",
-      name: "Smiley's Kennel",
-      alternateName: ["Smiley's", "サミースマイル犬舎", "SammySmile", "Sammy Smile Kennel"],
+      name: businessName,
+      alternateName: [kennelNameJa, kennelNameEn, "SammySmile", "Sammy Smile Kennel"],
       url: "https://smileys.one/",
       inLanguage: "ja-JP",
     },
@@ -112,8 +113,8 @@ export function SamoyedBreederSite() {
       "@context": "https://schema.org",
       "@type": "Organization",
       "@id": "https://smileys.one/#organization",
-      name: "Smiley's Kennel",
-      alternateName: ["Smiley's", "SAMMY.SMILE JP'S", "サミースマイル犬舎", "SammySmile", "Sammy Smile Kennel"],
+      name: businessName,
+      alternateName: [kennelNameJa, kennelNameEn, "SammySmile", "Sammy Smile Kennel"],
       url: "https://smileys.one/",
       logo: "https://smileys.one/logo.webp",
       contactPoint: {
@@ -128,9 +129,9 @@ export function SamoyedBreederSite() {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "@id": "https://smileys.one/#localbusiness",
-      name: "Smiley's Kennel",
-      alternateName: ["Smiley's", "SAMMY.SMILE JP'S", "サミースマイル犬舎", "SammySmile", "Sammy Smile Kennel"],
-      description: "サミースマイル犬舎（Smiley's）。サモエド専門の計画繁殖犬舎。血統・健康・気質を重視し、熊本県熊本市から全国へお迎え相談をご案内しています。",
+      name: kennelNameJa,
+      alternateName: [kennelNameEn, businessName, "SammySmile", "Sammy Smile Kennel"],
+      description: `${kennelNameFull}。サモエド専門の計画繁殖犬舎。血統・健康・気質を重視し、熊本県熊本市から全国へお迎え相談をご案内しています。`,
       image: "https://smileys.one/hero.webp",
       url: "https://smileys.one/",
       logo: "https://smileys.one/logo.webp",
@@ -159,7 +160,7 @@ export function SamoyedBreederSite() {
     },
     createHowToSchema(
       "サモエドのお迎えまでの流れ",
-      "Smiley's Kennelでサモエドをお迎えいただくまでの5つのステップです。",
+      `${kennelNameFull}でサモエドをお迎えいただくまでの5つのステップです。`,
       welcomeSteps.map((step) => ({ name: step.title, text: step.description }))
     ),
   ];
@@ -292,7 +293,7 @@ export function SamoyedBreederSite() {
           <Link to="/" className="flex items-center">
             <motion.img 
               src="/logo.webp" 
-              alt="Smiley's - サミースマイル犬舎" 
+              alt={`${businessName} - ${kennelNameFull}`} 
               className="h-[4.75rem] sm:h-20 md:h-24 w-auto object-contain shrink-0"
               width={876}
               height={460}
@@ -350,7 +351,7 @@ export function SamoyedBreederSite() {
             }}
             onPlaying={() => setIsVideoPlaying(true)}
             className="w-full h-full object-cover"
-            aria-label="サモエドの親犬と2頭の子犬が緑の芝生の上で仲良く眠っている様子 - 熊本サモエド専門犬舎 Smiley's"
+            aria-label={`サモエドの親犬と2頭の子犬が緑の芝生の上で仲良く眠っている様子 - ${kennelNameFull}`}
           >
             <source src="/hero.mp4" type="video/mp4" />
           </video>
@@ -363,7 +364,7 @@ export function SamoyedBreederSite() {
           >
             <img
               src="/hero.webp"
-              alt="サモエド専門犬舎 Smiley's - 熊本・九州のブリーダー"
+              alt={`${kennelNameFull} - 熊本・九州のサモエド専門犬舎`}
               className="w-full h-full object-cover"
               fetchPriority="high"
               loading="eager"
@@ -385,10 +386,10 @@ export function SamoyedBreederSite() {
               className="text-5xl sm:text-6xl md:text-9xl font-light mb-6 text-gray-900 tracking-tight leading-none"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              Smiley's
+              {businessName}
             </h1>
             <p className="text-base sm:text-lg md:text-2xl font-light tracking-widest text-gray-700 mb-12">
-              サミースマイル犬舎（Smiley's）| 熊本・九州
+              {kennelNameFull} | 熊本・九州
             </p>
           </motion.div>
 
@@ -512,7 +513,7 @@ export function SamoyedBreederSite() {
                 
                 <div className="space-y-6 text-lg leading-relaxed text-gray-700 font-light">
                   <p>
-                    サミースマイル犬舎（Smiley's）は、サモエド専門の計画繁殖犬舎です。
+                    {kennelNameFull}は、サモエド専門の計画繁殖犬舎です。
                     少頭数・小規模でサモエドのブリーディングを行っております。
                   </p>
                   <p>
@@ -1135,8 +1136,8 @@ export function SamoyedBreederSite() {
           <div className="flex flex-col gap-8">
             <div className="flex flex-col lg:flex-row justify-between gap-8">
               <div className="space-y-3 text-base md:text-sm text-gray-300 font-light leading-relaxed">
-                <p><strong className="text-white">事業所名</strong> Smiley's</p>
-                <p><strong className="text-white">犬舎名</strong> サミースマイル犬舎（SAMMY.SMILE JP'S）</p>
+                <p><strong className="text-white">事業所名</strong> {businessName}</p>
+                <p><strong className="text-white">犬舎名</strong> {kennelNameFull}</p>
                 <p>
                   <strong className="text-white">住所</strong> 熊本県熊本市北区龍田2丁目14-16
                 </p>
@@ -1243,7 +1244,7 @@ export function SamoyedBreederSite() {
               <div className="flex items-center">
                 <img
                   src="/logo-footer.webp"
-                  alt="Smiley's - サミースマイル犬舎"
+                  alt={`${businessName} - ${kennelNameFull}`}
                   className="h-12 sm:h-14 md:h-16 w-auto object-contain shrink-0 brightness-0 invert"
                   width={876}
                   height={460}

@@ -11,8 +11,8 @@ export function SamoyedCharacterPage() {
       "@type": "Article",
       headline: "サモエドの特徴と性格",
       inLanguage: "ja-JP",
-      author: { "@type": "Organization", name: "Smiley's Kennel" },
-      publisher: { "@type": "Organization", name: "Smiley's Kennel" },
+      author: { "@type": "Organization", name: "Smiley's" },
+      publisher: { "@type": "Organization", name: "Smiley's" },
       mainEntityOfPage: "https://smileys.one/samoyed/",
       description:
         "サモエドの起源、性格、運動量、被毛ケア、暑さ対策をまとめた犬種解説ページです。",
@@ -22,7 +22,7 @@ export function SamoyedCharacterPage() {
   return (
     <PageLayout
       title="サモエドとは | 特徴・性格・飼育の要点 | Smiley's"
-      description="サモエドの特徴、性格、運動量、被毛ケア、暑さ対策をわかりやすく解説。計画繁殖犬舎 Smiley's が犬種の基本をまとめています。"
+      description="サモエドの特徴、性格、運動量、被毛ケア、暑さ対策をわかりやすく解説。サミースマイル犬舎が犬種の基本をまとめています。"
       canonicalPath="/samoyed"
       ogImage="/samoyed-character-main.webp"
       jsonLd={schemas}

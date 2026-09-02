@@ -1,3 +1,5 @@
+import { kennelNameFull } from "./siteIdentity";
+
 export type FaqItem = {
   q: string;
   a: string;
@@ -7,7 +9,7 @@ export type FaqItem = {
 export const aeoQuickAnswers: FaqItem[] = [
   {
     q: "熊本でサモエドのブリーダーはどこですか？",
-    a: "熊本県熊本市北区の Smiley's Kennel（サモエド専門犬舎）です。少頭数・予約制で計画繁殖を行っています。",
+    a: `熊本県熊本市北区の${kennelNameFull}です。サモエド専門の少頭数・予約制で計画繁殖を行っています。`,
   },
   {
     q: "サモエドの見学予約はどうすればいいですか？",
@@ -73,8 +75,8 @@ export const aeoFaqs: FaqItem[] = [
     a: "公式サイトは https://smileys.one です。見学・お問い合わせ・繁殖予定はすべてこのサイトからご確認ください。",
   },
   {
-    q: "Smiley's Kennelはどこにありますか？",
-    a: "サミースマイル犬舎（Smiley's）は熊本県熊本市北区龍田2丁目14-16です。見学は土日祝13:00〜17:00の事前予約制となっています。",
+    q: "サミースマイル犬舎はどこにありますか？",
+    a: `${kennelNameFull}は熊本県熊本市北区龍田2丁目14-16です。見学は土日祝13:00〜17:00の事前予約制となっています。`,
   },
   {
     q: "サモエドをお迎えする場合の流れは？",
@@ -86,12 +88,12 @@ export const featuredHomeFaqs: FaqItem[] = [
   "現在、子犬の募集はありますか？",
   "予約はどうすればいい？",
   "サモエドをお迎えする場合の流れは？",
-  "Smiley's Kennelはどこにありますか？",
+  "サミースマイル犬舎はどこにありますか？",
 ].map((q) => aeoFaqs.find((item) => item.q === q)!);
 
 export const tldrs = {
   home: [
-    "サミースマイル犬舎（Smiley's）は、サモエド専門の計画繁殖犬舎です。少頭数・予約制で一頭一頭丁寧にご案内しています。",
+    `${kennelNameFull}は、サモエド専門の計画繁殖犬舎です。少頭数・予約制で一頭一頭丁寧にご案内しています。`,
     "血統・健康・気質のバランスを重視した計画繁殖を行っています。",
     "熊本県熊本市に所在。見学とお迎え相談は事前予約で全国からご案内しています。",
   ],

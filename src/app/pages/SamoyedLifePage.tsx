@@ -33,8 +33,8 @@ export function SamoyedLifePage() {
       "@type": "Article",
       headline: "サモエドがいる暮らし",
       inLanguage: "ja-JP",
-      author: { "@type": "Organization", name: "Smiley's Kennel" },
-      publisher: { "@type": "Organization", name: "Smiley's Kennel" },
+      author: { "@type": "Organization", name: "Smiley's" },
+      publisher: { "@type": "Organization", name: "Smiley's" },
       mainEntityOfPage: "https://smileys.one/samoyed-life/",
       description:
         "サモエドと暮らすことの魅力。和み、家族の相棒、毎日の散歩で人も健康に。絆を深め、家族の一員としての暮らしをご紹介します。",
@@ -67,7 +67,7 @@ export function SamoyedLifePage() {
   return (
     <PageLayout
       title="サモエドがいる暮らし | 家族としての暮らし方 | Smiley's"
-      description="サモエドと暮らす魅力をご紹介。和み、お子さんの相棒、毎日の散歩で人も健康に。絆を深め、家族としての暮らしをSmiley'sがお伝えします。"
+      description="サモエドと暮らす魅力をご紹介。和み、お子さんの相棒、毎日の散歩で人も健康に。絆を深め、家族としての暮らしをサミースマイル犬舎がお伝えします。"
       canonicalPath="/samoyed-life"
       ogImage="/samoyed-life-main.webp"
       jsonLd={schemas}

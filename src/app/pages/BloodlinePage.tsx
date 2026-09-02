@@ -12,8 +12,8 @@ export function BloodlinePage() {
       "@type": "Article",
       headline: "サモエド血統へのこだわり",
       inLanguage: "ja-JP",
-      author: { "@type": "Organization", name: "Smiley's Kennel" },
-      publisher: { "@type": "Organization", name: "Smiley's Kennel" },
+      author: { "@type": "Organization", name: "Smiley's" },
+      publisher: { "@type": "Organization", name: "Smiley's" },
       mainEntityOfPage: "https://smileys.one/bloodline/",
       description:
         "ロシア・ウクライナ・英国系の血統背景を重視した計画繁殖と、健康・気質のバランスを確認できる方針をまとめたページです。",

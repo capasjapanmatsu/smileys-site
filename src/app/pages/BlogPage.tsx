@@ -101,8 +101,8 @@ export function BlogPage() {
 
   return (
     <PageLayout
-      title="ブログ | Smiley's Kennel"
-      description="サモエド専門犬舎 Smiley's のブログ。子犬のご案内、飼育のヒント、犬舎のお知らせなどをお届けします。"
+      title="ブログ | Smiley's（熊本・九州）"
+      description="サミースマイル犬舎（SAMMY.SMILE JP'S）のブログ。子犬のご案内、飼育のヒント、犬舎のお知らせなどをお届けします。"
       canonicalPath="/blog"
       ogImage="/hero.webp"
     >

@@ -21,7 +21,7 @@ export function BlogPostPage() {
   if (!post) {
     return (
       <PageLayout
-        title="記事が見つかりません | Smiley's Kennel"
+        title="記事が見つかりません | Smiley's（熊本・九州）"
         description="お探しの記事が見つかりませんでした。"
         canonicalPath="/blog"
         ogImage="/hero.webp"
@@ -46,7 +46,7 @@ export function BlogPostPage() {
 
   return (
     <PageLayout
-      title={`${post.title} | Smiley's Kennel`}
+      title={`${post.title} | Smiley's（熊本・九州）`}
       description={post.excerpt}
       canonicalPath={`/blog/${post.slug}`}
       ogImage={post.image ?? "/hero.webp"}

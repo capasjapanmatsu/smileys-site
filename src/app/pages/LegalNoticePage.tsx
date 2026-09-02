@@ -2,8 +2,8 @@ import { FadeInSection } from "../components/FadeInSection";
 import { PageLayout } from "../components/PageLayout";
 
 const legalItems: Array<{ label: string; value: string }> = [
-  { label: "事業所名", value: "smiley's" },
-  { label: "犬舎名", value: "SammySmile(サミースマイル犬舎)" },
+  { label: "事業所名", value: "Smiley's" },
+  { label: "犬舎名", value: "サミースマイル犬舎（SAMMY.SMILE JP'S）" },
   { label: "動物取扱責任者", value: "松本 亜理沙" },
   {
     label: "動物取扱業登録番号・登録年月日・有効期限",
@@ -34,8 +34,8 @@ const legalItems: Array<{ label: string; value: string }> = [
 export function LegalNoticePage() {
   return (
     <PageLayout
-      title="特定商取引法に基づく表記 | Smiley's Kennel"
-      description="Smiley's Kennel（サミースマイル犬舎）の特定商取引法に基づく表記です。お支払い方法、ご予約金、引渡し時期、保証・返品方針をご案内します。"
+      title="特定商取引法に基づく表記 | Smiley's（熊本・九州）"
+      description="サミースマイル犬舎（SAMMY.SMILE JP'S）の特定商取引法に基づく表記です。お支払い方法、ご予約金、引渡し時期、保証・返品方針をご案内します。"
       canonicalPath="/legal"
       ogImage="/hero.webp"
     >

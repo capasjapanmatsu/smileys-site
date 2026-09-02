@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { FileText, Mail, ShoppingBag, BookOpen, Heart } from "lucide-react";
 import { motion } from "motion/react";
 import { SeoHead } from "./SeoHead";
+import { businessName, kennelNameFull } from "../content/siteIdentity";
 
 type BreadcrumbItem = { label: string; path?: string };
 
@@ -48,7 +49,7 @@ export function PageLayout({ children, title, description, canonicalPath, ogImag
           <Link to="/" className="flex items-center">
             <img
               src="/logo.webp"
-              alt="Smiley's - サミースマイル犬舎"
+              alt={`${businessName} - ${kennelNameFull}`}
               className="h-[4.75rem] sm:h-20 md:h-24 w-auto object-contain shrink-0"
               width={876}
               height={460}
@@ -96,16 +97,17 @@ export function PageLayout({ children, title, description, canonicalPath, ogImag
               <div className="flex items-center">
                 <img
                   src="/logo-footer.webp"
-                  alt="Smiley's - サミースマイル犬舎"
+                  alt={`${businessName} - ${kennelNameFull}`}
                   className="h-12 sm:h-14 md:h-16 w-auto object-contain shrink-0 brightness-0 invert"
                   width={876}
                   height={460}
                   loading="lazy"
                 />
               </div>
-              <p className="text-base md:text-sm text-gray-400 font-light">
-                サミースマイル犬舎（SAMMY.SMILE JP'S）
-              </p>
+              <div className="text-base md:text-sm text-gray-400 font-light space-y-1">
+                <p>事業所名：{businessName}</p>
+                <p>犬舎名：{kennelNameFull}</p>
+              </div>
               <div className="text-base md:text-sm text-gray-500 font-light space-y-2 leading-relaxed">
                 <p>熊本県熊本市北区龍田2丁目14-16</p>
                 <p>第一種動物取扱業熊市販第R7-12号</p>
