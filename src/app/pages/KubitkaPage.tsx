@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { FadeInSection } from "../components/FadeInSection";
 import { PageLayout } from "../components/PageLayout";
+import { buildSeoTitle } from "../content/siteIdentity";
 
 const championTitles = [
   "モルドバ ベビーチャンピオン",
@@ -64,7 +65,7 @@ export function KubitkaPage() {
 
   return (
     <PageLayout
-      title="親犬紹介（サム・クビトカ・カイ）| Smiley's（熊本・九州）"
+      title={buildSeoTitle("親犬紹介（サム・クビトカ・カイ）")}
       description="サム・クビトカ（クイティカ）・カイの血統背景、タイトル実績、遺伝子検査結果をご紹介します。"
       canonicalPath="/kubitka"
       ogImage="/parent-kubitka.webp"

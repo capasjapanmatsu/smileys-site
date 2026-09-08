@@ -3,6 +3,7 @@ import { FadeInSection } from "../components/FadeInSection";
 import { aeoFaqs, tldrs } from "../content/aeo";
 import { Link } from "react-router-dom";
 import { createBreadcrumbList, createFaqPageSchema } from "../lib/schema";
+import { buildSeoTitle } from "../content/siteIdentity";
 
 export function FaqPage() {
   const faqSchemas: Record<string, unknown>[] = [
@@ -12,7 +13,7 @@ export function FaqPage() {
 
   return (
     <PageLayout
-      title="サモエド ブリーダーFAQ | 飼育・予約・検査 | Smiley's"
+      title={buildSeoTitle("サモエド ブリーダーFAQ | 飼育・予約・検査")}
       description="サモエドの飼育、予約方法、遺伝子検査、血統方針などよくある質問をまとめました。熊本・九州からのお迎え相談も受け付けています。"
       canonicalPath="/faq"
       ogImage="/hero.webp"

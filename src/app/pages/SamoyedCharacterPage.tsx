@@ -3,6 +3,7 @@
 import { PageLayout } from "../components/PageLayout";
 import { FadeInSection } from "../components/FadeInSection";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import { buildSeoTitle, kennelNameJa } from "../content/siteIdentity";
 
 export function SamoyedCharacterPage() {
   const schemas: Record<string, unknown>[] = [
@@ -11,8 +12,8 @@ export function SamoyedCharacterPage() {
       "@type": "Article",
       headline: "サモエドの特徴と性格",
       inLanguage: "ja-JP",
-      author: { "@type": "Organization", name: "Smiley's" },
-      publisher: { "@type": "Organization", name: "Smiley's" },
+      author: { "@type": "Organization", name: kennelNameJa },
+      publisher: { "@type": "Organization", name: kennelNameJa },
       mainEntityOfPage: "https://smileys.one/samoyed/",
       description:
         "サモエドの起源、性格、運動量、被毛ケア、暑さ対策をまとめた犬種解説ページです。",
@@ -21,7 +22,7 @@ export function SamoyedCharacterPage() {
 
   return (
     <PageLayout
-      title="サモエドとは | 特徴・性格・飼育の要点 | Smiley's"
+      title={buildSeoTitle("サモエドとは | 特徴・性格・飼育の要点")}
       description="サモエドの特徴、性格、運動量、被毛ケア、暑さ対策をわかりやすく解説。サミースマイル犬舎が犬種の基本をまとめています。"
       canonicalPath="/samoyed"
       ogImage="/samoyed-character-main.webp"

@@ -1,10 +1,11 @@
 import { FadeInSection } from "../components/FadeInSection";
 import { PageLayout } from "../components/PageLayout";
+import { buildSeoTitle } from "../content/siteIdentity";
 
 export function PrivacyPolicyPage() {
   return (
     <PageLayout
-      title="プライバシーポリシー | Smiley's（熊本・九州）"
+      title={buildSeoTitle("プライバシーポリシー")}
       description="サミースマイル犬舎（SAMMY.SMILE JP'S）のプライバシーポリシーです。お客様の個人情報の取り扱いについてご説明します。"
       canonicalPath="/privacy"
       ogImage="/hero.webp"

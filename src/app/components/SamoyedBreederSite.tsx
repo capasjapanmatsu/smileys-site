@@ -5,7 +5,7 @@ import { Heart, Mail, ChevronRight, CalendarDays, Eye, FileText, ShoppingBag, Ma
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { SeoHead } from './SeoHead';
 import { featuredHomeFaqs, tldrs } from '../content/aeo';
-import { businessName, kennelNameFull, kennelNameJa, kennelNameEn } from '../content/siteIdentity';
+import { businessName, kennelNameFull, kennelNameJa, kennelNameEn, buildSeoTitle, homeSeoDescription, organizationAlternateNames } from '../content/siteIdentity';
 import { createHowToSchema } from '../lib/schema';
 import { featuredTestimonials } from '../content/testimonials';
 
@@ -104,8 +104,8 @@ export function SamoyedBreederSite() {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "@id": "https://smileys.one/#website",
-      name: businessName,
-      alternateName: [kennelNameJa, kennelNameEn, "SammySmile", "Sammy Smile Kennel"],
+      name: kennelNameJa,
+      alternateName: [...organizationAlternateNames],
       url: "https://smileys.one/",
       inLanguage: "ja-JP",
     },
@@ -113,8 +113,8 @@ export function SamoyedBreederSite() {
       "@context": "https://schema.org",
       "@type": "Organization",
       "@id": "https://smileys.one/#organization",
-      name: businessName,
-      alternateName: [kennelNameJa, kennelNameEn, "SammySmile", "Sammy Smile Kennel"],
+      name: kennelNameJa,
+      alternateName: [...organizationAlternateNames],
       url: "https://smileys.one/",
       logo: "https://smileys.one/logo.webp",
       contactPoint: {
@@ -131,7 +131,9 @@ export function SamoyedBreederSite() {
       "@id": "https://smileys.one/#localbusiness",
       name: kennelNameJa,
       alternateName: [kennelNameEn, businessName, "SammySmile", "Sammy Smile Kennel"],
-      description: `${kennelNameFull}。サモエド専門の計画繁殖犬舎。血統・健康・気質を重視し、熊本県熊本市から全国へお迎え相談をご案内しています。`,
+      description: `${kennelNameFull}。サモエド専門の計画繁殖犬舎。血統・健康・気質を重視し、熊本県熊本市北区から全国へお迎え相談をご案内しています。`,
+      additionalType: "https://www.productontology.org/id/Dog_breeding",
+      knowsAbout: ["Samoyed", "Dog breeding", "サモエド", "犬のブリーダー", "サモエド ブリーダー"],
       image: "https://smileys.one/hero.webp",
       url: "https://smileys.one/",
       logo: "https://smileys.one/logo.webp",
@@ -246,8 +248,8 @@ export function SamoyedBreederSite() {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden" style={{ fontFamily: "'Montserrat', 'Noto Sans JP', sans-serif" }}>
       <SeoHead
-        title="サモエド ブリーダー | 計画繁殖・血統重視 | Smiley's（熊本・九州）"
-        description="サモエド専門の計画繁殖犬舎。血統・健康・気質を重視し、遺伝子検査済みの親犬から少頭数で繁殖しています。熊本県熊本市に所在。見学・お迎え相談は事前予約制で全国からご案内しています。"
+        title={buildSeoTitle("サモエド ブリーダー | 計画繁殖・血統重視")}
+        description={homeSeoDescription}
         canonicalPath="/"
         ogImage="/hero.webp"
         jsonLd={homeSchemas}

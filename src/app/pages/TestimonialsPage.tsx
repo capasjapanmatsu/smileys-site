@@ -2,11 +2,12 @@ import { PageLayout } from "../components/PageLayout";
 import { FadeInSection } from "../components/FadeInSection";
 import { testimonials } from "../content/testimonials";
 import { createBreadcrumbList } from "../lib/schema";
+import { buildSeoTitle } from "../content/siteIdentity";
 
 export function TestimonialsPage() {
   return (
     <PageLayout
-      title="お客様の声 | Smiley's（熊本・九州）"
+      title={buildSeoTitle("お客様の声")}
       description="サミースマイル犬舎（SAMMY.SMILE JP'S）からお迎えいただいたオーナー様の声。福岡・長崎など各地からご家族が増えています。"
       canonicalPath="/testimonials"
       ogImage="/hero.webp"

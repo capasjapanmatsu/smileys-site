@@ -4,13 +4,14 @@ import { FadeInSection } from "../components/FadeInSection";
 import { PageLayout } from "../components/PageLayout";
 import { createBreadcrumbList } from "../lib/schema";
 import { APP_ROUTE_PATHS } from "../routePaths";
+import { buildSeoTitle } from "../content/siteIdentity";
 
 const MOFU_LAB_URL = "https://umaoyatsu.base.shop/";
 
 export function RecommendedPage() {
   return (
     <PageLayout
-      title="お迎え後のおすすめ｜おやつ・暮らしのヒント | Smiley's"
+      title={buildSeoTitle("お迎え後のおすすめ｜おやつ・暮らしのヒント")}
       description="サモエドのお迎え後に役立つおやつや暮らしのヒント。犬舎おすすめのおやつは MOFU LAB で扱っています。"
       canonicalPath={APP_ROUTE_PATHS.recommended}
       ogImage="/hero.webp"

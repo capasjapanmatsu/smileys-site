@@ -4,6 +4,7 @@ import { FadeInSection } from "../components/FadeInSection";
 import { getBlogPostBySlug } from "../content/blog";
 import { ChevronLeft } from "lucide-react";
 import { APP_ROUTE_PATHS } from "../routePaths";
+import { buildSeoTitle } from "../content/siteIdentity";
 
 function formatDate(dateStr: string): string {
   const date = new Date(dateStr);
@@ -21,7 +22,7 @@ export function BlogPostPage() {
   if (!post) {
     return (
       <PageLayout
-        title="記事が見つかりません | Smiley's（熊本・九州）"
+        title={buildSeoTitle("記事が見つかりません")}
         description="お探しの記事が見つかりませんでした。"
         canonicalPath="/blog"
         ogImage="/hero.webp"
@@ -46,7 +47,7 @@ export function BlogPostPage() {
 
   return (
     <PageLayout
-      title={`${post.title} | Smiley's（熊本・九州）`}
+      title={buildSeoTitle(post.title)}
       description={post.excerpt}
       canonicalPath={`/blog/${post.slug}`}
       ogImage={post.image ?? "/hero.webp"}

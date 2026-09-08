@@ -3,6 +3,7 @@
 import { PageLayout } from "../components/PageLayout";
 import { FadeInSection } from "../components/FadeInSection";
 import { tldrs } from "../content/aeo";
+import { buildSeoTitle, kennelNameJa } from "../content/siteIdentity";
 
 export function BreedingPolicyPage() {
   const schemas: Record<string, unknown>[] = [
@@ -11,8 +12,8 @@ export function BreedingPolicyPage() {
       "@type": "Article",
       headline: "繁殖理念と想い",
       inLanguage: "ja-JP",
-      author: { "@type": "Organization", name: "Smiley's" },
-      publisher: { "@type": "Organization", name: "Smiley's" },
+      author: { "@type": "Organization", name: kennelNameJa },
+      publisher: { "@type": "Organization", name: kennelNameJa },
       mainEntityOfPage: "https://smileys.one/policy/",
       description:
         "少頭数・予約制で行う計画繁殖の理念と、お迎えまでの方針をまとめたページです。",
@@ -21,7 +22,7 @@ export function BreedingPolicyPage() {
 
   return (
     <PageLayout
-      title="繁殖理念 | 少頭数・計画繁殖 | Smiley's（熊本・九州）"
+      title={buildSeoTitle("繁殖理念 | 少頭数・計画繁殖")}
       description="常時販売ではなく計画性と福祉を優先する繁殖理念。血統・健康・気質の調和を大切に、条件確認を前提にお迎えまでご案内しています。"
       canonicalPath="/policy"
       ogImage="/hero.webp"

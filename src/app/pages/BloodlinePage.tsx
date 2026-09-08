@@ -4,6 +4,7 @@ import { PageLayout } from "../components/PageLayout";
 import { FadeInSection } from "../components/FadeInSection";
 import { tldrs } from "../content/aeo";
 import { createBreadcrumbList } from "../lib/schema";
+import { buildSeoTitle, kennelNameJa } from "../content/siteIdentity";
 
 export function BloodlinePage() {
   const schemas: Record<string, unknown>[] = [
@@ -12,8 +13,8 @@ export function BloodlinePage() {
       "@type": "Article",
       headline: "サモエド血統へのこだわり",
       inLanguage: "ja-JP",
-      author: { "@type": "Organization", name: "Smiley's" },
-      publisher: { "@type": "Organization", name: "Smiley's" },
+      author: { "@type": "Organization", name: kennelNameJa },
+      publisher: { "@type": "Organization", name: kennelNameJa },
       mainEntityOfPage: "https://smileys.one/bloodline/",
       description:
         "ロシア・ウクライナ・英国系の血統背景を重視した計画繁殖と、健康・気質のバランスを確認できる方針をまとめたページです。",
@@ -23,7 +24,7 @@ export function BloodlinePage() {
 
   return (
     <PageLayout
-      title="サモエド血統へのこだわり | 名門血統・遺伝子検査 | Smiley's"
+      title={buildSeoTitle("サモエド血統へのこだわり | 名門血統・遺伝子検査")}
       description="ロシア・ウクライナ・英国系の血統背景を重視した計画繁殖。骨格・歩様・気質・健康のバランスを確認できる方針をご紹介します。"
       canonicalPath="/bloodline"
       ogImage="/bloodline-main.webp"

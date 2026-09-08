@@ -1,5 +1,6 @@
 import { FadeInSection } from "../components/FadeInSection";
 import { PageLayout } from "../components/PageLayout";
+import { buildSeoTitle } from "../content/siteIdentity";
 
 const legalItems: Array<{ label: string; value: string }> = [
   { label: "事業所名", value: "Smiley's" },
@@ -34,7 +35,7 @@ const legalItems: Array<{ label: string; value: string }> = [
 export function LegalNoticePage() {
   return (
     <PageLayout
-      title="特定商取引法に基づく表記 | Smiley's（熊本・九州）"
+      title={buildSeoTitle("特定商取引法に基づく表記")}
       description="サミースマイル犬舎（SAMMY.SMILE JP'S）の特定商取引法に基づく表記です。お支払い方法、ご予約金、引渡し時期、保証・返品方針をご案内します。"
       canonicalPath="/legal"
       ogImage="/hero.webp"

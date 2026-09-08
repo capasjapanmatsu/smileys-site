@@ -9,6 +9,7 @@ import {
 } from "../content/blog";
 import { ChevronRight } from "lucide-react";
 import { APP_ROUTE_PATHS } from "../routePaths";
+import { buildSeoTitle } from "../content/siteIdentity";
 
 type FilterValue = "すべて" | (typeof blogCategories)[number];
 
@@ -101,7 +102,7 @@ export function BlogPage() {
 
   return (
     <PageLayout
-      title="ブログ | Smiley's（熊本・九州）"
+      title={buildSeoTitle("ブログ")}
       description="サミースマイル犬舎（SAMMY.SMILE JP'S）のブログ。子犬のご案内、飼育のヒント、犬舎のお知らせなどをお届けします。"
       canonicalPath="/blog"
       ogImage="/hero.webp"
