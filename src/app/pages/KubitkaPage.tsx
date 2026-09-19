@@ -224,7 +224,7 @@ export function KubitkaPage() {
               <p className="text-sm md:text-base text-gray-600 mb-4">2025年4月18日生まれ / Male</p>
               <div className="mb-5">
                 <img
-                  src="/kai-profile.webp?v=20260911"
+                  src="/kai-profile.webp?v=20260919"
                   alt="カイ（SAMMY.SMILE JP'S CASTOR）"
                   className="w-full max-w-2xl h-auto object-cover"
                   width={1024}
