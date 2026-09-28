@@ -22,6 +22,12 @@ const BreedingSchedulePage = lazy(() =>
 const KubitkaPage = lazy(() =>
   import('./pages/KubitkaPage').then((m) => ({ default: m.KubitkaPage }))
 );
+const ParentDogPage = lazy(() =>
+  import('./pages/ParentDogPage').then((m) => ({ default: m.ParentDogPage }))
+);
+const GalleryPage = lazy(() =>
+  import('./pages/GalleryPage').then((m) => ({ default: m.GalleryPage }))
+);
 const LegalNoticePage = lazy(() =>
   import('./pages/LegalNoticePage').then((m) => ({ default: m.LegalNoticePage }))
 );
@@ -111,6 +117,38 @@ export default function App() {
         element={
           <Suspense fallback={null}>
             <KubitkaPage />
+          </Suspense>
+        }
+      />
+      <Route
+        path={APP_ROUTE_PATHS.parentSam}
+        element={
+          <Suspense fallback={null}>
+            <ParentDogPage id="sam" />
+          </Suspense>
+        }
+      />
+      <Route
+        path={APP_ROUTE_PATHS.parentKubitka}
+        element={
+          <Suspense fallback={null}>
+            <ParentDogPage id="kubitka" />
+          </Suspense>
+        }
+      />
+      <Route
+        path={APP_ROUTE_PATHS.parentKai}
+        element={
+          <Suspense fallback={null}>
+            <ParentDogPage id="kai" />
+          </Suspense>
+        }
+      />
+      <Route
+        path={APP_ROUTE_PATHS.gallery}
+        element={
+          <Suspense fallback={null}>
+            <GalleryPage />
           </Suspense>
         }
       />

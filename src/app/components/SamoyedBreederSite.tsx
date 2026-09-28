@@ -8,6 +8,9 @@ import { featuredHomeFaqs, tldrs } from '../content/aeo';
 import { businessName, kennelNameFull, kennelNameJa, kennelNameEn, buildSeoTitle, homeSeoDescription, organizationAlternateNames } from '../content/siteIdentity';
 import { createHowToSchema } from '../lib/schema';
 import { featuredTestimonials } from '../content/testimonials';
+import { homeGalleryImages } from '../content/gallery';
+import { getParentDog } from '../content/parentDogs';
+import { APP_ROUTE_PATHS } from '../routePaths';
 
 const ChecklistModal = lazy(() =>
   import('./ChecklistModal').then((m) => ({ default: m.ChecklistModal }))
@@ -58,11 +61,6 @@ export function SamoyedBreederSite() {
     { id: 'faq', label: 'FAQ' },
     { id: 'contact', label: 'Contact' },
   ];
-
-  const galleryImages = Array.from(
-    { length: 39 },
-    (_, i) => `/gallery/gallery-${String(i + 1).padStart(2, '0')}.webp`
-  );
 
   const welcomeSteps = [
     {
@@ -252,6 +250,7 @@ export function SamoyedBreederSite() {
         description={homeSeoDescription}
         canonicalPath="/"
         ogImage="/hero.webp"
+        ogImageAlt="サモエド専門犬舎 SammySmile - 熊本のサモエドブリーダー"
         jsonLd={homeSchemas}
       />
       {/* Side Navigation（フッター表示中は非表示にして重なりを防ぐ） */}
@@ -597,7 +596,7 @@ export function SamoyedBreederSite() {
               title="ロシアチャンピオン"
               description="ロシア – BELIY VOLK犬舎から来た男の子。この犬舎は世界的ショーで多数のチャンピオンを輩出し、骨格の美しさ、落ち着いた性格、豊富な被毛を特徴としおっとりとした優しい性格が特徴。 曾祖父に名犬「BELIY VOLK DIVIDE ET IMPERA」を持つ直系血統。"
               image="/parent-sam.webp"
-              detailPath="/kubitka#sam"
+              detailPath={getParentDog('sam').path}
             />
             <div className="space-y-16">
               <ParentDogCard
@@ -607,7 +606,7 @@ export function SamoyedBreederSite() {
                 title="ウクライナ モルドバ他多数のジュニアチャンピオン"
                 description="ウクライナ有名犬舎DAENERYS / DESANT犬舎より来た優良血統の女の子です。さらに43カ国でタイトルを獲得し、世界で最も有名なサモエドの一頭である「BELIY VOLK YAROMIR VELIKIY」の血統も受け継ぎ、骨格と歩様を正しく伝えています。"
                 image="/parent-kubitka.webp"
-                detailPath="/kubitka#kubitka"
+                detailPath={getParentDog('kubitka').path}
               />
               <ParentDogCard
                 delay={0.4}
@@ -616,23 +615,23 @@ export function SamoyedBreederSite() {
                 title="SAMMY.SMILE JP'S CASTOR"
                 description="サム直系の息子で、優れた骨格構成・美しい被毛・しなやかな歩様を兼ね備えた正統派ショー血統のサモエドです。BELIY VOLK 名門犬舎の血統価値を色濃く受け継いでいます。"
                 image="/parent-kai.webp"
-                detailPath="/kubitka#kai"
+                detailPath={getParentDog('kai').path}
               />
             </div>
           </div>
           <div className="mt-10 flex flex-wrap justify-center gap-6 text-sm md:text-base">
             <motion.div whileHover={{ x: 4, scale: 1.05 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.25 }}>
-              <Link to="/kubitka#sam" className="underline underline-offset-4 hover:text-gray-900 transition-colors">
+              <Link to={getParentDog('sam').path} className="underline underline-offset-4 hover:text-gray-900 transition-colors">
                 サムの詳細を見る
               </Link>
             </motion.div>
             <motion.div whileHover={{ x: 4, scale: 1.05 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.25 }}>
-              <Link to="/kubitka#kubitka" className="underline underline-offset-4 hover:text-gray-900 transition-colors">
+              <Link to={getParentDog('kubitka').path} className="underline underline-offset-4 hover:text-gray-900 transition-colors">
                 クビトカの詳細を見る
               </Link>
             </motion.div>
             <motion.div whileHover={{ x: 4, scale: 1.05 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.25 }}>
-              <Link to="/kubitka#kai" className="underline underline-offset-4 hover:text-gray-900 transition-colors">
+              <Link to={getParentDog('kai').path} className="underline underline-offset-4 hover:text-gray-900 transition-colors">
                 カイの詳細を見る
               </Link>
             </motion.div>
@@ -807,13 +806,13 @@ export function SamoyedBreederSite() {
             <motion.div
               className="flex gap-6 w-max"
               animate={{ x: ['0%', '-50%'] }}
-              transition={{ duration: 180, ease: 'linear', repeat: Infinity }}
+              transition={{ duration: 60, ease: 'linear', repeat: Infinity }}
             >
-              {[...galleryImages, ...galleryImages].map((src, index) => (
+              {[...homeGalleryImages, ...homeGalleryImages].map((src, index) => (
                 <div key={`${src}-${index}`} className="w-72 md:w-80 shrink-0">
                   <img
                     src={src}
-                    alt={`巣立ったサモエドの子犬ギャラリー ${index + 1}`}
+                    alt={`巣立ったサモエドの子犬ギャラリー ${(index % homeGalleryImages.length) + 1}`}
                     className="w-full h-72 md:h-80 object-cover rounded-sm"
                     loading="lazy"
                     width={320}
@@ -821,6 +820,17 @@ export function SamoyedBreederSite() {
                   />
                 </div>
               ))}
+            </motion.div>
+          </div>
+          <div className="mt-10 flex justify-center text-sm md:text-base">
+            <motion.div whileHover={{ x: 4, scale: 1.05 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.25 }}>
+              <Link
+                to={APP_ROUTE_PATHS.gallery}
+                className="inline-flex items-center gap-2 underline underline-offset-4 hover:text-gray-900 transition-colors"
+              >
+                ギャラリーをもっと見る
+                <ChevronRight className="w-4 h-4" />
+              </Link>
             </motion.div>
           </div>
         </div>

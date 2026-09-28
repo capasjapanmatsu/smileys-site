@@ -6,6 +6,7 @@ type SeoHeadProps = {
   description: string;
   canonicalPath: string;
   ogImage?: string;
+  ogImageAlt?: string;
   jsonLd?: Record<string, unknown>[];
   keywords?: string;
 };
@@ -15,6 +16,7 @@ export function SeoHead({
   description,
   canonicalPath,
   ogImage = "/hero.webp",
+  ogImageAlt,
   jsonLd = [],
   keywords = "サモエド,サモエド ブリーダー,犬舎,血統,計画繁殖,熊本,九州",
 }: SeoHeadProps) {
@@ -35,6 +37,7 @@ export function SeoHead({
       <meta property="og:image" content={imageUrl} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
+      {ogImageAlt && <meta property="og:image:alt" content={ogImageAlt} />}
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />

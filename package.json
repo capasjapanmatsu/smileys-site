@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "build": "vite build && react-snap",
+    "build": "vite build && node scripts/normalize-sitemap.mjs && react-snap",
     "dev": "vite"
   },
   "dependencies": {
@@ -104,6 +104,10 @@
       "/testimonials",
       "/recommended",
       "/kubitka",
+      "/kubitka/sam",
+      "/kubitka/kubitka",
+      "/kubitka/kai",
+      "/gallery",
       "/legal",
       "/privacy",
       "/blog",
