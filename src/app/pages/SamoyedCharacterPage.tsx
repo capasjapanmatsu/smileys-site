@@ -1,5 +1,6 @@
 "use client";
 
+import { Link } from "react-router-dom";
 import { PageLayout } from "../components/PageLayout";
 import { FadeInSection } from "../components/FadeInSection";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
@@ -178,6 +179,40 @@ export function SamoyedCharacterPage() {
                 <li>・知的で学習能力が高く、適切なしつけで素晴らしいパートナーに</li>
                 <li>・遊び好きで活発、適度な運動が必要</li>
               </ul>
+              <div className="mt-8 space-y-6 text-gray-700 font-light leading-relaxed">
+                <p>
+                  人との距離が近い犬種で、家族のそばにいると落ち着く子が多く、甘えん坊な一面もあります。そのぶん、長い時間ひとりで過ごす暮らしは負担になりやすいため、
+                  <Link to="/blog/samoyed-alone-time/" className="underline underline-offset-4 hover:text-gray-900 mx-1">お留守番についての考え方</Link>
+                  も迎える前に確認しておくと安心です。
+                </p>
+                <p>
+                  賢く覚えの早い犬ですが、スピッツ系らしい独立心から、気が乗らないと指示を聞き流す頑固さを見せることもあります。叱って従わせるより、褒めながら同じルールを根気よく続けるほうが、この犬種の良さを引き出せます。
+                </p>
+                <p>
+                  子どもや他の犬とも打ち解けやすい傾向がありますが、体が大きく力も強いため、小さなお子さんと遊ぶときは大人が見守ることが大切です。落ち着きや相性には個体差があり、
+                  <Link to="/blog/puppy-socialization/" className="underline underline-offset-4 hover:text-gray-900 mx-1">子犬の社会化期</Link>
+                  の過ごし方も影響します。
+                </p>
+                <p>
+                  もともと体と頭を使って働いてきた犬種です。運動や遊び、声かけが足りないと、退屈から吠えや穴掘り、いたずらにつながることもあります。
+                </p>
+                <p>
+                  明るく友好的な性格から「飼いやすい犬」と思われがちですが、どのご家庭にも向くわけではありません。サモエドとの暮らしが合いやすいのは、たとえば次のようなご家庭です。
+                </p>
+                <ul className="space-y-4">
+                  <li>・家族の誰かが家にいる時間が比較的長い</li>
+                  <li>・毎日の散歩や遊びの時間を確保できる</li>
+                  <li>・抜け毛やブラッシングを暮らしの一部として受け入れられる</li>
+                  <li>・夏でも室温を管理できる住まいがある</li>
+                </ul>
+                <p>
+                  初めて犬を迎える方でも、こうした時間と環境を整え、事前に学んでおくことで一緒に暮らしていけます。準備については
+                  <Link to="/blog/dog-owner-responsibility/" className="underline underline-offset-4 hover:text-gray-900 mx-1">犬を飼う前に学ぶこと</Link>
+                  や
+                  <Link to="/faq/" className="underline underline-offset-4 hover:text-gray-900 mx-1">よくある質問</Link>
+                  もあわせてご覧ください。
+                </p>
+              </div>
             </section>
           </FadeInSection>
 
