@@ -3,6 +3,7 @@
 import { Link } from "react-router-dom";
 import { FileText, Mail, ShoppingBag, BookOpen, Heart } from "lucide-react";
 import { motion } from "motion/react";
+import { Helmet } from "react-helmet-async";
 import { SeoHead } from "./SeoHead";
 import { businessName, kennelNameFull } from "../content/siteIdentity";
 
@@ -11,8 +12,9 @@ type BreadcrumbItem = { label: string; path?: string };
 interface PageLayoutProps {
   children: React.ReactNode;
   title: string;
-  description: string;
-  canonicalPath: string;
+  /** Omit description and canonicalPath only for non-indexable pages such as 404. */
+  description?: string;
+  canonicalPath?: string;
   ogImage?: string;
   jsonLd?: Record<string, unknown>[];
   breadcrumbs?: BreadcrumbItem[];
@@ -36,13 +38,19 @@ export function PageLayout({ children, title, description, canonicalPath, ogImag
       className="min-h-screen bg-white overflow-x-hidden"
       style={{ fontFamily: "'Montserrat', 'Noto Sans JP', sans-serif" }}
     >
-      <SeoHead
-        title={title}
-        description={description}
-        canonicalPath={canonicalPath}
-        ogImage={ogImage}
-        jsonLd={jsonLd}
-      />
+      {description && canonicalPath ? (
+        <SeoHead
+          title={title}
+          description={description}
+          canonicalPath={canonicalPath}
+          ogImage={ogImage}
+          jsonLd={jsonLd}
+        />
+      ) : (
+        <Helmet>
+          <title>{title}</title>
+        </Helmet>
+      )}
 
       <header className="fixed top-0 w-full bg-white/90 backdrop-blur-xl z-40 border-b border-gray-100">
         <div className="container mx-auto px-4 sm:px-6 md:px-12 py-4 flex justify-between items-center gap-3">

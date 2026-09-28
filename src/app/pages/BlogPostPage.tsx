@@ -5,6 +5,7 @@ import { getBlogPostBySlug } from "../content/blog";
 import { ChevronLeft } from "lucide-react";
 import { APP_ROUTE_PATHS } from "../routePaths";
 import { buildSeoTitle } from "../content/siteIdentity";
+import { NotFoundPage } from "./NotFoundPage";
 
 function formatDate(dateStr: string): string {
   const date = new Date(dateStr);
@@ -20,29 +21,7 @@ export function BlogPostPage() {
   const post = slug ? getBlogPostBySlug(slug) : undefined;
 
   if (!post) {
-    return (
-      <PageLayout
-        title={buildSeoTitle("記事が見つかりません")}
-        description="お探しの記事が見つかりませんでした。"
-        canonicalPath="/blog"
-        ogImage="/hero.webp"
-      >
-        <div className="container mx-auto px-6 md:px-12">
-          <div className="max-w-2xl mx-auto text-center py-20">
-            <h1 className="text-2xl font-medium text-gray-900 mb-4">
-              記事が見つかりませんでした
-            </h1>
-            <Link
-              to={APP_ROUTE_PATHS.blog}
-              className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 underline underline-offset-4"
-            >
-              <ChevronLeft className="w-4 h-4" />
-              ブログ一覧へ戻る
-            </Link>
-          </div>
-        </div>
-      </PageLayout>
-    );
+    return <NotFoundPage />;
   }
 
   return (

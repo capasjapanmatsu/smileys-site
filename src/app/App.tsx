@@ -28,6 +28,9 @@ const ParentDogPage = lazy(() =>
 const GalleryPage = lazy(() =>
   import('./pages/GalleryPage').then((m) => ({ default: m.GalleryPage }))
 );
+const NotFoundPage = lazy(() =>
+  import('./pages/NotFoundPage').then((m) => ({ default: m.NotFoundPage }))
+);
 const LegalNoticePage = lazy(() =>
   import('./pages/LegalNoticePage').then((m) => ({ default: m.LegalNoticePage }))
 );
@@ -205,6 +208,14 @@ export default function App() {
         element={
           <Suspense fallback={null}>
             <RecommendedPage />
+          </Suspense>
+        }
+      />
+      <Route
+        path="*"
+        element={
+          <Suspense fallback={null}>
+            <NotFoundPage />
           </Suspense>
         }
       />

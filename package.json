@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "build": "vite build && node scripts/normalize-sitemap.mjs && react-snap",
+    "build": "vite build && node scripts/normalize-sitemap.mjs && react-snap && node scripts/verify-prerender.mjs",
     "dev": "vite"
   },
   "dependencies": {
@@ -111,6 +111,7 @@
       "/legal",
       "/privacy",
       "/blog",
+      "/blog/samoyed-alone-time",
       "/blog/dog-owner-responsibility",
       "/blog/samoyed-shedding-season",
       "/blog/samoyed-summer-walks",
