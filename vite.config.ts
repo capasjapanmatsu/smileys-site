@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-import { writeFile } from 'node:fs/promises'
+import { copyFile } from 'node:fs/promises'
 import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
@@ -26,10 +26,10 @@ export default defineConfig({
     {
       name: 'normalize-robots-txt',
       async closeBundle() {
-        await writeFile(
+        // vite-plugin-sitemap overwrites dist/robots.txt; restore public/robots.txt as the source of truth.
+        await copyFile(
+          path.resolve(__dirname, 'public/robots.txt'),
           path.resolve(__dirname, 'dist/robots.txt'),
-          'User-agent: *\nAllow: /\n\n# Bing / IndexNow\nSitemap: https://smileys.one/sitemap.xml\n',
-          'utf8',
         )
       },
     },

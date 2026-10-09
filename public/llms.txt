@@ -23,11 +23,11 @@
 
 ## 主要ページ
 - トップ: https://smileys.one/
-- サモエドについて: https://smileys.one/samoyed
-- 繁殖予定: https://smileys.one/breeding-schedule
-- 親犬紹介: https://smileys.one/kubitka
-- FAQ: https://smileys.one/faq
-- ブログ: https://smileys.one/blog
+- サモエドについて: https://smileys.one/samoyed/
+- 繁殖予定: https://smileys.one/breeding-schedule/
+- 親犬紹介: https://smileys.one/kubitka/
+- FAQ: https://smileys.one/faq/
+- ブログ: https://smileys.one/blog/
 
 ## サイトマップ
 https://smileys.one/sitemap.xml

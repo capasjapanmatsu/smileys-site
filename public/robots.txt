@@ -1,5 +1,15 @@
 User-agent: *
 Allow: /
 
+# AI search crawlers
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ExaSearchBot
+Allow: /
+
+User-agent: ShapBot
+Allow: /
+
 # Bing / IndexNow
 Sitemap: https://smileys.one/sitemap.xml
