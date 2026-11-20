@@ -1,11 +1,24 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import potrace from "potrace";
-import sharp from "sharp";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const publicDir = path.join(__dirname, "..", "public");
+
+async function loadOptionalDependency(name) {
+  try {
+    return await import(name);
+  } catch {
+    throw new Error(
+      `Missing optional logo-build dependency "${name}". Install it temporarily before running this script.`,
+    );
+  }
+}
+
+const [{ default: potrace }, { default: sharp }] = await Promise.all([
+  loadOptionalDependency("potrace"),
+  loadOptionalDependency("sharp"),
+]);
 
 const SOURCE_PNG =
   "C:/Users/info/.cursor/projects/c-Users-info-project2/assets/c__Users_info_AppData_Roaming_Cursor_User_workspaceStorage_4fe207239ac212a7d199de0be4680226_images_image-1f389f93-2216-49a4-bc4d-c3bb87ae6144.png";
