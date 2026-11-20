@@ -617,6 +617,7 @@ export function SamoyedBreederSite() {
                 image="/parent-kai.webp"
                 detailPath={getParentDog('kai').path}
               />
+              <ComingSoonDogCard delay={0.6} />
             </div>
           </div>
           <div className="mt-10 flex flex-wrap justify-center gap-6 text-sm md:text-base">
@@ -1369,6 +1370,43 @@ function ParentDogCard({
               <ChevronRight className="w-4 h-4" />
             </Link>
           </motion.div>
+        </div>
+      </div>
+    </AnimatedSection>
+  );
+}
+
+function ComingSoonDogCard({ delay = 0 }: { delay?: number }) {
+  return (
+    <AnimatedSection delay={delay}>
+      <div className="group">
+        <div className="relative overflow-hidden mb-6">
+          <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.6 }}>
+            <ImageWithFallback
+              src="/new-face-coming-soon.jpg"
+              alt="ニューフェイスのサモエド - Coming Soon"
+              className="w-full h-[500px] object-cover"
+              loading="lazy"
+              width={1200}
+              height={1500}
+            />
+          </motion.div>
+          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent px-6 py-8 text-white">
+            <div className="text-xs tracking-[0.35em] mb-2">NEW FACE</div>
+            <div className="text-3xl font-light" style={{ fontFamily: "'Playfair Display', serif" }}>
+              Coming Soon
+            </div>
+          </div>
+        </div>
+        <div className="space-y-2">
+          <div className="text-base md:text-sm tracking-widest text-gray-500">NEW FACE</div>
+          <h3 className="text-4xl font-light" style={{ fontFamily: "'Playfair Display', serif" }}>
+            ニューフェイス
+          </h3>
+          <div className="text-base md:text-sm text-gray-600 font-light">Coming Soon</div>
+          <p className="text-base md:text-sm text-gray-700 font-light leading-relaxed pt-2">
+            新しい仲間を迎える準備を進めています。詳しいご紹介は、準備が整い次第お知らせいたします。
+          </p>
         </div>
       </div>
     </AnimatedSection>
