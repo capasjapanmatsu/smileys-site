@@ -1383,7 +1383,8 @@ function ComingSoonDogCard({ delay = 0 }: { delay?: number }) {
             <ImageWithFallback
               src="/new-face-coming-soon.jpg"
               alt="ニューフェイスのサモエド - Coming Soon"
-              className="w-full h-[500px] object-cover"
+              className="w-full h-[500px] object-cover scale-[1.35] origin-bottom-right"
+              style={{ objectPosition: "78% 72%" }}
               loading="lazy"
               width={1200}
               height={1500}
