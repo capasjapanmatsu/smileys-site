@@ -598,27 +598,25 @@ export function SamoyedBreederSite() {
               image="/parent-sam.webp"
               detailPath={getParentDog('sam').path}
             />
-            <div className="space-y-16">
-              <ParentDogCard
-                delay={0.2}
-                name="クビトカ"
-                role="GIRLS"
-                title="ウクライナ モルドバ他多数のジュニアチャンピオン"
-                description="ウクライナ有名犬舎DAENERYS / DESANT犬舎より来た優良血統の女の子です。さらに43カ国でタイトルを獲得し、世界で最も有名なサモエドの一頭である「BELIY VOLK YAROMIR VELIKIY」の血統も受け継ぎ、骨格と歩様を正しく伝えています。"
-                image="/parent-kubitka.webp"
-                detailPath={getParentDog('kubitka').path}
-              />
-              <ParentDogCard
-                delay={0.4}
-                name="カイ"
-                role="BOYS"
-                title="SAMMY.SMILE JP'S CASTOR"
-                description="サム直系の息子で、優れた骨格構成・美しい被毛・しなやかな歩様を兼ね備えた正統派ショー血統のサモエドです。BELIY VOLK 名門犬舎の血統価値を色濃く受け継いでいます。"
-                image="/parent-kai.webp"
-                detailPath={getParentDog('kai').path}
-              />
-              <ComingSoonDogCard delay={0.6} />
-            </div>
+            <ParentDogCard
+              delay={0.2}
+              name="クビトカ"
+              role="GIRLS"
+              title="ウクライナ モルドバ他多数のジュニアチャンピオン"
+              description="ウクライナ有名犬舎DAENERYS / DESANT犬舎より来た優良血統の女の子です。さらに43カ国でタイトルを獲得し、世界で最も有名なサモエドの一頭である「BELIY VOLK YAROMIR VELIKIY」の血統も受け継ぎ、骨格と歩様を正しく伝えています。"
+              image="/parent-kubitka.webp"
+              detailPath={getParentDog('kubitka').path}
+            />
+            <ParentDogCard
+              delay={0.4}
+              name="カイ"
+              role="BOYS"
+              title="SAMMY.SMILE JP'S CASTOR"
+              description="サム直系の息子で、優れた骨格構成・美しい被毛・しなやかな歩様を兼ね備えた正統派ショー血統のサモエドです。BELIY VOLK 名門犬舎の血統価値を色濃く受け継いでいます。"
+              image="/parent-kai.webp"
+              detailPath={getParentDog('kai').path}
+            />
+            <ComingSoonDogCard delay={0.6} />
           </div>
           <div className="mt-10 flex flex-wrap justify-center gap-6 text-sm md:text-base">
             <motion.div whileHover={{ x: 4, scale: 1.05 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.25 }}>
