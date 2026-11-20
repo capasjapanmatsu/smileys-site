@@ -80,12 +80,16 @@ try {
   page.setDefaultTimeout(30000);
 
   for (const route of routes) {
-    const response = await page.goto(`${origin}${route}`, { waitUntil: "networkidle0" });
+    const response = await page.goto(`${origin}${route}`, {
+      waitUntil: "domcontentloaded",
+      timeout: 60000,
+    });
     if (!response?.ok()) {
       throw new Error(`failed to prerender ${route}: HTTP ${response?.status() ?? "unknown"}`);
     }
 
     await page.waitForFunction(() => document.querySelector("#root")?.textContent?.trim());
+    await page.waitForNetworkIdle({ idleTime: 500, timeout: 10000 }).catch(() => {});
     const html = await page.content();
     const outputPath =
       route === "/404.html"

@@ -588,7 +588,7 @@ export function SamoyedBreederSite() {
             </div>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-x-16 gap-y-10 md:gap-y-14 max-w-6xl mx-auto">
             <ParentDogCard
               delay={0}
               name="サム"
